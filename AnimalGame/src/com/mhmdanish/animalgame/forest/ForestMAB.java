@@ -1,8 +1,11 @@
 package com.mhmdanish.animalgame.forest;
 
+import com.mhmdanish.animalgame.animal.AbstractAnimalFactoryMAB;
+import com.mhmdanish.animalgame.animal.AnimalFactoryMAB;
 import com.mhmdanish.animalgame.animal.AnimalMAB;
 import com.mhmdanish.animalgame.animal.DuckAdapterMAB;
 import com.mhmdanish.animalgame.animal.DuckMAB;
+import com.mhmdanish.animalgame.animal.FightableAnimalFactoryMAB;
 import com.mhmdanish.animalgame.animal.FightableMAB;
 import com.mhmdanish.animalgame.animal.LionMAB;
 import com.mhmdanish.animalgame.animal.TigerMAB;
@@ -36,12 +39,20 @@ public class ForestMAB {
 	
 	public void createAnimal() {
 		
+		
+		//animal factory for creating fightable animal
+		AbstractAnimalFactoryMAB fightableanimalFactory = new FightableAnimalFactoryMAB();
+		
+		//animal factory for creating animal
+		AbstractAnimalFactoryMAB animalFactory = new AnimalFactoryMAB();
+		
+		
 		// used decorator pattern
-		tiger = new FightableMAB(new TigerMAB());
-		lion = new FightableMAB(new LionMAB());
+		tiger = fightableanimalFactory.createAnimal("tiger");
+		lion = fightableanimalFactory.createAnimal("lion");
 		
 		//used adapter pattern
-		duck = new DuckAdapterMAB(new DuckMAB());
+		duck = animalFactory.createAnimal("duck");
 	}
 	
 	public void roamAnimalMAB() {

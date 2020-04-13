@@ -1,0 +1,28 @@
+package com.mhmdanish.animalgame.forest;
+
+public class ForestMAB {
+	
+	private static volatile ForestMAB instance = null;
+	
+	private ForestMAB() {
+		
+	}
+	
+	
+	// singleton pattern
+	public static ForestMAB getInstanceMAB() {
+		if(instance == null) {
+			synchronized(ForestMAB.class) {
+				if(instance == null) {
+					instance = new ForestMAB();
+				}
+			}
+		}
+		
+		return instance;
+	}
+	
+	
+	
+
+}

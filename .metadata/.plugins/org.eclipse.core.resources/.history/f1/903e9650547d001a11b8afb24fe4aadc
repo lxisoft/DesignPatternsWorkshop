@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+package com.mhmdanish.animalgame;
+
+import com.mhmdanish.animalgame.forest.Forest;
+
+/**
+ * @author mohammed anish
+ *
+ */
+public class Tdd {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Forest forest = Forest.getInstance();
+		
+		System.out.println(forest);
+	}
+
+}

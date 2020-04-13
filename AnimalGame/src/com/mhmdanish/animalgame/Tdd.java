@@ -3,6 +3,8 @@
  */
 package com.mhmdanish.animalgame;
 
+import com.mhmdanish.animalgame.forest.ForestMAB;
+
 /**
  * @author mohammed anish
  *
@@ -14,6 +16,9 @@ public class Tdd {
 	 */
 	public static void main(String[] args) {
 		
+		ForestMAB forest = ForestMAB.getInstanceMAB();
+		forest.roarAnimal();
+		System.out.println(forest);
 	}
 
 }

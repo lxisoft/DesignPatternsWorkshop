@@ -1,0 +1,25 @@
+package com.mhmdanish.animalgame.forest;
+
+public class Forest {
+	
+	private static volatile Forest instance = null;
+	
+	private Forest() {
+		
+	}
+	
+	
+	// singleton pattern
+	public static Forest getInstance() {
+		if(instance == null) {
+			synchronized(Forest.class) {
+				if(instance == null) {
+					instance = new Forest();
+				}
+			}
+		}
+		
+		return instance;
+	}
+
+}

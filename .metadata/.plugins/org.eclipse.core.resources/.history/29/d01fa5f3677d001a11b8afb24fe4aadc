@@ -1,0 +1,11 @@
+package com.mhmdanish.animalgame.animal;
+
+public class DuckAdapterMAB extends AnimalMAB {
+	
+	DuckMAB duck;
+	
+	public DuckAdapterMAB(DuckMAB duck) {
+		this.duck = duck;
+	}
+
+}

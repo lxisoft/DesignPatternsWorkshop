@@ -17,7 +17,8 @@ public class Tdd {
 	public static void main(String[] args) {
 		
 		ForestMAB forest = ForestMAB.getInstanceMAB();
-		forest.roarAnimal();
+		forest.createAnimal();
+		forest.roamAnimalMAB();
 		System.out.println(forest);
 	}
 

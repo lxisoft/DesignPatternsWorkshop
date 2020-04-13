@@ -6,7 +6,7 @@ public abstract class AnimalMAB {
 		System.out.println("Eating");
 	}
 
-	public void walk() {
+	public void walkMAB() {
 		System.out.println("walking");
 	}
 }

@@ -11,7 +11,11 @@ import com.akhil.animalgame.forest.*;
 public class Tdd {
  public static void main(String[] args) {
 	  ForestAKJ forest = ForestAKJ.getInstance();
-	  System.out.print("Welcome To The"+" "+forest.toString()+" Forest");
+	  String forestName = forest.toString();
+	  System.out.println("=================================================");
+	  System.out.println(           "Welcome To The"+    forest     + "   Forest");
+	  System.out.println("=================================================");
+	  
 	 
  }
 }

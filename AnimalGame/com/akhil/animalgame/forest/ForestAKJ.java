@@ -1,5 +1,8 @@
 package com.akhil.animalgame.forest;
 
+import com.akhil.animalgame.animal.AnimalAKJ;
+import com.akhil.animalgame.animal.AnimalFactoryAKJ;
+
 /**
  * @author Akhil
  * 
@@ -8,7 +11,11 @@ package com.akhil.animalgame.forest;
  */
 
 public class ForestAKJ {
-
+	
+	AnimalAKJ tiger;
+	AnimalAKJ lion;
+	AnimalAKJ rabbit;
+	AnimalAKJ deer;
 	
 	String name;
 
@@ -29,5 +36,11 @@ public class ForestAKJ {
     { 
         return forest; 
     } 
+    
+    public void createAnimal() {
+    	// creating animal using factory pattern
+    	AnimalFactoryAKJ animal = AnimalFactoryAKJ.getInstance();
+    	System.out.print(animal.getAnimal("tiger").eatAKJ());
+    }
 } 
 

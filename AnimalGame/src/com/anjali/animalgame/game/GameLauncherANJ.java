@@ -14,7 +14,7 @@ public class GameLauncherANJ {
 	
 	public ForestANJ setGameANJ() {
 		
-		forest=new ForestANJ("Gir Forest");
+		forest=ForestANJ.getInstance();   //Singleton pattern
 		
 		forest.getAnimals()[0]=new TigerANJ();
 		forest.getAnimals()[0].setAnimalName("Tiger 1");

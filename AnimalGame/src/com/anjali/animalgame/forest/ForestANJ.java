@@ -4,9 +4,17 @@ import com.anjali.animalgame.animal.AnimalANJ;
 
 public class ForestANJ {
 	
-	public ForestANJ(String forestName) {
-		this.forestName = forestName;
-	} 
+	private static ForestANJ uniqueInstance;  /**
+	 											*Singleton pattern implemented-marked constructor as private
+	 										   */											 										 
+	private ForestANJ() {} 
+	
+	public static ForestANJ getInstance() {
+		if(uniqueInstance==null) {
+			uniqueInstance=new ForestANJ();
+		}
+		return uniqueInstance;
+	}
 	
 	private String forestName;
 	

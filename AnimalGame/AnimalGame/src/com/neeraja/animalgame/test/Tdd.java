@@ -14,7 +14,7 @@ public class Tdd {
 		System.out.println(forest);
 		//Strategy
 		AnimalNrj tigerNrj=new TigerNrj();
-		tigerNrj.setEat();
+		tigerNrj.setEatNrj();
 	}
 
 }

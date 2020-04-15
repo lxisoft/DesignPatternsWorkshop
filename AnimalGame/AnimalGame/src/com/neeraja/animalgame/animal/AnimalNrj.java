@@ -2,11 +2,11 @@ package com.neeraja.animalgame.animal;
 
 public abstract class AnimalNrj {
 	
-	EatBehaviourNrj eatBehaviour;
+	EatBehaviourNrj eatBehaviourNrj;
 
-	public void setEat(){
+	public void setEatNrj(){
 
-		eatBehaviour.eat();
+		eatBehaviourNrj.eatNrj();
 	}
 
 	public void eatNrj() {

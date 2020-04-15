@@ -13,6 +13,12 @@ public class Tdd{
 	    forest.viewDetailsSPM();
 		AnimalSPM tiger = new TigerSPM();
 		tiger.setEat();
+		AnimalSPM lion = new LionSPM();
+		lion.setEat();
+		AnimalSPM rabbit = new RabbitSPM();
+		rabbit.setEat();
+		AnimalSPM deer = new DeerSPM();
+		deer.setEat();
 		
 	}
 }

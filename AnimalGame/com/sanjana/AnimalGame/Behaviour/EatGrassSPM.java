@@ -7,6 +7,6 @@ package com.sanjana.AnimalGame.Behaviour;
 public class EatGrassSPM implements EatBehaviourSPM{
 	
 	public void eat(){
-		System.out.println("eats grass");
+		System.out.println("this animal is a herbivorous");
 	}
 }

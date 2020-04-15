@@ -19,7 +19,7 @@ public class Tdd {
 		ForestMAB forest = ForestMAB.getInstanceMAB();
 		forest.createAnimal();
 		forest.roamAnimalMAB();
-		System.out.println(forest);
+		forest.eatMAB();
 	}
 
 }

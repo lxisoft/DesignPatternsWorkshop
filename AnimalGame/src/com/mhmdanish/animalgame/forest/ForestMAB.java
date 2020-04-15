@@ -2,9 +2,13 @@ package com.mhmdanish.animalgame.forest;
 
 import com.mhmdanish.animalgame.animal.AbstractAnimalFactoryMAB;
 import com.mhmdanish.animalgame.animal.AnimalFactoryMAB;
+import com.mhmdanish.animalgame.animal.AnimalInvokerMAB;
 import com.mhmdanish.animalgame.animal.AnimalIteratorMAB;
 import com.mhmdanish.animalgame.animal.AnimalMAB;
+import com.mhmdanish.animalgame.animal.CommandMAB;
+import com.mhmdanish.animalgame.animal.EatCommandMAB;
 import com.mhmdanish.animalgame.animal.FightableAnimalFactoryMAB;
+import com.mhmdanish.animalgame.animal.WalkCommandMAB;
 
 public class ForestMAB {
 	
@@ -54,11 +58,24 @@ public class ForestMAB {
 		
 	}
 	
-	public void fight() {
+	public void eatMAB() {
+		AnimalIteratorMAB iterator = new AnimalIteratorMAB(animals);
+		
+		while(iterator.hasNext()) {
+			eatMAB(iterator.next());
+		}
 	}
 	
 	private void walkMAB(AnimalMAB animal) {
-		animal.walkMAB();
+		CommandMAB animalCommand  = new WalkCommandMAB(animal);
+		AnimalInvokerMAB animalInvoker = new AnimalInvokerMAB(animalCommand);
+		animalInvoker.executeMAB();
+	}
+	
+	private void eatMAB(AnimalMAB animal) {
+		CommandMAB animalCommand  = new EatCommandMAB(animal);
+		AnimalInvokerMAB animalInvoker = new AnimalInvokerMAB(animalCommand);
+		animalInvoker.executeMAB();
 	}
 	
 

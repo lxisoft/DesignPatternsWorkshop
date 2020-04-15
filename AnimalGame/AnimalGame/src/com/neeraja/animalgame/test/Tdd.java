@@ -10,11 +10,14 @@ public class Tdd {
 		
 		//Singleton and adapter
 		ForestNrj forest = ForestNrj.getInstanceNrj();
-		forest.animalSound();
+		forest.animalWalk();
 		System.out.println(forest);
 		//Strategy
 		AnimalNrj tigerNrj=new TigerNrj();
 		tigerNrj.setEatNrj();
+		
+		//clientRequirement
+		forest.createAnimal();
 	}
 
 }

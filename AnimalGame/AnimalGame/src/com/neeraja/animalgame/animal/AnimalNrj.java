@@ -1,7 +1,13 @@
 package com.neeraja.animalgame.animal;
 
 public abstract class AnimalNrj {
+	String name;
 	
+	
+	public String getName() {
+		return name;
+	}
+
 	EatBehaviourNrj eatBehaviourNrj;
 
 	public void setEatNrj(){

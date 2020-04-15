@@ -41,7 +41,6 @@ public class AnimalConfigurationSPM {
 				System.out.println("CONFIGURATION NOT LOADED");
 			}
 		}
-		//System.out.println(result);
 		return result;
 	}
 

@@ -1,28 +1,35 @@
 package com.anjali.animalgame.animal;
 
-public class DeerANJ extends AnimalANJ implements Herbivorous{
+import com.anjali.animalgame.strategy.impl.GrazeFood;
+import com.anjali.animalgame.strategy.impl.HuntFood;
+
+public class DeerANJ extends AnimalANJ {
+
+	
+	public DeerANJ() {
+		foodEatBehaviour=new GrazeFood(); //setting strategy pattern behaviour
+	}
 
 	@Override
 	public void meetAnotherAnimalANJ(AnimalANJ animal2) {
 	
-		if(animal2 instanceof Carnivorous){
-				run(animal2);
-			}	
-			else if(animal2 instanceof Omnivorous){
-				run(animal2);
+		if(animal2.getFoodEatBehaviour() instanceof HuntFood){
+			run(animal2);
 			}
-			else if(animal2 instanceof Herbivorous){
-				ignore(animal2);
+			
+			else if(animal2.getFoodEatBehaviour() instanceof GrazeFood){
+			ignore(animal2);
 			}
+			
 			else{
 				System.out.println("Not valid");
 			}
 		
 	}
 
-	@Override
+	
 	public void graze() {
-		System.out.println(getAnimalName()+" graze for food");	 	
+		this.foodHunt(); 		//strategy behaviour invoked
 	}
 	
 	public void run(AnimalANJ animal){

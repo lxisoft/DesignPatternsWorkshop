@@ -2,6 +2,8 @@ package com.anjali.animalgame.animal;
 
 import java.util.Scanner;
 
+import com.anjali.animalgame.strategy.IFoodEatBehaviourANJ;
+
 public abstract class AnimalANJ {
 	
 	private String animalName;
@@ -9,10 +11,20 @@ public abstract class AnimalANJ {
 	private boolean isAlive=true;
 	
 	private int hungerLevel;
-	
+
 	private int strengthLevel;
 	
+	protected IFoodEatBehaviourANJ foodEatBehaviour; //strategy behaviour interface
+	
 	public Scanner sc=new Scanner(System.in);
+	
+	public IFoodEatBehaviourANJ getFoodEatBehaviour() {
+		return foodEatBehaviour;
+	}
+
+	public void setFoodEatBehaviour(IFoodEatBehaviourANJ foodEatBehaviour) {
+		this.foodEatBehaviour = foodEatBehaviour;
+	}
 	
 	public String getAnimalName() {
 		return animalName;
@@ -45,9 +57,13 @@ public abstract class AnimalANJ {
 	public void setStrengthLevel(int strengthLevel) {
 		this.strengthLevel = strengthLevel;
 	}
-
+	
 	public abstract void meetAnotherAnimalANJ(AnimalANJ anotherAnimal);
 
+	public void foodHunt() {
+		foodEatBehaviour.foodHunt();
+	}
+	
 	public void fight(AnimalANJ animal2){
 		System.out.println(animalName+" fights with "+animal2.getAnimalName());	
 	}
@@ -59,12 +75,6 @@ public abstract class AnimalANJ {
 	}
 	
 	public void ignore(AnimalANJ animal2){
-		if((animal2 instanceof Carnivorous)||(animal2 instanceof Omnivorous)){
-		System.out.println(animal2.getAnimalName()+" ignores "+getAnimalName());
-			
-		}
-		else{
 		System.out.println(getAnimalName()+" ignores "+animal2.getAnimalName());
-		}
 	}
 }

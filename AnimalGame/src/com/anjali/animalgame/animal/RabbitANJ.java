@@ -1,19 +1,23 @@
 package com.anjali.animalgame.animal;
 
-public class RabbitANJ extends AnimalANJ implements Herbivorous{
+import com.anjali.animalgame.strategy.impl.GrazeFood;
+import com.anjali.animalgame.strategy.impl.HuntFood;
+
+public class RabbitANJ extends AnimalANJ {
+
+	
+	public RabbitANJ() {
+		foodEatBehaviour=new GrazeFood(); //setting strategy pattern behaviour
+	}
 
 	@Override
 	public void meetAnotherAnimalANJ(AnimalANJ animal2) {
 		
-		if(animal2 instanceof Carnivorous){
+		if(animal2.getFoodEatBehaviour() instanceof HuntFood){
 			run(animal2);
 			}
 			
-			else if(animal2 instanceof Omnivorous){
-			run(animal2);
-			}
-			
-			else if(animal2 instanceof Herbivorous){
+			else if(animal2.getFoodEatBehaviour() instanceof GrazeFood){
 			ignore(animal2);
 			}
 			
@@ -23,10 +27,9 @@ public class RabbitANJ extends AnimalANJ implements Herbivorous{
 		
 	}
 
-	@Override
+	
 	public void graze() {
-		System.out.println(getAnimalName()+" graze for food");
-		 	
+		this.foodHunt();		//strategy behaviour invoked 	
 	}
 	
 	public void run(AnimalANJ animal){

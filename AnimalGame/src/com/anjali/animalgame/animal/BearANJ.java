@@ -1,25 +1,31 @@
 package com.anjali.animalgame.animal;
 
-public class BearANJ extends AnimalANJ implements Omnivorous{
+import com.anjali.animalgame.strategy.impl.GrazeFood;
+import com.anjali.animalgame.strategy.impl.HuntFood;
+
+public class BearANJ extends AnimalANJ /*implements Omnivorous*/{
+
+	
+	public BearANJ() {
+		foodEatBehaviour=new HuntFood(); //setting strategy pattern behaviour
+	}
 
 	@Override
 	public void meetAnotherAnimalANJ(AnimalANJ animal2) {
 		
-		if(animal2 instanceof Carnivorous){
-			checkStrengthLevel(animal2);	
-			}
+		if(animal2.getFoodEatBehaviour() instanceof GrazeFood) {
+			System.out.println("******Bear meet graze food"+animal2.getAnimalName());
 			
-			else if(animal2 instanceof Omnivorous){
-			checkStrengthLevel(animal2);
-			}
-
-			else if(animal2 instanceof Herbivorous){
 			checkHungerLevel(animal2);
-			}
+		}
+		else if(animal2.getFoodEatBehaviour() instanceof HuntFood) {
+			System.out.println("******Bear meet hunt food"+animal2.getAnimalName());
 			
-			else{
-				System.out.println("Not valid");
-			}
+			checkStrengthLevel(animal2);
+		}
+		else{
+			System.out.println("Invalid");	
+		}
 		
 	}
 
@@ -50,30 +56,13 @@ public class BearANJ extends AnimalANJ implements Omnivorous{
 		animal2.setHungerLevel(sc.nextInt());
 		
 		if(getHungerLevel()>6){
-			hunt(animal2,getAnimalName());
-		    animal2.dead();
+			this.foodHunt(); 		//strategy behaviour invoked
+			animal2.dead();
 		}
 		else{
 			ignore(animal2);
-			if(animal2.getHungerLevel()>6){
-			((Herbivorous)animal2).graze();
-			}
-			else{
-			System.out.println(animal2.getAnimalName()+" rest");	
-			}
 			
-		}		
+		}	
 	}
 	
-	public void hunt(AnimalANJ b,String name){
-		if(b instanceof Herbivorous){
-			System.out.println(name+" eats "+b.getAnimalName());	
-		}
-		else if((b instanceof Carnivorous)||(b instanceof Omnivorous)){
-			System.out.println(b.getAnimalName()+" eats "+name);	
-		}
-		else{
-		System.out.println("Invalid");	
-		}
-	}	
 }

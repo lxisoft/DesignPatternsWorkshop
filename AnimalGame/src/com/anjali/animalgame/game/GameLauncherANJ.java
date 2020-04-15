@@ -7,6 +7,8 @@ import com.anjali.animalgame.animal.LionANJ;
 import com.anjali.animalgame.animal.RabbitANJ;
 import com.anjali.animalgame.animal.TigerANJ;
 import com.anjali.animalgame.forest.ForestANJ;
+import com.anjali.animalgame.strategy.impl.GrazeFood;
+import com.anjali.animalgame.strategy.impl.HuntFood;
 
 public class GameLauncherANJ {
 	

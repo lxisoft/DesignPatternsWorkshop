@@ -1,4 +1,6 @@
-package com.mhmdanish.animalgame.animal;
+package com.mhmdanish.animalgame.factory;
+
+import com.mhmdanish.animalgame.animal.AnimalMAB;
 
 /**
  * @author mohammed anish

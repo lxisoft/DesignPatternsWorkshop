@@ -1,4 +1,11 @@
-package com.mhmdanish.animalgame.animal;
+package com.mhmdanish.animalgame.factory;
+
+import com.mhmdanish.animalgame.adapter.DuckAdapterMAB;
+import com.mhmdanish.animalgame.animal.AnimalMAB;
+import com.mhmdanish.animalgame.animal.DuckMAB;
+import com.mhmdanish.animalgame.animal.LionMAB;
+import com.mhmdanish.animalgame.animal.TigerMAB;
+import com.mhmdanish.animalgame.decorator.FightableMAB;
 
 public class FightableAnimalFactoryMAB extends AbstractAnimalFactoryMAB {
 

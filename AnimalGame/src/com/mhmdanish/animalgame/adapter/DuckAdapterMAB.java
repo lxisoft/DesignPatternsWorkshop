@@ -1,4 +1,7 @@
-package com.mhmdanish.animalgame.animal;
+package com.mhmdanish.animalgame.adapter;
+
+import com.mhmdanish.animalgame.animal.AnimalMAB;
+import com.mhmdanish.animalgame.animal.DuckMAB;
 
 /**
  * @author mohammed anish

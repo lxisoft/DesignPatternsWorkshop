@@ -1,4 +1,4 @@
-package com.mhmdanish.animalgame.animal;
+package com.mhmdanish.animalgame.command;
 
 public class AnimalInvokerMAB {
 	

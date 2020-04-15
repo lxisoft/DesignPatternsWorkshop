@@ -1,4 +1,6 @@
-package com.mhmdanish.animalgame.animal;
+package com.mhmdanish.animalgame.command;
+
+import com.mhmdanish.animalgame.animal.AnimalMAB;
 
 public class WalkCommandMAB implements CommandMAB {
 

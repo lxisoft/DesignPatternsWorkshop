@@ -1,14 +1,21 @@
 package com.mhmdanish.animalgame.forest;
 
-import com.mhmdanish.animalgame.animal.AbstractAnimalFactoryMAB;
-import com.mhmdanish.animalgame.animal.AnimalFactoryMAB;
-import com.mhmdanish.animalgame.animal.AnimalInvokerMAB;
+import java.io.IOException;
+
 import com.mhmdanish.animalgame.animal.AnimalIteratorMAB;
 import com.mhmdanish.animalgame.animal.AnimalMAB;
-import com.mhmdanish.animalgame.animal.CommandMAB;
-import com.mhmdanish.animalgame.animal.EatCommandMAB;
-import com.mhmdanish.animalgame.animal.FightableAnimalFactoryMAB;
-import com.mhmdanish.animalgame.animal.WalkCommandMAB;
+import com.mhmdanish.animalgame.command.AnimalInvokerMAB;
+import com.mhmdanish.animalgame.command.CommandMAB;
+import com.mhmdanish.animalgame.command.EatCommandMAB;
+import com.mhmdanish.animalgame.command.WalkCommandMAB;
+import com.mhmdanish.animalgame.config.AnimalTypeConfigMAB;
+import com.mhmdanish.animalgame.decorator.WebAnimalMAB;
+import com.mhmdanish.animalgame.factory.AbstractAnimalFactoryMAB;
+import com.mhmdanish.animalgame.factory.AnimalFactoryMAB;
+import com.mhmdanish.animalgame.factory.FightableAnimalFactoryMAB;
+import com.mhmdanish.animalgame.factory.IOTAnimalFactoryMAB;
+import com.mhmdanish.animalgame.factory.MobileAnimalFactoryMAB;
+import com.mhmdanish.animalgame.factory.WebAnimalFactoryMAB;
 
 /**
  * @author mohammed anish
@@ -43,16 +50,38 @@ public class ForestMAB {
 	}
 	
 	public void createAnimal() {
+		String type = null;
+		try {
+			type =new AnimalTypeConfigMAB().getTypeMAB();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		animals = new AnimalMAB[6];
 		
-		animals = new AnimalMAB[3];
-		
+		if(type.equals("iot")) {
+			AbstractAnimalFactoryMAB animalFactory = new IOTAnimalFactoryMAB();
+			animals[0] = animalFactory.createAnimal("tiger");
+			animals[1] = animalFactory.createAnimal("lion");
+			animals[2] = animalFactory.createAnimal("duck");
+		} else if(type.equals("web")) {
+			AbstractAnimalFactoryMAB animalFactory = new WebAnimalFactoryMAB();
+			animals[0] = animalFactory.createAnimal("tiger");
+			animals[1] = animalFactory.createAnimal("lion");
+			animals[2] = animalFactory.createAnimal("duck");
+		} else if(type.equals("mobile")) {
+			AbstractAnimalFactoryMAB animalFactory = new MobileAnimalFactoryMAB();
+			animals[0] = animalFactory.createAnimal("tiger");
+			animals[1] = animalFactory.createAnimal("lion");
+			animals[2] = animalFactory.createAnimal("duck");
+		}
+			
 		AbstractAnimalFactoryMAB fightableanimalFactory = new FightableAnimalFactoryMAB();
 		AbstractAnimalFactoryMAB animalFactory = new AnimalFactoryMAB();
 		
-		animals[0] = fightableanimalFactory.createAnimal("tiger");
-		animals[1] = fightableanimalFactory.createAnimal("lion");
-		
-		animals[2] = animalFactory.createAnimal("duck");
+		animals[3] = fightableanimalFactory.createAnimal("tiger");
+		animals[4] = fightableanimalFactory.createAnimal("lion");
+		animals[5] = animalFactory.createAnimal("duck");
 	}
 	
 	public void roamAnimalMAB() {

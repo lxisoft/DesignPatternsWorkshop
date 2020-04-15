@@ -2,21 +2,15 @@ package com.mhmdanish.animalgame.forest;
 
 import com.mhmdanish.animalgame.animal.AbstractAnimalFactoryMAB;
 import com.mhmdanish.animalgame.animal.AnimalFactoryMAB;
+import com.mhmdanish.animalgame.animal.AnimalIteratorMAB;
 import com.mhmdanish.animalgame.animal.AnimalMAB;
-import com.mhmdanish.animalgame.animal.DuckAdapterMAB;
-import com.mhmdanish.animalgame.animal.DuckMAB;
 import com.mhmdanish.animalgame.animal.FightableAnimalFactoryMAB;
-import com.mhmdanish.animalgame.animal.FightableMAB;
-import com.mhmdanish.animalgame.animal.LionMAB;
-import com.mhmdanish.animalgame.animal.TigerMAB;
 
 public class ForestMAB {
 	
 	private static volatile ForestMAB instance = null;
 	
-	AnimalMAB tiger;
-	AnimalMAB lion;
-	AnimalMAB duck;
+	AnimalMAB[] animals;
 	
 	
 	private ForestMAB() {
@@ -39,27 +33,25 @@ public class ForestMAB {
 	
 	public void createAnimal() {
 		
+		animals = new AnimalMAB[3];
 		
-		//animal factory for creating fightable animal
 		AbstractAnimalFactoryMAB fightableanimalFactory = new FightableAnimalFactoryMAB();
-		
-		//animal factory for creating animal
 		AbstractAnimalFactoryMAB animalFactory = new AnimalFactoryMAB();
 		
+		animals[0] = fightableanimalFactory.createAnimal("tiger");
+		animals[1] = fightableanimalFactory.createAnimal("lion");
 		
-		// used decorator pattern
-		tiger = fightableanimalFactory.createAnimal("tiger");
-		lion = fightableanimalFactory.createAnimal("lion");
-		
-		//used adapter pattern
-		duck = animalFactory.createAnimal("duck");
+		animals[2] = animalFactory.createAnimal("duck");
 	}
 	
 	public void roamAnimalMAB() {
 		
-		walkMAB(tiger);
-		walkMAB(lion);
-		walkMAB(duck);
+		AnimalIteratorMAB iterator = new AnimalIteratorMAB(animals);
+		
+		while(iterator.hasNext()) {
+			walkMAB(iterator.next());
+		}
+		
 	}
 	
 	public void fight() {

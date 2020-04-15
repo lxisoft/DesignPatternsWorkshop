@@ -1,6 +1,12 @@
 package com.sruthy.animalgame.animal;
 
-public class WhiteTiger extends Tiger {
+/**
+ * @author sruthi
+ * 
+ * Implemented  Factory Pattern
+ *
+ */
+public class WhiteTiger extends IOTAnimal {
 
 
 }

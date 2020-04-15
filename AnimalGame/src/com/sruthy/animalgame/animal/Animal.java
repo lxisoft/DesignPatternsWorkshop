@@ -4,36 +4,16 @@ package com.sruthy.animalgame.animal;
 /**
  * @author sruthi
  * 
+ * Implemented  Abstract Factory Pattern
+ * It acts as an animal abstract factory
  * Implemented  Strategy Pattern
  *
  */
-public class Animal {
+public abstract class Animal{
+
+		public abstract void createAnimalsAndBehavioursSKC();
+		
 	
-	private RunBehavior runBehavior;
-
-	
-	public RunBehavior getRunBehavior() {
-		return runBehavior;
-	}
-
-	public void setRunBehavior(RunBehavior runBehavior) {
-		this.runBehavior = runBehavior;
-	}
-
-
-	public void performRun() {
-		runBehavior.run();
-	}
-	
-
-	public void eatSKC() {
-		System.out.println("Eating");
-	}
-
-	public void walkSKC() {
-		System.out.println("walking");
-	}
+		
 
 }
-	
-

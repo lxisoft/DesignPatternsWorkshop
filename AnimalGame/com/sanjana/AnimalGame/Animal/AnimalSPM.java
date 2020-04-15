@@ -9,7 +9,7 @@ public abstract class AnimalSPM{
 
 	// StrengthBehaviour StrengthBehaviour;
 	EatBehaviourSPM eatBehaviour;
-
+public abstract String featureSPM();
 public void setEat(){
 
 	eatBehaviour.eat();

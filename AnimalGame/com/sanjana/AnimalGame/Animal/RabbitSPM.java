@@ -8,4 +8,8 @@ import com.sanjana.AnimalGame.Behaviour.*;
 public class RabbitSPM extends AnimalSPM{
 	public RabbitSPM(){
 		eatBehaviour = new EatGrassSPM();
-	}}
+	}
+	public String featureSPM() {
+		return "Rabbit is small";
+	}
+	}

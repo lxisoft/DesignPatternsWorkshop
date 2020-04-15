@@ -8,4 +8,8 @@ import com.sanjana.AnimalGame.Behaviour.*;
 public class TigerSPM extends AnimalSPM{
 	public TigerSPM(){
 		eatBehaviour = new EatFleshSPM();
-	}}
+	}
+	public String featureSPM() {
+		return "tiger has strips";
+	}
+	}

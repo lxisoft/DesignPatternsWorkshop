@@ -10,15 +10,15 @@ import com.sanjana.AnimalGame.Forest.ForestSPM;
 public class Tdd{
 	public static void main(String [] args){
 		ForestSPM forest = ForestSPM.getInstance();
-	    forest.viewDetailsSPM();
-		AnimalSPM tiger = new TigerSPM();
-		tiger.setEat();
-		AnimalSPM lion = new LionSPM();
-		lion.setEat();
-		AnimalSPM rabbit = new RabbitSPM();
-		rabbit.setEat();
-		AnimalSPM deer = new DeerSPM();
-		deer.setEat();
+	    forest.createAnimalSPM();
+//		AnimalSPM tiger = new TigerSPM();
+//		tiger.setEat();
+//		AnimalSPM lion = new LionSPM();
+//		lion.setEat();
+//		AnimalSPM rabbit = new RabbitSPM();
+//		rabbit.setEat();
+//		AnimalSPM deer = new DeerSPM();
+//		deer.setEat();
 		
 	}
 }

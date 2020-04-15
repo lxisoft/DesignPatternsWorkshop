@@ -1,5 +1,8 @@
 package com.sanjana.AnimalGame.Forest;
 
+import com.sanjana.AnimalGame.Animal.AnimalFactorySPM;
+import com.sanjana.AnimalGame.Animal.AnimalSPM;
+import com.sanjana.AnimalGame.Animal.TigerSPM;
 import com.sanjana.AnimalGame.Behaviour.*;
 /**
  * @author sanjana p
@@ -8,7 +11,7 @@ import com.sanjana.AnimalGame.Behaviour.*;
 public class ForestSPM{
 	
 	private volatile static ForestSPM forest;
-	
+	 
 	private ForestSPM() {
 		
 	}
@@ -24,7 +27,9 @@ public class ForestSPM{
 		  return forest; 
 		}
 	
-	public void viewDetailsSPM() {
-		System.out.println("animal game");
+	public void createAnimalSPM() {
+		AnimalFactorySPM animalSPM = AnimalFactorySPM.getInstance();
+		System.out.print(animalSPM.getAnimalSPM("tiger").featureSPM());
+		
 	}
 }

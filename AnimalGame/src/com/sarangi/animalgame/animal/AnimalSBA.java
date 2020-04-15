@@ -15,6 +15,8 @@
  */
 package com.sarangi.animalgame.animal;
 
+import com.sarangi.animalgame.animalBehaviour.AnimalBehaviourSBA;
+
 /**
  * Define animal in this game
  * @author SarangiBalu A
@@ -26,6 +28,22 @@ public abstract class AnimalSBA {
      * name  of animal
      */
 	private String name;
+	
+	private AnimalBehaviourSBA animalBehaviourSBA;
+	
+	
+	public AnimalBehaviourSBA getAnimalBehaviourSBA() {
+		return animalBehaviourSBA;
+	}
+
+	public void setAnimalBehaviourSBA(AnimalBehaviourSBA animalBehaviourSBA) {
+		this.animalBehaviourSBA = animalBehaviourSBA;
+	}
+	
+	public void AnimalFightBehaviourSBA()
+	{
+		animalBehaviourSBA.FightBehaviourSBA();
+	}
 
 	/**
 	 * getter for animal name

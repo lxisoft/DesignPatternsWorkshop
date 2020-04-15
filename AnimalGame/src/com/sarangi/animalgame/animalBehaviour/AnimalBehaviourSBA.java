@@ -1,5 +1,4 @@
 /*
-
  * Copyright 2002-2016 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,26 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.sarangi.animalgame.test;
-
-
-import com.sarangi.animalgame.game.GameSBA;
+package com.sarangi.animalgame.animalBehaviour;
 
 /**
- * The TddSBA class implements an animal game
- * displays Zoo animals using AbstractFactory and Factory method design patterns.
- * displays Forest animals using Adapter design petterns.
- * 
+ * The AnimalBehaviourSBA interface implements an animal behavior using strategy Dp.
  * @author SarangiBalu A
  * ,
  */
-public class TddSBA {
+public interface AnimalBehaviourSBA {
 	
-	public static void main(String[] args) {
-				
-		GameSBA zooGame = new GameSBA();
-		   zooGame.setupZooAnimalGameSBA();
-		   zooGame.playGameSBA();
-	}
+	public void FightBehaviourSBA();
 
 }

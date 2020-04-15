@@ -46,7 +46,11 @@ public abstract class ZooSBA {
 	public void displayAnimalsSBA(List<AnimalSBA> animals) 
 	{
 		for(AnimalSBA animal : animals)
-	         System.out.println("\n\t Animal -> "+animal+"\n\t Name   -> "+animal.getName());
+		{
+			System.out.println("\n\t Animal -> "+animal+"\n\t Name   -> "+animal.getName()+"\n\t Fight Behaviour   -> "+animal.getAnimalBehaviourSBA());
+		    animal.getAnimalBehaviourSBA().FightBehaviourSBA();
+		}
+	         
 	}
 
 }

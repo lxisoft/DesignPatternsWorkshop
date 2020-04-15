@@ -19,6 +19,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.sarangi.animalgame.animal.AnimalSBA;
+import com.sarangi.animalgame.animalBehaviour.AggressiveBehaviourSBA;
+import com.sarangi.animalgame.animalBehaviour.AgonisticBehaviourSBA;
+import com.sarangi.animalgame.animalBehaviour.AnimalBehaviourSBA;
 import com.sarangi.animalgame.animalFactory.AmericanFatorySBA;
 import com.sarangi.animalgame.animalFactory.AnimalFactorySBA;
 
@@ -35,6 +38,8 @@ public class AmericanZooSBA extends ZooSBA{
 	public List<AnimalSBA> createAnimalsSBA(List<String> animalNames) {
 		
 		AnimalSBA animal = null;
+		AnimalBehaviourSBA animalBehaviour;
+		
 		List<AnimalSBA> americanAnimals = new ArrayList<AnimalSBA>();
 		
 		AnimalFactorySBA animalFactorySBA =new AmericanFatorySBA();
@@ -45,6 +50,9 @@ public class AmericanZooSBA extends ZooSBA{
 		     {
 		    	 animal = animalFactorySBA.createTigerSBA();
 		    	 animal.setName(animalName);
+		    	 animalBehaviour = new AgonisticBehaviourSBA();
+		    	 animal.setAnimalBehaviourSBA(animalBehaviour);	
+		    	 
 		    	 americanAnimals.add(animal);
 		    	 
 		     }
@@ -52,6 +60,9 @@ public class AmericanZooSBA extends ZooSBA{
 		     {
 		    	 animal = animalFactorySBA.createLionSBA();
 		    	 animal.setName(animalName);
+		    	 animalBehaviour = new AggressiveBehaviourSBA();
+		    	 animal.setAnimalBehaviourSBA(animalBehaviour);	
+		    	 
 		    	 americanAnimals.add(animal); 
 		     }
 		     

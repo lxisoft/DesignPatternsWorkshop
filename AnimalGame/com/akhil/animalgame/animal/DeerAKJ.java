@@ -8,6 +8,10 @@ package com.akhil.animalgame.animal;
 
 public class DeerAKJ extends AnimalAKJ{
 
+	private String name;
+
+
+
 	@Override
 	public String eatAKJ() {
 		
@@ -15,4 +19,7 @@ public class DeerAKJ extends AnimalAKJ{
 		return "Deer eating plants...";
 	}
 
+	public DeerAKJ(String name) {
+		this.name = name;
+	}
 }

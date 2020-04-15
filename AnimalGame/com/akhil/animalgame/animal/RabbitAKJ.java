@@ -7,6 +7,9 @@ package com.akhil.animalgame.animal;
  */
 
 public class RabbitAKJ extends AnimalAKJ {
+	
+	private String name;
+
 
 	@Override
 	public String eatAKJ() {
@@ -14,5 +17,9 @@ public class RabbitAKJ extends AnimalAKJ {
 		
 		return "Rabbit eating grass..";
 	}
+	
+	 public RabbitAKJ(String name) {
+		 this.name =name;
+	 }
 
 }

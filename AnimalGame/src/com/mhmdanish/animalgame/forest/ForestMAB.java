@@ -10,6 +10,13 @@ import com.mhmdanish.animalgame.animal.EatCommandMAB;
 import com.mhmdanish.animalgame.animal.FightableAnimalFactoryMAB;
 import com.mhmdanish.animalgame.animal.WalkCommandMAB;
 
+/**
+ * @author mohammed anish
+ * fecade pattern
+ * 
+ *
+ */
+
 public class ForestMAB {
 	
 	private static volatile ForestMAB instance = null;

@@ -13,21 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.sarangi.animalgame.animalFactory;
-
-
-import com.sarangi.animalgame.animal.LionSBA;
-import com.sarangi.animalgame.animal.TigerSBA;
+package com.sarangi.animalgame.animal;
 
 /**
  * TODO Provide a detailed description here
  * @author Owner
  * ,
  */
-public interface AnimalFactorySBA {
+public class WebMachaliTigerSBA extends TigerSBA {
 	
-	public TigerSBA createTigerSBA();
-
-	public LionSBA createLionSBA(); 
+	@Override
+	public String toString() {
+		return "Web-Tiger";
+	}
 
 }

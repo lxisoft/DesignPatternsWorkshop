@@ -15,6 +15,10 @@
  */
 package com.sarangi.animalgame.zoo;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import com.sarangi.animalgame.animal.AnimalSBA;
 
 
@@ -28,13 +32,21 @@ public abstract class ZooSBA {
 	/**
 	 * @return
 	 */
-	public AnimalSBA needAnimalSBA(String animalName) {
+	public List<AnimalSBA> bringAnimalSBA(String... animalNames) {
 		
-		AnimalSBA animal = createAnimalSBA(animalName);
+		List<String> animalNamelist = new ArrayList<String>(Arrays.asList(animalNames));
 		
-		return animal;
+		List<AnimalSBA> animals = createAnimalsSBA(animalNamelist);
+		
+		return animals;
 	}
 	
-	public abstract AnimalSBA createAnimalSBA(String animalName);
+	public abstract List<AnimalSBA> createAnimalsSBA(List<String> animalNamelist);
+	
+	public void displayAnimalsSBA(List<AnimalSBA> animals) 
+	{
+		for(AnimalSBA animal : animals)
+	         System.out.println("\n\t Animal -> "+animal+"\n\t Name   -> "+animal.getName());
+	}
 
 }

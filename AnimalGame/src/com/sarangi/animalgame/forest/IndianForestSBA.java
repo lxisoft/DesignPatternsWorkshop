@@ -13,22 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.sarangi.animalgame.zoo;
+package com.sarangi.animalgame.forest;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.sarangi.animalgame.animal.AnimalSBA;
 import com.sarangi.animalgame.animalFactory.AnimalFactorySBA;
-import com.sarangi.animalgame.animalFactory.IndianFactorySBA;
+import com.sarangi.animalgame.animalFactory.WebAnimalFactorySBA;
+
+
 
 /**
  * TODO Provide a detailed description here
  * @author Owner
  * ,
  */
-public class IndianZooSBA extends ZooSBA{
-
+public class IndianForestSBA extends ForestSBA {
 	
 	@Override
 	public List<AnimalSBA> createAnimalsSBA(List<String> animalNames) {
@@ -36,7 +37,7 @@ public class IndianZooSBA extends ZooSBA{
 		AnimalSBA animal = null;
 		List<AnimalSBA> indianAnimals = new ArrayList<AnimalSBA>();
 		
-		AnimalFactorySBA animalFactorySBA =new IndianFactorySBA();;
+		AnimalFactorySBA animalFactorySBA =new WebAnimalFactorySBA();;
 		
 		  for(String animalName : animalNames)
 		  {	  

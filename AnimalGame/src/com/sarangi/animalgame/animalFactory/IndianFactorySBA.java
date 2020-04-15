@@ -15,6 +15,8 @@
  */
 package com.sarangi.animalgame.animalFactory;
 
+import com.sarangi.animalgame.animal.AsiaticLionSBA;
+import com.sarangi.animalgame.animal.LionSBA;
 import com.sarangi.animalgame.animal.MachaliTigerSBA;
 import com.sarangi.animalgame.animal.TigerSBA;
 
@@ -34,6 +36,17 @@ public class IndianFactorySBA implements AnimalFactorySBA{
 		TigerSBA tiger = new MachaliTigerSBA();
 		
 		return tiger;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.sarangi.animalgame.animalFactory.AnimalFactorySBA#createLionSBA()
+	 */
+	@Override
+	public LionSBA createLionSBA() {
+		
+		LionSBA lion = new AsiaticLionSBA();
+		
+		return lion;
 	}
 
 }

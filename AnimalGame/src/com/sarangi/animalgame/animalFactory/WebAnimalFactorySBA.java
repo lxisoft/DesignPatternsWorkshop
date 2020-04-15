@@ -17,17 +17,39 @@ package com.sarangi.animalgame.animalFactory;
 
 
 import com.sarangi.animalgame.animal.LionSBA;
+
 import com.sarangi.animalgame.animal.TigerSBA;
+import com.sarangi.animalgame.animal.WebAsiaticLionSBA;
+import com.sarangi.animalgame.animal.WebMachaliTigerSBA;
 
 /**
  * TODO Provide a detailed description here
  * @author Owner
  * ,
  */
-public interface AnimalFactorySBA {
+public class WebAnimalFactorySBA implements AnimalFactorySBA{
 	
-	public TigerSBA createTigerSBA();
+	/* (non-Javadoc)
+	 * @see com.sarangi.animalgame.animalFactory.AnimalFactorySBA#createTigerSBA()
+	 */
+	@Override
+	public TigerSBA createTigerSBA() {
+		
+		TigerSBA tiger = new WebMachaliTigerSBA();
+		
+		return tiger;
+	}
 
-	public LionSBA createLionSBA(); 
+	/* (non-Javadoc)
+	 * @see com.sarangi.animalgame.animalFactory.AnimalFactorySBA#createLionSBA()
+	 */
+	@Override
+	public LionSBA createLionSBA() {
+		
+		LionSBA lion = new WebAsiaticLionSBA();
+		
+		return lion;
+	}
+
 
 }

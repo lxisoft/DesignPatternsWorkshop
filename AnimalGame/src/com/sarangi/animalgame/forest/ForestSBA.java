@@ -13,21 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.sarangi.animalgame.animalFactory;
+package com.sarangi.animalgame.forest;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-import com.sarangi.animalgame.animal.LionSBA;
-import com.sarangi.animalgame.animal.TigerSBA;
+import com.sarangi.animalgame.animal.AnimalSBA;
 
 /**
  * TODO Provide a detailed description here
  * @author Owner
  * ,
  */
-public interface AnimalFactorySBA {
+public abstract class ForestSBA {
 	
-	public TigerSBA createTigerSBA();
-
-	public LionSBA createLionSBA(); 
+	/**
+	 * @return
+	 */
+	public List<AnimalSBA> bringAnimalSBA(String... animalNames) {
+		
+		List<String> animalNamelist = new ArrayList<String>(Arrays.asList(animalNames));
+		
+		List<AnimalSBA> animals = createAnimalsSBA(animalNamelist);
+		
+		return animals;
+	}
+	
+	public abstract List<AnimalSBA> createAnimalsSBA(List<String> animalNamelist);
+	
+	
 
 }

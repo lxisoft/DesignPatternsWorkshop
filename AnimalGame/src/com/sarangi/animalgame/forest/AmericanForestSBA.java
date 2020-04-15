@@ -13,49 +13,50 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.sarangi.animalgame.zoo;
+package com.sarangi.animalgame.forest;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.sarangi.animalgame.animal.AnimalSBA;
 import com.sarangi.animalgame.animalFactory.AnimalFactorySBA;
-import com.sarangi.animalgame.animalFactory.IndianFactorySBA;
+import com.sarangi.animalgame.animalFactory.IOTAnimalFactorySBA;
 
 /**
  * TODO Provide a detailed description here
  * @author Owner
  * ,
  */
-public class IndianZooSBA extends ZooSBA{
-
+public class AmericanForestSBA extends ForestSBA{
 	
+
 	@Override
 	public List<AnimalSBA> createAnimalsSBA(List<String> animalNames) {
 		
 		AnimalSBA animal = null;
-		List<AnimalSBA> indianAnimals = new ArrayList<AnimalSBA>();
+		List<AnimalSBA> americanAnimals = new ArrayList<AnimalSBA>();
 		
-		AnimalFactorySBA animalFactorySBA =new IndianFactorySBA();;
+		AnimalFactorySBA animalFactorySBA =new IOTAnimalFactorySBA();
 		
-		  for(String animalName : animalNames)
-		  {	  
-		     if(animalName.equals("Machali"))
+		for(String animalName : animalNames)
+		  {	 
+		     if(animalName.equals("Bruce"))
 		     {
 		    	 animal = animalFactorySBA.createTigerSBA();
 		    	 animal.setName(animalName);
-		    	 indianAnimals.add(animal);
+		    	 americanAnimals.add(animal);
 		    	 
 		     }
-		     else if(animalName.equals("Asiatic"))
+		     else if(animalName.equals("PantheraAtrox"))
 		     {
 		    	 animal = animalFactorySBA.createLionSBA();
 		    	 animal.setName(animalName);
-		    	 indianAnimals.add(animal); 
+		    	 americanAnimals.add(animal); 
 		     }
-		  }   
+		     
+		  }    
 		
-		return indianAnimals;
+		return americanAnimals;
 	}
 
 }

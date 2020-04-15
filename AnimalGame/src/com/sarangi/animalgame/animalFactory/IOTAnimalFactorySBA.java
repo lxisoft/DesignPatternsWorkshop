@@ -16,7 +16,10 @@
 package com.sarangi.animalgame.animalFactory;
 
 
+import com.sarangi.animalgame.animal.IOTBruceTigerSBA;
+import com.sarangi.animalgame.animal.IOTPantheraAtroxLionSBA;
 import com.sarangi.animalgame.animal.LionSBA;
+
 import com.sarangi.animalgame.animal.TigerSBA;
 
 /**
@@ -24,10 +27,29 @@ import com.sarangi.animalgame.animal.TigerSBA;
  * @author Owner
  * ,
  */
-public interface AnimalFactorySBA {
+public class IOTAnimalFactorySBA implements AnimalFactorySBA{
 	
-	public TigerSBA createTigerSBA();
+	/* (non-Javadoc)
+	 * @see com.sarangi.animalgame.animalFactory.AnimalFactorySBA#createTigerSBA()
+	 */
+	
+		@Override
+		public TigerSBA createTigerSBA() {
+			
+			TigerSBA tiger = new IOTBruceTigerSBA();
+			
+			return tiger;
+		}
 
-	public LionSBA createLionSBA(); 
+		/* (non-Javadoc)
+		 * @see com.sarangi.animalgame.animalFactory.AnimalFactorySBA#createLionSBA()
+		 */
+		@Override
+		public LionSBA createLionSBA() {
+			
+			LionSBA lion = new IOTPantheraAtroxLionSBA();
+			
+			return lion;
+		}
 
 }

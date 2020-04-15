@@ -15,6 +15,9 @@
  */
 package com.sarangi.animalgame.zoo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.sarangi.animalgame.animal.AnimalSBA;
 import com.sarangi.animalgame.animalFactory.AmericanFatorySBA;
 import com.sarangi.animalgame.animalFactory.AnimalFactorySBA;
@@ -27,23 +30,34 @@ import com.sarangi.animalgame.animalFactory.AnimalFactorySBA;
  */
 public class AmericanZooSBA extends ZooSBA{
 
-	/* (non-Javadoc)
-	 * @see com.sarangi.animalgame.zoo.ZooSBA#createAnimalSBA(java.lang.String)
-	 */
+	
 	@Override
-	public AnimalSBA createAnimalSBA(String animalName) {
+	public List<AnimalSBA> createAnimalsSBA(List<String> animalNames) {
 		
 		AnimalSBA animal = null;
-		AnimalFactorySBA animalFactorySBA =new AmericanFatorySBA();;
+		List<AnimalSBA> americanAnimals = new ArrayList<AnimalSBA>();
 		
+		AnimalFactorySBA animalFactorySBA =new AmericanFatorySBA();
+		
+		for(String animalName : animalNames)
+		  {	 
 		     if(animalName.equals("Bruce"))
 		     {
 		    	 animal = animalFactorySBA.createTigerSBA();
 		    	 animal.setName(animalName);
+		    	 americanAnimals.add(animal);
 		    	 
 		     }
+		     else if(animalName.equals("PantheraAtrox"))
+		     {
+		    	 animal = animalFactorySBA.createLionSBA();
+		    	 animal.setName(animalName);
+		    	 americanAnimals.add(animal); 
+		     }
+		     
+		  }    
 		
-		return animal;
+		return americanAnimals;
 	}
 
 	

@@ -13,21 +13,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.sarangi.animalgame.animalFactory;
+package com.sarangi.animalgame.zoo;
 
+import java.util.List;
 
-import com.sarangi.animalgame.animal.LionSBA;
-import com.sarangi.animalgame.animal.TigerSBA;
+import com.sarangi.animalgame.animal.AnimalSBA;
+import com.sarangi.animalgame.forest.ForestSBA;
 
 /**
  * TODO Provide a detailed description here
  * @author Owner
  * ,
  */
-public interface AnimalFactorySBA {
+public class ZooAdapterSBA extends ZooSBA{
 	
-	public TigerSBA createTigerSBA();
+	ForestSBA forest;
+	
+	public ZooAdapterSBA(ForestSBA forest)
+	{
+		this.forest = forest;
+	}
 
-	public LionSBA createLionSBA(); 
+	public List<AnimalSBA> bringAnimalSBA(String... animalNames) {
+		
+		return forest.bringAnimalSBA(animalNames);
+	}
+	
+	
 
+	@Override
+	public List<AnimalSBA> createAnimalsSBA(List<String> animalNamelist) {
+		
+		return null;
+	}
+
+	
 }

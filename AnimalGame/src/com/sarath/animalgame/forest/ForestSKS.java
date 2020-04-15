@@ -56,12 +56,6 @@ public class ForestSKS {
 
 	}
 	
-	public void eatSKS() {
-		AnimalIteratorSKS iterator = new AnimalIteratorSKS(animals);
-		
-		while(iterator.hasNext()) {
-			eatSKS();
-		}
-	}
+	
 
 }

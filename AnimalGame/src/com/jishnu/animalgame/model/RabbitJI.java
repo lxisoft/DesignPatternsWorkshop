@@ -1,6 +1,6 @@
 package com.jishnu.animalgame.model;
 
-import com.jishnu.animalgame.util.sound.SqueakSoundStratergy;
+import com.jishnu.animalgame.util.stratergy.sound.SqueakSoundStratergy;
 
 public class RabbitJI  extends AnimalJI{
 	public RabbitJI(){

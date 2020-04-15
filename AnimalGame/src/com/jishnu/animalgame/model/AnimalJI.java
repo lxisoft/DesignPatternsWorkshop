@@ -1,6 +1,6 @@
 package com.jishnu.animalgame.model;
 
-import com.jishnu.animalgame.util.sound.SoundStratergy;
+import com.jishnu.animalgame.util.stratergy.sound.SoundStratergy;
 
 public abstract class AnimalJI {
 

@@ -1,4 +1,4 @@
-package com.jishnu.animalgame.util.sound;
+package com.jishnu.animalgame.util.stratergy.sound;
 
 public class RoarSoundStratergy implements SoundStratergy {
     public void sound() {

@@ -1,4 +1,4 @@
-package com.jishnu.animalgame.util.sound;
+package com.jishnu.animalgame.util.stratergy.sound;
 
 public class SqueakSoundStratergy implements SoundStratergy {
 	public void sound() {

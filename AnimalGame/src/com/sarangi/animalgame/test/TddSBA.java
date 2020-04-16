@@ -17,7 +17,11 @@
 package com.sarangi.animalgame.test;
 
 
+import com.sarangi.animalgame.game.DoneStateSBA;
 import com.sarangi.animalgame.game.GameSBA;
+import com.sarangi.animalgame.game.InprogressStateSBA;
+import com.sarangi.animalgame.game.StateSBA;
+import com.sarangi.animalgame.game.TodoStateSBA;
 
 /**
  * The TddSBA class implements an game using Singleton Dp
@@ -30,8 +34,18 @@ public class TddSBA {
 				
 		GameSBA zooGame = GameSBA.getInstanceSBA();
 		   zooGame.setupStageSBA();
-		   zooGame.setupZooAnimalGameSBA();
+		   
+		   StateSBA todoStateSBA = new TodoStateSBA(zooGame);
+		   zooGame.setState(todoStateSBA);		   
+		   zooGame.startAnimalGameSBA();
+		   
+		   StateSBA inprogressStateSBA = new InprogressStateSBA(zooGame);
+		   zooGame.setState(inprogressStateSBA);	
 		   zooGame.playGameSBA();
+		   
+		   StateSBA doneStateSBA = new DoneStateSBA(zooGame);
+		   zooGame.setState(doneStateSBA);	
+		   zooGame.publishingWinnerSBA();
 	}
 
 }

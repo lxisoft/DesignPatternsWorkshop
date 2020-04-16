@@ -26,8 +26,7 @@ import com.sarangi.animalgame.stage.CarpetSpreadingSBA;
 import com.sarangi.animalgame.stage.FencingSBA;
 import com.sarangi.animalgame.stage.GameStageSBA;
 import com.sarangi.animalgame.stage.StageOneSBA;
-import com.sarangi.animalgame.zoo.AmericanZooSBA;
-import com.sarangi.animalgame.zoo.IndianZooSBA;
+
 import com.sarangi.animalgame.zoo.ZooAdapterSBA;
 import com.sarangi.animalgame.zoo.ZooSBA;
 
@@ -41,8 +40,16 @@ public class GameSBA {
 	
 	private volatile static GameSBA uniqueInstanceSBA;
 	
-	private List<AnimalSBA> animals = new ArrayList<AnimalSBA>();
+	private StateSBA TodoStateSBA ;
+	private StateSBA InprogressStateSBA ;
+	private StateSBA DoneStateSBA ;
 	
+	StateSBA state = TodoStateSBA;	
+	
+	private List<AnimalSBA> indianAnimalsSBA = new ArrayList<AnimalSBA>();
+	private List<AnimalSBA> americanAnimalsSBA = new ArrayList<AnimalSBA>();
+	private AnimalSBA winnerAnimalSBA;
+		
 	private GameSBA(){}
 	
 	public static GameSBA getInstanceSBA(){
@@ -59,8 +66,7 @@ public class GameSBA {
 		
 	}
 	
-		
-	
+			
 	public void setupStageSBA()
 	{
 		GameStageSBA stageOne = new StageOneSBA();
@@ -73,22 +79,85 @@ public class GameSBA {
 		
 	}
 	
-	public void setupZooAnimalGameSBA()
+	
+	
+	public AnimalSBA getWinnerAnimalSBA() {
+		return winnerAnimalSBA;
+	}
+
+	public void setWinnerAnimalSBA(AnimalSBA winnerAnimalSBA) {
+		this.winnerAnimalSBA = winnerAnimalSBA;
+	}
+
+	public List<AnimalSBA> getIndianAnimalsSBA() {
+		return indianAnimalsSBA;
+	}
+
+	public void setIndianAnimalsSBA(List<AnimalSBA> indianAnimalsSBA) {
+		this.indianAnimalsSBA = indianAnimalsSBA;
+	}
+
+	public List<AnimalSBA> getAmericanAnimalsSBA() {
+		return americanAnimalsSBA;
+	}
+
+	public void setAmericanAnimalsSBA(List<AnimalSBA> americanAnimalsSBA) {
+		this.americanAnimalsSBA = americanAnimalsSBA;
+	}
+
+	public void startAnimalGameSBA()
 	{
-		ZooSBA indianZoo = new IndianZooSBA();
-		ZooSBA americanZoo = new AmericanZooSBA();
-				
-		animals = indianZoo.bringAnimalSBA("Machali","Asiatic");
-		System.out.println("\n\t************************** INDIAN ZOO ANIMAL ************************************");
-		     indianZoo.displayAnimalsSBA(animals);
+		state.startAnimalGameSBA();
 		
-		animals = americanZoo.bringAnimalSBA("Bruce","PantheraAtrox");
-		System.out.println("\n\t************************* AMERICAN ZOO ANIMAL ***********************************");
-		     americanZoo.displayAnimalsSBA(animals);
 	}
 	
-	public void setupForestAnimalGameSBA()
+	public void playGameSBA()
 	{
+		state.playGameSBA();
+	}
+	
+	public void publishingWinnerSBA()
+	{
+		state.publishingWinnerSBA();
+	}
+		
+	public StateSBA getTodoStateSBA() {
+		return TodoStateSBA;
+	}
+
+	public void setTodoStateSBA(StateSBA todoStateSBA) {
+		TodoStateSBA = todoStateSBA;
+	}
+
+	public StateSBA getInprogressStateSBA() {
+		return InprogressStateSBA;
+	}
+
+	public void setInprogressStateSBA(StateSBA inprogressStateSBA) {
+		InprogressStateSBA = inprogressStateSBA;
+	}
+
+	public StateSBA getDoneStateSBA() {
+		return DoneStateSBA;
+	}
+
+	public void setDoneStateSBA(StateSBA doneStateSBA) {
+		DoneStateSBA = doneStateSBA;
+	}
+
+	public StateSBA getState() {
+		return state;
+	}
+
+	public void setState(StateSBA state) {
+		this.state = state;
+	}
+
+	public void startForestAnimalGameSBA()
+	{
+		
+	     List<AnimalSBA> animals = new ArrayList<AnimalSBA>();
+	
 		 ForestSBA americanForest = new AmericanForestSBA();  
 		 ForestSBA indianForest = new IndianForestSBA();
 		 
@@ -105,9 +174,6 @@ public class GameSBA {
 		
 	}
 	
-	public void playGameSBA()
-	{
-		
-	}
+	
 
 }

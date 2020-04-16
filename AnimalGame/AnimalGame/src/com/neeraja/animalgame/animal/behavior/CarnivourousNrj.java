@@ -1,4 +1,4 @@
-package com.neeraja.animalgame.animal;
+package com.neeraja.animalgame.animal.behavior;
 
 public class CarnivourousNrj implements EatBehaviourNrj {
 

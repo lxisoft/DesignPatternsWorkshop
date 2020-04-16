@@ -1,10 +1,10 @@
 package com.neeraja.animalgame.animal.animalFactory;
 
 import com.neeraja.animalgame.animal.AnimalNrj;
-import com.neeraja.animalgame.animal.EagleAdapterNrj;
 import com.neeraja.animalgame.animal.EagleNrj;
 import com.neeraja.animalgame.animal.LionNrj;
 import com.neeraja.animalgame.animal.TigerNrj;
+import com.neeraja.animalgame.animal.adapter.EagleAdapterNrj;
 import com.neeraja.animalgame.animal.animaltype.IotAnimalNrj;
 import com.neeraja.animalgame.animal.animaltype.MobileAnimalNrj;
 

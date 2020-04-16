@@ -6,14 +6,15 @@ import java.util.Scanner;
 
 import com.neeraja.animalgame.animal.AnimalNrj;
 import com.neeraja.animalgame.animal.AnimalTypeConfigNrj;
-import com.neeraja.animalgame.animal.EagleAdapterNrj;
 import com.neeraja.animalgame.animal.EagleNrj;
 import com.neeraja.animalgame.animal.LionNrj;
 import com.neeraja.animalgame.animal.TigerNrj;
+import com.neeraja.animalgame.animal.adapter.EagleAdapterNrj;
 import com.neeraja.animalgame.animal.animalFactory.AbstractAnimalFactoryNrj;
 import com.neeraja.animalgame.animal.animalFactory.IotAnimalFactoryNrj;
 import com.neeraja.animalgame.animal.animalFactory.MobileAnimalFactoryNrj;
 import com.neeraja.animalgame.animal.animalFactory.WebAnimalFactoryNrj;
+import com.neeraja.animalgame.animal.iterator.AnimalIteratorNrj;
 
 public class ForestNrj {
 	
@@ -76,14 +77,15 @@ ArrayList<AnimalNrj> animalList= new ArrayList<AnimalNrj>();
             System.out.println("no match"); 
 		}
 		
-		displayAnimals(animalList);
+		displayAnimals();
 	}
 	
+	//iterator Pattern
 	
-	
-	  private void displayAnimals(ArrayList<AnimalNrj> animalList) {
-		for(AnimalNrj a:animalList) {
-			System.out.println(a);
+	  private void displayAnimals() {
+		  AnimalIteratorNrj animalIterator=new AnimalIteratorNrj(animalList);
+		while(animalIterator.hasNext()) {
+			System.out.println(animalIterator.next());
 		}
 		
 	}

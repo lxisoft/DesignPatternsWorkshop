@@ -1,4 +1,7 @@
-package com.neeraja.animalgame.animal;
+package com.neeraja.animalgame.animal.adapter;
+
+import com.neeraja.animalgame.animal.AnimalNrj;
+import com.neeraja.animalgame.animal.EagleNrj;
 
 public class EagleAdapterNrj extends AnimalNrj {
 	

@@ -41,6 +41,20 @@ public abstract class AnimalANJ {
 		aliveState = new AliveState(this);
 		deadState = new DeadState(this);
 	}
+	
+	/*
+	 * Template method
+	 */
+	public final void templateMethod(AnimalANJ anotherAnimal) {	
+		meetAnotherAnimalANJ(anotherAnimal);				//abstract template method. It is implemented in the subclasses
+		foodHunt();					
+		fight(anotherAnimal);		/* 
+		 							concrete methods*/
+		dead();
+		ignore(anotherAnimal);
+	
+	}
+	
 
 	public IFoodEatBehaviourANJ getFoodEatBehaviour() {
 		return foodEatBehaviour;

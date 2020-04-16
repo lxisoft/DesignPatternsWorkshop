@@ -7,6 +7,7 @@ public class DeerANJ extends AnimalANJ {
 
 	
 	public DeerANJ() {
+		
 		foodEatBehaviour=new GrazeFood(); //setting strategy pattern behaviour
 	}
 

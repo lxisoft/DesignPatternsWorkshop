@@ -1,6 +1,8 @@
-package com.mhmdanish.animalgame.animal;
+package com.mhmdanish.animalgame.iterator;
 
 import java.util.Iterator;
+
+import com.mhmdanish.animalgame.animal.AnimalMAB;
 
 /**
  * @author mohammed anish

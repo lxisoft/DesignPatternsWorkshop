@@ -2,7 +2,6 @@ package com.mhmdanish.animalgame.forest;
 
 import java.io.IOException;
 
-import com.mhmdanish.animalgame.animal.AnimalIteratorMAB;
 import com.mhmdanish.animalgame.animal.AnimalMAB;
 import com.mhmdanish.animalgame.command.AnimalInvokerMAB;
 import com.mhmdanish.animalgame.command.CommandMAB;
@@ -16,11 +15,12 @@ import com.mhmdanish.animalgame.factory.FightableAnimalFactoryMAB;
 import com.mhmdanish.animalgame.factory.IOTAnimalFactoryMAB;
 import com.mhmdanish.animalgame.factory.MobileAnimalFactoryMAB;
 import com.mhmdanish.animalgame.factory.WebAnimalFactoryMAB;
+import com.mhmdanish.animalgame.iterator.AnimalIteratorMAB;
 
 /**
  * @author mohammed anish
  * fecade pattern
- * 
+ * singleton pattern
  *
  */
 

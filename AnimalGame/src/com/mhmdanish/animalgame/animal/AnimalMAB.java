@@ -5,6 +5,13 @@ import com.mhmdanish.animalgame.strategy.HuntAndEatBehaviorMAB;
 import com.mhmdanish.animalgame.strategy.OnlyWalkBehaviorMAB;
 import com.mhmdanish.animalgame.strategy.WalkBehaviorMAB;
 
+/**
+ * 
+ * @author mohammed anish
+ * 
+ * template method pattern
+ *
+ */
 public abstract class AnimalMAB {
 	
 	WalkBehaviorMAB walkBehaviorMAB;

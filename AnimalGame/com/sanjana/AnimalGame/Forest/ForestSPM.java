@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import com.sanjana.AnimalGame.Factory.*;
+import com.sanjana.AnimalGame.Iterator.AnimalIteratorSPM;
 import com.sanjana.AnimalGame.Animal.AnimalSPM;
 import com.sanjana.AnimalGame.Behaviour.*;
 import com.sanjana.AnimalGame.Configuration.AnimalConfigurationSPM;
@@ -65,12 +66,22 @@ public class ForestSPM{
 //		System.out.println(animal.getAnimalSPM("rabbit").featureSPM());
 //		System.out.println(animal.getAnimalSPM("deer").featureSPM());
 		
-		viewAnimalsSPM(animals);
+		viewAnimalsSPM();
 	}
-public void viewAnimalsSPM(ArrayList<AnimalSPM> animals) {
-	for(AnimalSPM animal:animals) {
-		System.out.println(animal);
-	}
+//public void viewAnimalsSPM(ArrayList<AnimalSPM> animals) {
+//	for(AnimalSPM animal:animals) {
+//		System.out.println(animal);
+//	}
+	
+	public void viewAnimalsSPM() {
+		AnimalIteratorSPM animaliterator = new AnimalIteratorSPM(animals);
+		while(animaliterator.hasNext()){
+			System.out.println(animaliterator.next());
+			
+		}
+		
+	
+	
 	
 }
 	

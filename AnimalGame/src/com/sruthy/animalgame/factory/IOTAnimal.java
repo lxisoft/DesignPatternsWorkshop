@@ -26,6 +26,9 @@ public class IOTAnimal extends Animal{
 		setRunBehaviourSKC(new RunWithAimOfPray() );
 	}
 
+	public void eat() {
+		
+	}
 
 
 	/**

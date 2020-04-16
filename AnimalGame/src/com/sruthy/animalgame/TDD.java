@@ -1,4 +1,4 @@
-package com.sruthy.animalgame.test;
+package com.sruthy.animalgame;
 
 import com.sruthy.animalgame.forest.Forest;
 

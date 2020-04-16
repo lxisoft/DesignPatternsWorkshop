@@ -10,8 +10,8 @@ import com.sruthy.animalgame.mobilebasedanimal.Horse;
 /**
  * @author sruthi
  * 
- * Implemented  Factory Pattern
- *
+ * Implemented  Factory Pattern, Strategy Pattern
+ * Implemented Template Pattern
  */
 public class MobileBasedAnimal extends Animal{
 	

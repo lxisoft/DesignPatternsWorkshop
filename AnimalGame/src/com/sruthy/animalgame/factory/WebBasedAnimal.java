@@ -10,7 +10,7 @@ import com.sruthy.animalgame.webbasedanimal.Elephant;
  * @author sruthi
  * 
  * Implemented Factory Pattern, Strategy Pattern
- * 
+ * Implemented Template Pattern
  *
  */
 public class WebBasedAnimal extends Animal{

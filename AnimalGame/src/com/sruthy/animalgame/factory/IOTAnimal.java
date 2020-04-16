@@ -9,7 +9,8 @@ import com.sruthy.animalgame.iotanimal.Tiger;
 /**
  * @author sruthi
  * 
- * Implemented  Factory Pattern
+ * Implemented  Factory Pattern, Strategy Pattern
+ * Implemented Template Pattern
  *
  */
 public class IOTAnimal extends Animal{

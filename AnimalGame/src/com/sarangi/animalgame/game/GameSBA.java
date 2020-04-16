@@ -22,6 +22,10 @@ import com.sarangi.animalgame.animal.AnimalSBA;
 import com.sarangi.animalgame.forest.AmericanForestSBA;
 import com.sarangi.animalgame.forest.ForestSBA;
 import com.sarangi.animalgame.forest.IndianForestSBA;
+import com.sarangi.animalgame.stage.CarpetSpreadingSBA;
+import com.sarangi.animalgame.stage.FencingSBA;
+import com.sarangi.animalgame.stage.GameStageSBA;
+import com.sarangi.animalgame.stage.StageOneSBA;
 import com.sarangi.animalgame.zoo.AmericanZooSBA;
 import com.sarangi.animalgame.zoo.IndianZooSBA;
 import com.sarangi.animalgame.zoo.ZooAdapterSBA;
@@ -35,6 +39,19 @@ import com.sarangi.animalgame.zoo.ZooSBA;
 public class GameSBA {
 	
 	private List<AnimalSBA> animals = new ArrayList<AnimalSBA>();
+	
+	public void setupStageSBA()
+	{
+		GameStageSBA stageOne = new StageOneSBA();
+		System.out.println("\n\t***************************** GAME POLICIES **************************************");
+		
+		stageOne = new CarpetSpreadingSBA(stageOne);
+		stageOne = new FencingSBA(stageOne);
+		stageOne = new FencingSBA(stageOne);
+		System.out.println("\n\t\t"+stageOne.getDescription());
+		
+		
+	}
 	
 	public void setupZooAnimalGameSBA()
 	{

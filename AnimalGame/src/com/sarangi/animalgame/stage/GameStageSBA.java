@@ -1,5 +1,4 @@
 /*
-
  * Copyright 2002-2016 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,27 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.sarangi.animalgame.test;
-
-
-import com.sarangi.animalgame.game.GameSBA;
+package com.sarangi.animalgame.stage;
 
 /**
- * The TddSBA class implements an animal game
- * displays Zoo animals using AbstractFactory and Factory method design patterns.
- * displays Forest animals using Adapter design petterns.
- * 
- * @author SarangiBalu A
+ * The GameStageSBA class implements Stage of animal game. it decorates using Decorator Dp
+ * @author Owner
  * ,
  */
-public class TddSBA {
+public abstract class GameStageSBA {
 	
-	public static void main(String[] args) {
-				
-		GameSBA zooGame = new GameSBA();
-		   zooGame.setupStageSBA();
-		   zooGame.setupZooAnimalGameSBA();
-		   zooGame.playGameSBA();
+	
+	String description = "No STAGE";
+	
+
+
+	public String getDescription() {
+		return description;
 	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	
 
 }

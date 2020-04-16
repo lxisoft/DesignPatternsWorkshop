@@ -25,7 +25,7 @@ import com.sarangi.animalgame.animal.AnimalSBA;
 /**
  * TODO Provide a detailed description here
  * @author Owner
- * ,
+ * 
  */
 public abstract class ZooSBA {
 
@@ -49,6 +49,8 @@ public abstract class ZooSBA {
 		{
 			System.out.println("\n\t Animal -> "+animal+"\n\t Name   -> "+animal.getName()+"\n\t Fight Behaviour   -> "+animal.getAnimalBehaviourSBA());
 		    animal.getAnimalBehaviourSBA().FightBehaviourSBA();
+		    
+		    
 		}
 	         
 	}

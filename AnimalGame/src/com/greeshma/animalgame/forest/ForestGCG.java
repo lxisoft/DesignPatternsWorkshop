@@ -14,6 +14,7 @@ import com.greeshma.animalgame.factory.AbstractAnimalFactoryGCG;
 import com.greeshma.animalgame.factory.IotFactory;
 import com.greeshma.animalgame.factory.MobileFactoryGCG;
 import com.greeshma.animalgame.factory.WebFactoryGCG;
+import com.greeshma.animalgame.iterator.AnimalIteratorGCG;
 
 public class ForestGCG {
 	 private volatile static ForestGCG uniqueInstance;
@@ -65,8 +66,11 @@ public class ForestGCG {
 		
 		public void eatGCG() {
 			
-			eatGCG(animals[0]);
-			eatGCG(animals[1]);
+			AnimalIteratorGCG iterator = new AnimalIteratorGCG(animals);
+			
+			while(iterator.hasNext()) {
+			eatGCG(iterator.next());
+			}
 			
 		}
 		

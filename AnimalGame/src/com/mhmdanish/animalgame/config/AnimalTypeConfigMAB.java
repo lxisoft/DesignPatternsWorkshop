@@ -26,7 +26,6 @@ public class AnimalTypeConfigMAB {
 		} finally {
 			inputStream.close();
 		}
-		System.out.println(result);
 		return result;
 	}
 }

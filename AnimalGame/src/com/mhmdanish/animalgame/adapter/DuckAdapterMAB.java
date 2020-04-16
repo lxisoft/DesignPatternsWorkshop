@@ -17,6 +17,10 @@ public class DuckAdapterMAB extends AnimalMAB {
 		this.duck = duck;
 	}
 	
+	public void eatMAB() {
+		this.duck.eatMAB();
+	}
+	
 	public void walk() {
 		this.duck.fly();
 	}

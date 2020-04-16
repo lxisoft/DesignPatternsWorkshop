@@ -1,5 +1,12 @@
 package com.sruthy.animalgame.builder;
 
+/**
+ * @author sruthi
+ * 
+ * Implemented Builder Pattern
+ *
+ */
+
 public class AmazonTreeHouseBuilder implements TreeHouseBuilder{
 
 

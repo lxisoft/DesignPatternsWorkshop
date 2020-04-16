@@ -32,13 +32,34 @@ import com.sarangi.animalgame.zoo.ZooAdapterSBA;
 import com.sarangi.animalgame.zoo.ZooSBA;
 
 /**
- * TODO Provide a detailed description here
+ * displays Zoo animals using AbstractFactory and Factory method design patterns.
+ * displays Forest animals using Adapter design petterns.
  * @author Owner
  * ,
  */
 public class GameSBA {
 	
+	private volatile static GameSBA uniqueInstanceSBA;
+	
 	private List<AnimalSBA> animals = new ArrayList<AnimalSBA>();
+	
+	private GameSBA(){}
+	
+	public static GameSBA getInstanceSBA(){
+		
+		if (uniqueInstanceSBA == null){
+			synchronized (GameSBA.class) {
+				if(uniqueInstanceSBA == null){
+					uniqueInstanceSBA = new GameSBA();
+				}
+				
+			}			
+		}
+	 return uniqueInstanceSBA; 	
+		
+	}
+	
+		
 	
 	public void setupStageSBA()
 	{
@@ -48,8 +69,7 @@ public class GameSBA {
 		stageOne = new CarpetSpreadingSBA(stageOne);
 		stageOne = new FencingSBA(stageOne);
 		stageOne = new FencingSBA(stageOne);
-		System.out.println("\n\t\t"+stageOne.getDescription());
-		
+		System.out.println("\n\t\t"+stageOne.getDescription());		
 		
 	}
 	

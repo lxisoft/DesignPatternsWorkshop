@@ -20,10 +20,7 @@ package com.sarangi.animalgame.test;
 import com.sarangi.animalgame.game.GameSBA;
 
 /**
- * The TddSBA class implements an animal game
- * displays Zoo animals using AbstractFactory and Factory method design patterns.
- * displays Forest animals using Adapter design petterns.
- * 
+ * The TddSBA class implements an game using Singleton Dp
  * @author SarangiBalu A
  * ,
  */
@@ -31,7 +28,7 @@ public class TddSBA {
 	
 	public static void main(String[] args) {
 				
-		GameSBA zooGame = new GameSBA();
+		GameSBA zooGame = GameSBA.getInstanceSBA();
 		   zooGame.setupStageSBA();
 		   zooGame.setupZooAnimalGameSBA();
 		   zooGame.playGameSBA();

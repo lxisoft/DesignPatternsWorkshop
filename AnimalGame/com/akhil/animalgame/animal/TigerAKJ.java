@@ -1,9 +1,11 @@
 package com.akhil.animalgame.animal;
 
+import com.akhil.animalgame.behavior.CarnivorousAKJ;
+
 /**
  * @author Akhil
  * 
- *         Implemented Singleton Pattern
+ *         
  *
  */
 
@@ -28,5 +30,16 @@ public class TigerAKJ extends AnimalAKJ {
 
 		this.name = name;
 	}
+	
+	@Override
+	public String toString() {
+
+		return   name;
+	}
+
+	public TigerAKJ() {
+		eatBehaviourAKJ =new CarnivorousAKJ();
+	}
+
 
 }

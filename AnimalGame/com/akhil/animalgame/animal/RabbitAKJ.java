@@ -1,4 +1,8 @@
 package com.akhil.animalgame.animal;
+
+import com.akhil.animalgame.behavior.EatBehaviorAKJ;
+import com.akhil.animalgame.behavior.HerbivorousAKJ;
+
 /**
  * @author Akhil
  * 
@@ -20,6 +24,17 @@ public class RabbitAKJ extends AnimalAKJ {
 	
 	 public RabbitAKJ(String name) {
 		 this.name =name;
+		 
 	 }
+	 public RabbitAKJ() {
+		 eatBehaviourAKJ = new HerbivorousAKJ();
+	 }
+	 
+	 @Override
+		public String toString() {
+
+			return  name;
+		}
+
 
 }

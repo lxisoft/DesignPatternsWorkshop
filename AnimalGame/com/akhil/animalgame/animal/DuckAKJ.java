@@ -9,7 +9,7 @@ import com.akhil.animalgame.behavior.HerbivorousAKJ;
  *
  */
 
-public class DeerAKJ extends AnimalAKJ{
+public class DuckAKJ extends AnimalAKJ{
 
 	private String name;
 
@@ -19,10 +19,10 @@ public class DeerAKJ extends AnimalAKJ{
 	public String eatAKJ() {
 		
 		
-		return "Deer eating plants...";
+		return "Duck eating plants...";
 	}
 
-	public DeerAKJ(String name) {
+	public DuckAKJ(String name) {
 		this.name = name;
 	}
 	
@@ -32,7 +32,7 @@ public class DeerAKJ extends AnimalAKJ{
 		return   name;
 	}
 	
-	public DeerAKJ() {
+	public DuckAKJ() {
 		eatBehaviourAKJ =new HerbivorousAKJ();
 	}
 

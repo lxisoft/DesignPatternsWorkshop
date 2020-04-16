@@ -1,28 +1,35 @@
 package com.akhil.animalgame.forest;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+
 import com.akhil.animalgame.animal.AnimalAKJ;
 import com.akhil.animalgame.animal.AnimalFactoryAKJ;
-import com.akhil.animalgame.animal.IotBasedAnimalsAKJ;
-import com.akhil.animalgame.animal.MobileBasedAnimalsAKJ;
-import com.akhil.animalgame.animal.WebBasedAnimalsAKJ;
+import com.akhil.animalgame.animal.AnimalIteratorAKJ;
+import com.akhil.animalgame.animal.IotBasedAnimalFactoryAKJ;
+import com.akhil.animalgame.animal.MobileBasedAnimalFactoryAKJ;
+import com.akhil.animalgame.animal.WebBasedAnimalFactoryAKJ;
+import com.akhil.animalgame.command.CommandAKJ;
+import com.akhil.animalgame.command.EatCommandAKJ;
+import com.akhil.animalgame.command.InvokerAKJ;
 import com.akhil.animalgame.config.AnimalConfig;
 
 /**
  * @author Akhil
  * 
- *         Implemented Singleton Pattern
- *         abstract factory pattern
+ *         Singleton Pattern 
+ *         abstract factory pattern 
  *         factory pattern
+ *        
  *
  */
 
 public class ForestAKJ {
 
-	AnimalAKJ tiger;
-	AnimalAKJ lion;
-	AnimalAKJ rabbit;
-	AnimalAKJ deer;
-
+	List<AnimalAKJ> animals = new ArrayList<>();
+	AnimalFactoryAKJ animalFactory = null;
 	String name;
 
 	@Override
@@ -46,21 +53,44 @@ public class ForestAKJ {
 		AnimalConfig instance = AnimalConfig.getInstance();
 
 		String type = instance.getType();
-		AnimalFactoryAKJ animal = null;
+		
 		switch (type) {
 		case "iot":
-			animal = new IotBasedAnimalsAKJ();
+			animalFactory = new IotBasedAnimalFactoryAKJ();
 			break;
 		case "mobile":
-			animal = new MobileBasedAnimalsAKJ();
+			animalFactory = new MobileBasedAnimalFactoryAKJ();
 			break;
 		case "web":
-			animal = new WebBasedAnimalsAKJ();
+			animalFactory = new WebBasedAnimalFactoryAKJ();
 			break;
 		}
 
-		System.out.print(animal.getAnimal("tiger").eatAKJ());
+		List<String> animalNames = Arrays.asList("duck","tiger", "lion", "rabbit", "deer");
+		for (int i = 0; i < 5; i++) {
+			AnimalAKJ animal = animalFactory.getAnimal(animalNames.get(new Random().nextInt(2+1)));
+			animals.add(animal);
+			System.out.println(animal.getClass().getName());
+			System.out.println(animal+"roaming...");
+		}
 
 	}
 
+	public void eatAkJ() {
+
+		AnimalIteratorAKJ iterator = new AnimalIteratorAKJ(animals);
+	
+		while (iterator.hasNext()) {
+			eatAKJ(iterator.next());
+			System.out.println("mm");
+		}
+	}
+
+	private void eatAKJ(AnimalAKJ animal) {
+
+		CommandAKJ animalCommand = new EatCommandAKJ(animal);
+		InvokerAKJ animalInvoker = new InvokerAKJ(animalCommand);
+		animalInvoker.executeAKJ();
+
+	}
 }

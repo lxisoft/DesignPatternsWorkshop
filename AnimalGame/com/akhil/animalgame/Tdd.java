@@ -4,6 +4,14 @@ import com.akhil.animalgame.forest.*;
 /**
  * @author Akhil
  * 
+ * command pattern
+ * singleton pattern
+ * factory pattern
+ * abstract factory pattern
+ * Iterator pattern
+ * adapter pattern
+ * Behaviour pattern
+ * 
  *
  */
 
@@ -16,6 +24,8 @@ public class Tdd {
 	  System.out.println("=================================================");
 	  
 	  forest.createAnimal();
+	  forest.eatAkJ();
 	 
  }
+ 
 }

@@ -1,6 +1,13 @@
 package com.akhil.animalgame.animal;
 
-public class WebBasedAnimalsAKJ extends AnimalFactoryAKJ {
+/**
+ * @author Akhil
+ * 
+ *
+ */
+
+
+public class WebBasedAnimalFactoryAKJ extends AnimalFactoryAKJ {
 
 	@Override
 	public AnimalAKJ getAnimal(String type) {
@@ -12,6 +19,8 @@ public class WebBasedAnimalsAKJ extends AnimalFactoryAKJ {
 			return new DeerAKJ("Web based Deer");
 		} else if (type.equals("rabbit")) {
 			return new RabbitAKJ("Web based Rabbit");
+		}else if (type.equals("duck")) {
+			return new DuckAKJ("Web based duck");
 		}
 		return null;
 	}

@@ -13,6 +13,7 @@ import com.anjali.animalgame.animal.adapter.adapter.JaguarAdapterANJ;
 import com.anjali.animalgame.animal.adapter.target.BlackJaguarANJ;
 import com.anjali.animalgame.forest.ForestANJ;
 import com.anjali.animalgame.game.GameLauncherANJ;
+import com.anjali.animalgame.observer.DangerSubject;
 
 public class TestClientANJ {
 
@@ -60,7 +61,8 @@ public class TestClientANJ {
 		algorithms are invoked by order 
 		*/
 		lion.templateMethod(deer);  
-		System.out.println("/n");
+		System.out.println("Thank you!");
+		
 		
 	}
 

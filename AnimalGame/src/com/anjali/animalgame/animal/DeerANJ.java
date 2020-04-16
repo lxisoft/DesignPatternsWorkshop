@@ -1,11 +1,24 @@
 package com.anjali.animalgame.animal;
 
+import com.anjali.animalgame.observer.DangerSubject;
+import com.anjali.animalgame.observer.Observer;
+import com.anjali.animalgame.observer.Subject;
 import com.anjali.animalgame.strategy.impl.GrazeFood;
 import com.anjali.animalgame.strategy.impl.HuntFood;
 
-public class DeerANJ extends AnimalANJ {
+/*
+ * Observer class observing DangerSubject
+ */
+public class DeerANJ extends AnimalANJ implements Observer{
 
+	private Boolean isDanger;
+	private Subject dangerSubject;
 	
+	public DeerANJ(Subject dangerSubject) {
+		this.dangerSubject = dangerSubject;
+		dangerSubject.register(this);
+		}
+
 	public DeerANJ() {
 		
 		foodEatBehaviour=new GrazeFood(); //setting strategy pattern behaviour
@@ -15,6 +28,8 @@ public class DeerANJ extends AnimalANJ {
 	public void meetAnotherAnimalANJ(AnimalANJ animal2) {
 	
 		if(animal2.getFoodEatBehaviour() instanceof HuntFood){
+			System.out.println("observer deer");
+			notifyDanger();										/* Observer pattern : Notify while meeting Danger*/
 			run(animal2);
 			}
 			
@@ -36,6 +51,19 @@ public class DeerANJ extends AnimalANJ {
 	public void run(AnimalANJ animal){
 		System.out.println(getAnimalName()+" Runs meeting "+animal.getAnimalName());
 		
+	}
+	
+	public void notifyDanger() {
+
+		System.out.println("Deer notifyDanger");
+
+		DeerANJ observer1=new DeerANJ(DangerSubject.getInstance());
+		DangerSubject.getInstance().getUpdate(this.isDanger);
+	}
+
+	@Override
+	public void update(Boolean isDanger) {
+		System.out.println("Run fast!!");
 	}
 
 }

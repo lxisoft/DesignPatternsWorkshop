@@ -20,6 +20,7 @@ import com.anjali.animalgame.factory.creator.CarnivoreAnimalCreatorANJ;
 import com.anjali.animalgame.factory.creator.HerbivoreAnimalCreatorANJ;
 import com.anjali.animalgame.factory.creator.OmnivoreAnimalCreatorANJ;
 import com.anjali.animalgame.forest.ForestANJ;
+import com.anjali.animalgame.observer.DangerSubject;
 import com.anjali.animalgame.strategy.impl.GrazeFood;
 import com.anjali.animalgame.strategy.impl.HuntFood;
 

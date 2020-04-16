@@ -1,11 +1,6 @@
-/**
- * 
- */
-package com.sruthy.test;
+package com.sruthy.animalgame.test;
 
-import java.util.Scanner;
-
-import com.sruthy.animalgame.Forest;
+import com.sruthy.animalgame.forest.Forest;
 
 /**
  * @author sruthi
@@ -20,7 +15,9 @@ public class TDD {
 		System.out.println("Welcome to the game at" + forestSKC.toString());
 
 		System.out.println("We can know about the animal behaviours");
+	
 		forestSKC.createAnimals();
+		
 		forestSKC.knowAnimalBehaviours();
 
 	}

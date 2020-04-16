@@ -1,5 +1,4 @@
-package com.sruthy.animalgame.animal;
-
+package com.sruthy.animalgame.behaviour;
 
 /**
  * @author sruthi

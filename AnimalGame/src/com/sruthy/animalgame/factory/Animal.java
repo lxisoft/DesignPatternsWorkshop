@@ -1,4 +1,4 @@
-package com.sruthy.animalgame.animal;
+package com.sruthy.animalgame.factory;
 
 
 /**
@@ -6,12 +6,12 @@ package com.sruthy.animalgame.animal;
  * 
  * Implemented  Abstract Factory Pattern
  * It acts as an animal abstract factory
- * Implemented  Strategy Pattern
+ * 
  *
  */
 public abstract class Animal{
 
-		public abstract void createAnimalsAndBehavioursSKC();
+		public abstract Animal createAnimalsAndBehavioursSKC(String animalName);
 		
 	
 		

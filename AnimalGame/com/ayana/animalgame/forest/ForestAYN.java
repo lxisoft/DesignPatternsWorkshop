@@ -7,6 +7,7 @@ import com.ayana.animalgame.animal.AbstractFactoryAYN;
 import com.ayana.animalgame.animal.AnimalAYN;
 
 import com.ayana.animalgame.animal.AnimalFactoryProducerAYN;
+import com.ayana.animalgame.animal.BearAYN;
 import com.ayana.animalgame.configuration.AnimalConfigAYN;
 
 public class ForestAYN {
@@ -54,17 +55,21 @@ public class ForestAYN {
 	{
 		AbstractFactoryAYN abstractFactory1 = factoryProducer.getFactoryAYN("mobile");
 		 AnimalAYN animal1=abstractFactory1.getAnimalAYN("Tiger");
-		 System.out.print("Mobile based");
+		 System.out.println("Mobile based");
 		 animal1.nameAYN();
 		 AnimalAYN animal2=abstractFactory1.getAnimalAYN("Lion");
-		 System.out.print("Mobile based");
 		 animal2.nameAYN();
 		 AnimalAYN animal3=abstractFactory1.getAnimalAYN("Deer");
-		 System.out.print("Mobile based");
 		 animal3.nameAYN();
 		 AnimalAYN animal4=abstractFactory1.getAnimalAYN("Rabbit");
-		 System.out.print("Mobile based");
 		 animal4.nameAYN();
+		 AnimalAYN animal5=abstractFactory1.getAnimalAYN("Bear");
+		 animal5.nameAYN();
+		 BearAYN bear = new BearAYN();
+		 System.out.print("Bear ");
+		 bear.eat("grass");
+		 bear.eat("meat");
+		 
 	}
 	
 	public void getWebBasedAnimalAYN()

@@ -5,11 +5,12 @@ package com.sruthy.animalgame.forest;
 
 import java.util.Scanner;
 
+import com.sruthy.animalgame.builder.AmazonTreeHouseBuilder;
+import com.sruthy.animalgame.builder.TreeHouseBuilder;
 import com.sruthy.animalgame.factory.Animal;
 import com.sruthy.animalgame.factory.IOTAnimal;
 import com.sruthy.animalgame.factory.MobileBasedAnimal;
 import com.sruthy.animalgame.factory.WebBasedAnimal;
-import com.sruthy.animalgame.utilities.AnimalIterator;
 
 /**
  * @author sruthi
@@ -17,6 +18,7 @@ import com.sruthy.animalgame.utilities.AnimalIterator;
  * Implemented Singleton Pattern 
  * Animal acts as an animal abstract factory
  * IOTAnimal and WebBasedAnimal are factory methods
+ * Implemented Builder Pattern
  */
 public class Forest {
 
@@ -24,6 +26,8 @@ public class Forest {
 	IOTAnimal[] iOTAnimalSKC;
 	WebBasedAnimal[] webBasedAnimalSKC;
 	MobileBasedAnimal[] mobileBasedAnimalSKC;
+	
+	private TreeHouseBuilder treeHouseBuilderSKC;
 	
 	Scanner s = new Scanner(System.in);
 
@@ -133,6 +137,28 @@ public class Forest {
 		System.out.println("Game Over");
 		s.close();
 		System.exit(0);
+	}
+
+	/**
+	 * @author sruthi
+	 * 
+	 * Implemented Builder Pattern
+	 */
+
+	public void constructTreeHouse() {
+		treeHouseBuilderSKC= new AmazonTreeHouseBuilder();
+		this.treeHouseBuilderSKC.buildClimber();
+		this.treeHouseBuilderSKC.buildDoor();
+		this.treeHouseBuilderSKC.buildTree();
+		System.out.println("\nBUILD TREE HOUSE SUCCESSFULLY");
+	}
+
+	public TreeHouseBuilder getTreeHouseBuilderSKC() {
+		return treeHouseBuilderSKC;
+	}
+
+	public void setTreeHouseBuilderSKC(TreeHouseBuilder treeHouseBuilderSKC) {
+		this.treeHouseBuilderSKC = treeHouseBuilderSKC;
 	}
 
 }

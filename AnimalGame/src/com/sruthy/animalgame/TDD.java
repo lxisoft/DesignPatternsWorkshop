@@ -16,6 +16,8 @@ public class TDD {
 
 		System.out.println("We can know about the animal behaviours");
 	
+		forestSKC.constructTreeHouse();
+		
 		forestSKC.createAnimals();
 		
 		forestSKC.knowAnimalBehaviours();

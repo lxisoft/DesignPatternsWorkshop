@@ -25,4 +25,10 @@ public class BearAYN implements AnimalAYN,HerbivoresAYN{
 		System.out.print(" Bear\n");
 	}
 
+	@Override
+	public int speedAYN(int initialSpeed) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

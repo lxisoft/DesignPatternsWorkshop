@@ -8,6 +8,11 @@ import com.ayana.animalgame.animal.AnimalAYN;
 
 import com.ayana.animalgame.animal.AnimalFactoryProducerAYN;
 import com.ayana.animalgame.animal.BearAYN;
+import com.ayana.animalgame.animal.ContextAYN;
+import com.ayana.animalgame.animal.DeerAYN;
+import com.ayana.animalgame.animal.LionAYN;
+import com.ayana.animalgame.animal.RabbitAYN;
+import com.ayana.animalgame.animal.TigerAYN;
 import com.ayana.animalgame.configuration.AnimalConfigAYN;
 
 public class ForestAYN {
@@ -38,17 +43,15 @@ public class ForestAYN {
 	{
 		AbstractFactoryAYN abstractFactory = factoryProducer.getFactoryAYN("iot");
 		 AnimalAYN animal1=abstractFactory.getAnimalAYN("Tiger");
-		 System.out.print("iot based");
+		 System.out.println("iot based");
 		 animal1.nameAYN();
 		 AnimalAYN animal2=abstractFactory.getAnimalAYN("Lion");
-		 System.out.print("iot based");
 		 animal2.nameAYN();
 		 AnimalAYN animal3=abstractFactory.getAnimalAYN("Deer");
-		 System.out.print("iot based");
 		 animal3.nameAYN();
 		 AnimalAYN animal4=abstractFactory.getAnimalAYN("Rabbit");
-		 System.out.print("iot based");
 		 animal4.nameAYN();
+		 getAllAnimalSpeed();
 	}
 	
 	public void getMobileBasedAnimalAYN()
@@ -87,5 +90,20 @@ public class ForestAYN {
 		 AnimalAYN animal4=abstractFactory1.getAnimalAYN("Rabbit");
 		 System.out.print("web based");
 		 animal4.nameAYN();
+	}
+	
+	public void getAllAnimalSpeed()
+	{
+		ContextAYN context = new ContextAYN(new TigerAYN());
+		System.out.println("speed of tiger = "+context.executeStrategyAYN(0));
+		context = new ContextAYN(new LionAYN());
+		System.out.println("speed of lion = "+context.executeStrategyAYN(0));
+		context = new ContextAYN(new DeerAYN());
+		System.out.println("speed of deer = "+context.executeStrategyAYN(0));
+		context = new ContextAYN(new RabbitAYN());
+		System.out.println("speed of rabbit = "+context.executeStrategyAYN(0));
+
+
+
 	}
 }

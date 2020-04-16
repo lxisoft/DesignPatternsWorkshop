@@ -15,4 +15,10 @@ public class TigerAYN implements AnimalAYN,CarnivoresAYN{
 		
 	}
 
+	@Override
+	public int speedAYN(int initialSpeed) {
+		// TODO Auto-generated method stub
+		return initialSpeed+50*2;
+	}
+
 }

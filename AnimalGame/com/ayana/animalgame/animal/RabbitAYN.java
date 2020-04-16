@@ -10,4 +10,10 @@ public class RabbitAYN implements AnimalAYN{
 		
 	}
 
+	@Override
+	public int speedAYN(int initialSpeed) {
+		// TODO Auto-generated method stub
+		return initialSpeed+38*2;
+	}
+
 }

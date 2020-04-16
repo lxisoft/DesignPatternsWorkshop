@@ -8,4 +8,10 @@ public class DeerAYN implements AnimalAYN{
 		System.out.print(" Deer\n");
 	}
 
+	@Override
+	public int speedAYN(int initialSpeed) {
+		// TODO Auto-generated method stub
+		return initialSpeed+40*2;
+	}
+
 }

@@ -37,4 +37,10 @@ public class BearAYN implements AnimalAYN,HerbivoresAYN{
 		
 	}
 
+	@Override
+	public void doAction(StateContextAYN context) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

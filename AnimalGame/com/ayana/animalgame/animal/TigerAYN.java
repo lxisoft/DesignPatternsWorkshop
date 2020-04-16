@@ -27,4 +27,10 @@ public class TigerAYN implements AnimalAYN,CarnivoresAYN{
 		
 	}
 
+	@Override
+	public void doAction(StateContextAYN context) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

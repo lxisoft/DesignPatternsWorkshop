@@ -21,4 +21,18 @@ public class DeerAYN implements AnimalAYN{
 		
 	}
 
+	@Override
+	public void doAction(StateContextAYN context) {
+		// TODO Auto-generated method stub
+		
+		System.out.println("Deer is in running state");
+		context.setState(this);
+		
+	}
+	
+	public String toString()
+	{
+		return "Running state";
+	}
+
 }

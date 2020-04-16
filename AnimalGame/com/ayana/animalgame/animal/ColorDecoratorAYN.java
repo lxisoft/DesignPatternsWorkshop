@@ -30,4 +30,10 @@ public class ColorDecoratorAYN extends AnimalDecoratorAYN{
 		return 0;
 	}
 
+	@Override
+	public void doAction(StateContextAYN context) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

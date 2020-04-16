@@ -22,4 +22,10 @@ public class RabbitAYN implements AnimalAYN{
 		
 	}
 
+	@Override
+	public void doAction(StateContextAYN context) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

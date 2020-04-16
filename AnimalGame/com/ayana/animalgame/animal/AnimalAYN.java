@@ -7,5 +7,7 @@ public interface AnimalAYN {
 	public int speedAYN(int initialSpeed);
 	
 	public void colorAYN();
+	
+	public void doAction(StateContextAYN context);
 
 }

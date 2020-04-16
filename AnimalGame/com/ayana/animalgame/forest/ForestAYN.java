@@ -13,6 +13,7 @@ import com.ayana.animalgame.animal.ContextAYN;
 import com.ayana.animalgame.animal.DeerAYN;
 import com.ayana.animalgame.animal.LionAYN;
 import com.ayana.animalgame.animal.RabbitAYN;
+import com.ayana.animalgame.animal.StateContextAYN;
 import com.ayana.animalgame.animal.TigerAYN;
 import com.ayana.animalgame.configuration.AnimalConfigAYN;
 
@@ -59,6 +60,10 @@ public class ForestAYN {
 		 AnimalAYN grey = new ColorDecoratorAYN(new DeerAYN());
 		 System.out.print("deer with ");
 		 grey.colorAYN();
+		 
+		 StateContextAYN context = new StateContextAYN();
+		 animal3.doAction(context);
+		 System.out.println(context.getState().toString());
 	}
 	
 	public void getMobileBasedAnimalAYN()

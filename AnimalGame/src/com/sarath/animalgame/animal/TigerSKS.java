@@ -1,5 +1,7 @@
 package com.sarath.animalgame.animal;
 
+import com.sarath.animalgame.strategy.CarnivorSKS;
+
 /**
  * @author SarathKumar S
  
@@ -9,16 +11,9 @@ public class TigerSKS extends AnimalSKS {
 	
 	private String name;
 
-	
-//	public String eatSKS() {
-//
-//		return name + " ate Meat";
-//	}
 
-	public TigerSKS(String name) {
+	public TigerSKS() {
 
-		this.name = name;
-		System.out.print(name);
 		category = new CarnivorSKS();
 	}
 

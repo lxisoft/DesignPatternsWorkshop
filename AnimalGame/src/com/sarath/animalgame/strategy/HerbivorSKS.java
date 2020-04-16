@@ -1,4 +1,4 @@
-package com.sarath.animalgame.animal;
+package com.sarath.animalgame.strategy;
 
 public class HerbivorSKS implements AnimalCategorySKS
 {

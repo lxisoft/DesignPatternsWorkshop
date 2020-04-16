@@ -1,5 +1,7 @@
 package com.sarath.animalgame.animal;
 
+import com.sarath.animalgame.strategy.HerbivorSKS;
+
 /**
  * @author SarathKumar S
  
@@ -10,15 +12,8 @@ public class RabbitSKS extends AnimalSKS {
 	private String name;
 
 	
-//	public String eatSKS() {
-//
-//		return name + " ate Meat";
-//	}
+	public RabbitSKS() {
 
-	public RabbitSKS(String name) {
-
-		this.name = name;
-		System.out.print(name);
 		category = new HerbivorSKS();
 
 	}

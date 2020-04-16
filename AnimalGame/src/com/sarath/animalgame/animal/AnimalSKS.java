@@ -1,5 +1,7 @@
 package com.sarath.animalgame.animal;
 
+import com.sarath.animalgame.strategy.AnimalCategorySKS;
+
 /**
  * @author SarathKumar S
  
@@ -15,4 +17,6 @@ public abstract class AnimalSKS {
     {
 		return category.eat();
     }
+
+	
 }

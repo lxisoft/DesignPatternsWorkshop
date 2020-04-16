@@ -1,4 +1,6 @@
-package com.sarath.animalgame.animal;
+package com.sarath.animalgame.factory;
+
+import com.sarath.animalgame.animal.AnimalSKS;
 
 /**
  * @author SarathKumar S

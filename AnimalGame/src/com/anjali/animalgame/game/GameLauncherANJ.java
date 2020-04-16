@@ -6,7 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
-import java.util.Iterator;
 import java.util.Scanner;
 
 import com.anjali.animalgame.animal.AnimalANJ;
@@ -20,6 +19,7 @@ import com.anjali.animalgame.factory.creator.CarnivoreAnimalCreatorANJ;
 import com.anjali.animalgame.factory.creator.HerbivoreAnimalCreatorANJ;
 import com.anjali.animalgame.factory.creator.OmnivoreAnimalCreatorANJ;
 import com.anjali.animalgame.forest.ForestANJ;
+import com.anjali.animalgame.iterator.Iterator;
 import com.anjali.animalgame.observer.DangerSubject;
 import com.anjali.animalgame.strategy.impl.GrazeFood;
 import com.anjali.animalgame.strategy.impl.HuntFood;
@@ -80,6 +80,10 @@ public class GameLauncherANJ {
 	public void startGame(AnimalANJ[] animals) throws IOException {
 		
 		System.out.println("Animals in the forest are");
+		
+		Iterator animalIterator=forest.createIterator();            /* invoke animal iterator for displaying animals */
+		printAnimals(animalIterator);
+		
 		System.out.println("/n");
 		int noOfAnimals=10;
 		
@@ -136,6 +140,18 @@ public class GameLauncherANJ {
       
         objectOutputStream.close();
         bufferedOutputStream.close();
+	}
+	
+	/*
+	 * Displys animals in array using Iterator without exposing the animal type
+	 */
+	public void printAnimals(Iterator iterator) {
+		System.out.println("inside print animals using iterator");
+		while (iterator.hasNext()) {
+			AnimalANJ animal = (AnimalANJ)iterator.next();
+			System.out.print(animal.getAnimalName() + "");
+			System.out.println("\n");
+		}
 	}
 	
 }

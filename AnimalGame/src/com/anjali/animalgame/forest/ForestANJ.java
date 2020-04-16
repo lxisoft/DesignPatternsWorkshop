@@ -1,10 +1,12 @@
 package com.anjali.animalgame.forest;
 
-import java.util.Iterator;
+
 
 import com.anjali.animalgame.animal.AnimalANJ;
 import com.anjali.animalgame.facade.AnimalDetailSetterANJ;
 import com.anjali.animalgame.facade.IAnimalFacadeANJ;
+import com.anjali.animalgame.iterator.AnimalIterator;
+import com.anjali.animalgame.iterator.Iterator;
 
 public class ForestANJ /*implements IAnimalFacadeANJ*/{
 	
@@ -31,11 +33,15 @@ public class ForestANJ /*implements IAnimalFacadeANJ*/{
 	public void setForestName(String forestName) {
 		this.forestName = forestName;
 	}
-
-	public AnimalANJ[] getAnimals() {
-		return animals;
+	                            
+	public AnimalANJ[] getAnimals() {			
+	  return animals;
 	}
 
+	public Iterator createIterator() {			/* Create Iterator instead of invoking getAnimals[] to encapsulate internal code behaviour*/
+		return new AnimalIterator(animals);
+	}
+	
 	public void setAnimals(AnimalANJ[] animals) {
 		this.animals = animals;
 	}

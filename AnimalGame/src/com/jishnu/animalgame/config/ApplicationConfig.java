@@ -3,19 +3,10 @@ package com.jishnu.animalgame.config;
 import java.util.Properties;
 import java.io.*;
 
-
-/**
- * 
- * @author jishnuj
- *
- * Singleton Pattern
- *
- */
-
 public class ApplicationConfig {
 
 
-	public String filename = "application.properties"; 
+	public String filename = "application.properties";
 
 	private InputStream inputStream;
 	
@@ -24,11 +15,11 @@ public class ApplicationConfig {
 	private static final ApplicationConfig instance = new ApplicationConfig();
 
 	private ApplicationConfig() {}
-	
+
 	public static ApplicationConfig getInstance() {
 		return instance;
 	}
-	
+
 	public void loadConfig() throws IOException {
 
 		try {
@@ -51,7 +42,7 @@ public class ApplicationConfig {
 			}
 		}
 	}
-	
+
 	public void setPlatform(Properties properties) {
 		switch(properties.getProperty("platform")) {
 			case "iot": this.platform = PlatformType.IOT;break;
@@ -59,7 +50,7 @@ public class ApplicationConfig {
 			case "web": this.platform = PlatformType.WEB;break;
 		}
 	}
-	
+
 	public PlatformType getPlatform() {
 		return this.platform;
 	}

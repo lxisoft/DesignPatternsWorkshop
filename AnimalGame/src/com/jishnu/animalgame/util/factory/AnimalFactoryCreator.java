@@ -1,8 +1,10 @@
 package com.jishnu.animalgame.util.factory;
 
+import com.jishnu.animalgame.config.PlatformType;
+
 public class AnimalFactoryCreator {
 
-	public static AnimalFactory getFactory(AnimalFactoryType type) {
+	public static AnimalFactory getFactory(PlatformType type) {
 
 		AnimalFactory factory = null;
 

@@ -6,9 +6,9 @@ public class MobileView implements ViewInterface<ForestJI> {
 
 	@Override
 	public void update(ForestJI d) {
-		System.out.println("Using Mobile View");
+		System.out.println("---------->Using Mobile View");
 		d.getAnimals().forEach(animal->System.out.println(animal));
-		
+		d.getAnimals().forEach(animal->animal.makeSound());
 	}
 
 

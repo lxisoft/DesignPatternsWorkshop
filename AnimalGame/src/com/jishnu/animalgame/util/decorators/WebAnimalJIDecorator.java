@@ -17,6 +17,10 @@ public class WebAnimalJIDecorator extends AnimalJI {
 	public void makeSound() {
 		this.animal.makeSound();
 	}
+	
+	public String toString() {
+		return this.animal.getClass().getSimpleName() + "[" + this.animal.getX() + "," + this.animal.getY() + "]";
+	}
 
 
 }

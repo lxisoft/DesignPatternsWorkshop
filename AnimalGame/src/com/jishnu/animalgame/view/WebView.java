@@ -9,8 +9,9 @@ public class WebView implements ViewInterface<ForestJI> {
 	
 	@Override
 	public void update(ForestJI d) {
-		System.out.println("Using Web View");
+		System.out.println("------------>Using Web View");
 		d.getAnimals().forEach(animal->System.out.println(animal));
+		d.getAnimals().forEach(animal->animal.makeSound());
 		
 	}
 

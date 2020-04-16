@@ -1,4 +1,6 @@
-package com.sanjana.AnimalGame.Animal;
+package com.sanjana.AnimalGame.Factory;
+
+import com.sanjana.AnimalGame.Animal.*;
 
 public class WebbasedFactorySPM extends AnimalFactorySPM {
  
@@ -6,13 +8,13 @@ public class WebbasedFactorySPM extends AnimalFactorySPM {
 		AnimalSPM animal=null;
 		
 		if (type.equals("tiger")) {        
-			animal = new TigerSPM();    
+			animal = new WildTigerSPM();    
 		} else if(type.equals("lion")) {        
-			animal = new LionSPM();    
+			animal = new WildLionSPM();    
 		} else if(type.equals("rabbit")) {        
-			animal = new RabbitSPM();    
+			animal = new WildRabbitSPM();    
 		} else if(type.equals("deer")) {        
-			animal = new DeerSPM();    
+			animal = new WildDeerSPM();    
 		} 
 		return animal;
 	}

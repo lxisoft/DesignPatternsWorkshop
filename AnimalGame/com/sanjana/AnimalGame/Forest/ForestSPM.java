@@ -1,13 +1,10 @@
 package com.sanjana.AnimalGame.Forest;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
-import com.sanjana.AnimalGame.Animal.AnimalFactorySPM;
+import com.sanjana.AnimalGame.Factory.*;
 import com.sanjana.AnimalGame.Animal.AnimalSPM;
-import com.sanjana.AnimalGame.Animal.IotbasedFactorySPM;
-import com.sanjana.AnimalGame.Animal.MobilebasedFactorySPM;
-import com.sanjana.AnimalGame.Animal.TigerSPM;
-import com.sanjana.AnimalGame.Animal.WebbasedFactorySPM;
 import com.sanjana.AnimalGame.Behaviour.*;
 import com.sanjana.AnimalGame.Configuration.AnimalConfigurationSPM;
 /**
@@ -16,6 +13,7 @@ import com.sanjana.AnimalGame.Configuration.AnimalConfigurationSPM;
  */
 public class ForestSPM{
 	
+	ArrayList<AnimalSPM> animals = new ArrayList<>();
 	private volatile static ForestSPM forest;
 	 
 	private ForestSPM() {
@@ -41,23 +39,40 @@ public class ForestSPM{
 		switch (type) {
 		case "iot":
 			animal = new IotbasedFactorySPM();
+			animals.add(animal.getAnimalSPM("tiger"));
+			animals.add(animal.getAnimalSPM("lion"));
+			animals.add(animal.getAnimalSPM("rabbit"));
+			animals.add(animal.getAnimalSPM("deer"));
 			break;
 		case "mobile":
 			animal = new MobilebasedFactorySPM();
+			animals.add(animal.getAnimalSPM("rabbit"));
+			animals.add(animal.getAnimalSPM("deer"));
+			animals.add(animal.getAnimalSPM("lion"));
+			animals.add(animal.getAnimalSPM("tiger"));
 			break;
 		case "web":
 			animal = new WebbasedFactorySPM();
+			animals.add(animal.getAnimalSPM("rabbit"));
+			animals.add(animal.getAnimalSPM("deer"));
+			animals.add(animal.getAnimalSPM("tiger"));
+			animals.add(animal.getAnimalSPM("lion"));
 			break;
 		}
 
-		System.out.println(animal.getAnimalSPM("tiger").featureSPM());
-		System.out.println(animal.getAnimalSPM("lion").featureSPM());
-		System.out.println(animal.getAnimalSPM("rabbit").featureSPM());
-		System.out.println(animal.getAnimalSPM("deer").featureSPM());
+//		System.out.println(animal.getAnimalSPM("tiger").featureSPM());
+//		System.out.println(animal.getAnimalSPM("lion").featureSPM());
+//		System.out.println(animal.getAnimalSPM("rabbit").featureSPM());
+//		System.out.println(animal.getAnimalSPM("deer").featureSPM());
 		
-
+		viewAnimalsSPM(animals);
 	}
-
+public void viewAnimalsSPM(ArrayList<AnimalSPM> animals) {
+	for(AnimalSPM animal:animals) {
+		System.out.println(animal);
+	}
+	
+}
 	
 	}
 	

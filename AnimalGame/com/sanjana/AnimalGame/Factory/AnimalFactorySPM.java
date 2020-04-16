@@ -1,5 +1,6 @@
-package com.sanjana.AnimalGame.Animal;
+package com.sanjana.AnimalGame.Factory;
 
+import com.sanjana.AnimalGame.Animal.AnimalSPM;
 import com.sanjana.AnimalGame.Forest.ForestSPM;
 
 /**

@@ -8,11 +8,18 @@ import com.sanjana.AnimalGame.Behaviour.*;
 public abstract class AnimalSPM{
 
 	// StrengthBehaviour StrengthBehaviour;
+	String name;
 	EatBehaviourSPM eatBehaviour;
-public abstract String featureSPM();
-public void setEat(){
+	
+	public String getName() {
+		return name;
+	}
+	public abstract String featureSPM();
+	public void setEat(){
 
-	eatBehaviour.eat();
-}
+		eatBehaviour.eat();
+	}
+	
+	public abstract int strengthSPM();
 
-}
+	}

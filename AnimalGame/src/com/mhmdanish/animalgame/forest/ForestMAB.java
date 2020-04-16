@@ -38,6 +38,7 @@ public class ForestMAB {
 	
 	// singleton pattern
 	public static ForestMAB getInstanceMAB() {
+		
 		if(instance == null) {
 			synchronized(ForestMAB.class) {
 				if(instance == null) {
@@ -58,30 +59,23 @@ public class ForestMAB {
 			e.printStackTrace();
 		}
 		animals = new AnimalMAB[6];
-		
+		AbstractAnimalFactoryMAB animalFactory = null;
 		if(type.equals("iot")) {
-			AbstractAnimalFactoryMAB animalFactory = new IOTAnimalFactoryMAB();
-			animals[0] = animalFactory.createAnimal("tiger");
-			animals[1] = animalFactory.createAnimal("lion");
-			animals[2] = animalFactory.createAnimal("duck");
 		} else if(type.equals("web")) {
-			AbstractAnimalFactoryMAB animalFactory = new WebAnimalFactoryMAB();
-			animals[0] = animalFactory.createAnimal("tiger");
-			animals[1] = animalFactory.createAnimal("lion");
-			animals[2] = animalFactory.createAnimal("duck");
+			animalFactory = new WebAnimalFactoryMAB();
 		} else if(type.equals("mobile")) {
-			AbstractAnimalFactoryMAB animalFactory = new MobileAnimalFactoryMAB();
-			animals[0] = animalFactory.createAnimal("tiger");
-			animals[1] = animalFactory.createAnimal("lion");
-			animals[2] = animalFactory.createAnimal("duck");
+			animalFactory = new MobileAnimalFactoryMAB();
 		}
 			
+		animals[0] = animalFactory.createAnimal("tiger");
+		animals[1] = animalFactory.createAnimal("lion");
+		animals[2] = animalFactory.createAnimal("duck");
 		AbstractAnimalFactoryMAB fightableanimalFactory = new FightableAnimalFactoryMAB();
-		AbstractAnimalFactoryMAB animalFactory = new AnimalFactoryMAB();
+		AbstractAnimalFactoryMAB nanimalFactory = new AnimalFactoryMAB();
 		
 		animals[3] = fightableanimalFactory.createAnimal("tiger");
 		animals[4] = fightableanimalFactory.createAnimal("lion");
-		animals[5] = animalFactory.createAnimal("duck");
+		animals[5] = nanimalFactory.createAnimal("duck");
 	}
 	
 	public void roamAnimalMAB() {

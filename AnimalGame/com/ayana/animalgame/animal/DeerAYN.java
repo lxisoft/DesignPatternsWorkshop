@@ -14,4 +14,11 @@ public class DeerAYN implements AnimalAYN{
 		return initialSpeed+40*2;
 	}
 
+	@Override
+	public void colorAYN() {
+		// TODO Auto-generated method stub
+		System.out.println("brown\n");
+		
+	}
+
 }

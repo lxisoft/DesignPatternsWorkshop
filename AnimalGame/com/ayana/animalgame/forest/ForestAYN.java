@@ -8,6 +8,7 @@ import com.ayana.animalgame.animal.AnimalAYN;
 
 import com.ayana.animalgame.animal.AnimalFactoryProducerAYN;
 import com.ayana.animalgame.animal.BearAYN;
+import com.ayana.animalgame.animal.ColorDecoratorAYN;
 import com.ayana.animalgame.animal.ContextAYN;
 import com.ayana.animalgame.animal.DeerAYN;
 import com.ayana.animalgame.animal.LionAYN;
@@ -52,6 +53,12 @@ public class ForestAYN {
 		 AnimalAYN animal4=abstractFactory.getAnimalAYN("Rabbit");
 		 animal4.nameAYN();
 		 getAllAnimalSpeed();
+		 
+		 System.out.print("deer with color ");
+		 animal3.colorAYN();
+		 AnimalAYN grey = new ColorDecoratorAYN(new DeerAYN());
+		 System.out.print("deer with ");
+		 grey.colorAYN();
 	}
 	
 	public void getMobileBasedAnimalAYN()
@@ -68,6 +75,7 @@ public class ForestAYN {
 		 animal4.nameAYN();
 		 AnimalAYN animal5=abstractFactory1.getAnimalAYN("Bear");
 		 animal5.nameAYN();
+		
 		 BearAYN bear = new BearAYN();
 		 System.out.print("Bear ");
 		 bear.eat("grass");

@@ -14,4 +14,10 @@ public class LionAYN implements AnimalAYN{
 		return initialSpeed+42*2;
 	}
 
+	@Override
+	public void colorAYN() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

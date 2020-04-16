@@ -21,4 +21,10 @@ public class TigerAYN implements AnimalAYN,CarnivoresAYN{
 		return initialSpeed+50*2;
 	}
 
+	@Override
+	public void colorAYN() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

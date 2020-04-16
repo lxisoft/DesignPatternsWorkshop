@@ -3,8 +3,10 @@ package com.anjali.animalgame.forest;
 import java.util.Iterator;
 
 import com.anjali.animalgame.animal.AnimalANJ;
+import com.anjali.animalgame.facade.AnimalDetailSetterANJ;
+import com.anjali.animalgame.facade.IAnimalFacadeANJ;
 
-public class ForestANJ {
+public class ForestANJ /*implements IAnimalFacadeANJ*/{
 	
 	private static ForestANJ uniqueInstance;  /**
 	 											*Singleton pattern implemented-marked constructor as private
@@ -36,6 +38,17 @@ public class ForestANJ {
 
 	public void setAnimals(AnimalANJ[] animals) {
 		this.animals = animals;
+	}
+
+	
+	/**
+	 * Implemented Facade pattern to avoid the coupling of method calls
+	 */	
+	public void setAnimalDetails() {
+		
+		AnimalDetailSetterANJ animalSetter=new AnimalDetailSetterANJ();
+	    animalSetter.setAnimalDetails(animals);
+		
 	}
 
 	

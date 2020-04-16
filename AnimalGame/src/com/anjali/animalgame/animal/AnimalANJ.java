@@ -2,7 +2,13 @@ package com.anjali.animalgame.animal;
 
 import java.util.Scanner;
 
+import com.anjali.animalgame.state.AliveState;
+import com.anjali.animalgame.state.DeadState;
+import com.anjali.animalgame.state.StateANJ;
 import com.anjali.animalgame.strategy.IFoodEatBehaviourANJ;
+/*
+ * Context class for State pattern
+ */
 
 public abstract class AnimalANJ {
 	
@@ -16,8 +22,26 @@ public abstract class AnimalANJ {
 	
 	protected IFoodEatBehaviourANJ foodEatBehaviour; //strategy behaviour interface
 	
-	public Scanner sc=new Scanner(System.in);
+	protected Scanner sc=new Scanner(System.in);
 	
+	
+	/*
+	 * State Composition in context class. Two states of animal: alive and dead  : State pattern
+	 * 
+	 */
+	private StateANJ aliveState;
+
+	private StateANJ deadState;
+	
+	StateANJ state=aliveState;
+	/*
+	 * Setting state via constructor 
+	 */
+	public AnimalANJ() {
+		aliveState = new AliveState(this);
+		deadState = new DeadState(this);
+	}
+
 	public IFoodEatBehaviourANJ getFoodEatBehaviour() {
 		return foodEatBehaviour;
 	}
@@ -58,6 +82,26 @@ public abstract class AnimalANJ {
 		this.strengthLevel = strengthLevel;
 	}
 	
+	public StateANJ getAliveState() {
+		return aliveState;
+	}
+
+	public void setAliveState(StateANJ aliveState) {
+		this.aliveState = aliveState;
+	}
+
+	public StateANJ getDeadState() {
+		return deadState;
+	}
+
+	public void setDeadState(StateANJ deadState) {
+		this.deadState = deadState;
+	}
+	
+	public void setState(StateANJ state) {
+		this.state = state;
+	}
+
 	public abstract void meetAnotherAnimalANJ(AnimalANJ anotherAnimal);
 
 	public void foodHunt() {
@@ -68,9 +112,14 @@ public abstract class AnimalANJ {
 		System.out.println(animalName+" fights with "+animal2.getAnimalName());	
 	}
 	
+	/*
+	 * Changing the animal state after death : State pattern
+	 */
 	public void dead(){
+		System.out.println("dead method state changed");
 		System.out.println(getAnimalName()+" dies");
-		isAlive=false;
+		this.setState(this.getDeadState());
+		state.changeStateOfAnimal();
 		
 	}
 	
@@ -78,3 +127,4 @@ public abstract class AnimalANJ {
 		System.out.println(getAnimalName()+" ignores "+animal2.getAnimalName());
 	}
 }
+

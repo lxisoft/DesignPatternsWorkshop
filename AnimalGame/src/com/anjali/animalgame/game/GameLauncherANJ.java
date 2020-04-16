@@ -1,5 +1,6 @@
 package com.anjali.animalgame.game;
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 import com.anjali.animalgame.animal.AnimalANJ;
@@ -80,21 +81,10 @@ public class GameLauncherANJ {
 			
 	}
 
-	/*public void createAnimals() {
-																	//invoked factory creator for creating animals: factory pattern
-		Scanner sc=new Scanner(System.in);
-		//String animalType=sc.nextLine();
-		
-		AnimalCreatorANJ herbCreator=new HerbivoreAnimalCreatorANJ();
-		AnimalCreatorANJ carnivoreCreator=new CarnivoreAnimalCreatorANJ();
-		
-		AnimalANJ createdAnimal=herbCreator.getAnimalANJ("DeerANJ"); //invoked factory creator for creating animals: factory pattern
-		System.out.println(createdAnimal);
-		
-	}
-	*/
 	public void startGame(AnimalANJ[] animals) {
 		
+		System.out.println("Animals in the forest are");
+		System.out.println("/n");
 		int noOfAnimals=10;
 		
 		do{		
@@ -119,7 +109,7 @@ public class GameLauncherANJ {
 		
 		} //end of playGame()
 		
-
+	
 	public AnimalANJ animalsLeft(){
 		AnimalANJ winner=null;
 		for(int j=0;j<10;j++){

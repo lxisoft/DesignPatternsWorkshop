@@ -1,5 +1,7 @@
 package com.anjali.animalgame;
 
+import java.io.IOException;
+
 import com.anjali.animalgame.animal.adapter.adaptee.ILeopardANJ;
 import com.anjali.animalgame.animal.adapter.adaptee.PersianLeopardANJ;
 import com.anjali.animalgame.animal.adapter.adapter.JaguarAdapterANJ;
@@ -13,11 +15,16 @@ public class TestClientANJ {
 		
 		GameLauncherANJ game=new GameLauncherANJ();
 		ForestANJ forest=game.setGameANJ();
-		game.startGame(forest.getAnimals());
+		try {
+			game.startGame(forest.getAnimals());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println("Game over!");
-
+		System.out.println("/n");
 		/*
-		 * Testing Adapter pattern
+		 * Testing Adapter pattern : jaguaradapter 
 		 */
 		System.out.println("Adapter pattern implemented");
 		
@@ -26,12 +33,11 @@ public class TestClientANJ {
 		
 		BlackJaguarANJ blackJaguar=new BlackJaguarANJ();
 		blackJaguar.climbTreeSlow();
-		
-		/*
-		*jaguaradapter 
-		*/
+
 		ILeopardANJ leopard=new JaguarAdapterANJ(blackJaguar);			
 		leopard.climbTree();
+		
+		
 		
 	}
 

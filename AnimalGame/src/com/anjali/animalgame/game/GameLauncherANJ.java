@@ -1,5 +1,11 @@
 package com.anjali.animalgame.game;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -81,7 +87,7 @@ public class GameLauncherANJ {
 			
 	}
 
-	public void startGame(AnimalANJ[] animals) {
+	public void startGame(AnimalANJ[] animals) throws IOException {
 		
 		System.out.println("Animals in the forest are");
 		System.out.println("/n");
@@ -105,6 +111,7 @@ public class GameLauncherANJ {
 			
 		if(noOfAnimals==1){
 			AnimalANJ winner=animalsLeft();	
+			this.saveResultInFile(winner);
 		}
 		
 		} //end of playGame()
@@ -121,5 +128,24 @@ public class GameLauncherANJ {
 		}
 		return winner;
 	}//end of animalsLeft()
+	
+	
+	/*
+	 *  Implemented real time example of Decorator pattern using ObjectOutputStream to write the winner to a file : Decorator pattern implementation
+	 */
+	public void saveResultInFile(AnimalANJ winner) throws IOException {
+		System.out.println("winner"+winner.getAnimalName());
+		
+		File file = new File("./result.txt");
+        file.createNewFile();
+       
+        FileOutputStream fileOutputStream = new FileOutputStream(file);
+        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+        objectOutputStream.writeBytes(winner.getAnimalName());
+      
+        objectOutputStream.close();
+        bufferedOutputStream.close();
+	}
 	
 }

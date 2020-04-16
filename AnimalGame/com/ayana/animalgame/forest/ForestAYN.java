@@ -11,6 +11,7 @@ import com.ayana.animalgame.animal.BearAYN;
 import com.ayana.animalgame.animal.ColorDecoratorAYN;
 import com.ayana.animalgame.animal.ContextAYN;
 import com.ayana.animalgame.animal.DeerAYN;
+import com.ayana.animalgame.animal.FacadeAYN;
 import com.ayana.animalgame.animal.LionAYN;
 import com.ayana.animalgame.animal.RabbitAYN;
 import com.ayana.animalgame.animal.StateContextAYN;
@@ -53,7 +54,7 @@ public class ForestAYN {
 		 animal3.nameAYN();
 		 AnimalAYN animal4=abstractFactory.getAnimalAYN("Rabbit");
 		 animal4.nameAYN();
-		 getAllAnimalSpeed();
+		 getAllAnimalSpeedAYN();
 		 
 		 System.out.print("deer with color ");
 		 animal3.colorAYN();
@@ -64,6 +65,7 @@ public class ForestAYN {
 		 StateContextAYN context = new StateContextAYN();
 		 animal3.doAction(context);
 		 System.out.println(context.getState().toString());
+		 getAllStrengthAYN();
 	}
 	
 	public void getMobileBasedAnimalAYN()
@@ -105,7 +107,7 @@ public class ForestAYN {
 		 animal4.nameAYN();
 	}
 	
-	public void getAllAnimalSpeed()
+	public void getAllAnimalSpeedAYN()
 	{
 		ContextAYN context = new ContextAYN(new TigerAYN());
 		System.out.println("speed of tiger = "+context.executeStrategyAYN(0));
@@ -118,5 +120,14 @@ public class ForestAYN {
 
 
 
+	}
+	
+	public void getAllStrengthAYN()
+	{
+		FacadeAYN strength = new FacadeAYN();
+		strength.getTigerStrengthAYN();
+		strength.getLionStrengthAYN();
+		strength.getDeerStrengthAYN();
+		strength.getRabbitStrengthAYN();
 	}
 }

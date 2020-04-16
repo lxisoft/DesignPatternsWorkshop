@@ -33,4 +33,11 @@ public class TigerAYN implements AnimalAYN,CarnivoresAYN{
 		
 	}
 
+	@Override
+	public void strengthAYN() {
+		// TODO Auto-generated method stub
+		System.out.println("strenth of tiger is 55");
+		
+	}
+
 }

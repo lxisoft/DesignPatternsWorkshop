@@ -9,5 +9,7 @@ public interface AnimalAYN {
 	public void colorAYN();
 	
 	public void doAction(StateContextAYN context);
+	
+	public void strengthAYN();
 
 }

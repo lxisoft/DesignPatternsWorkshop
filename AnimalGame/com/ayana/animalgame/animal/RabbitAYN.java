@@ -28,4 +28,10 @@ public class RabbitAYN implements AnimalAYN{
 		
 	}
 
+	@Override
+	public void strengthAYN() {
+		// TODO Auto-generated method stub
+		System.out.println("strength of rabbit is 40");
+	}
+
 }

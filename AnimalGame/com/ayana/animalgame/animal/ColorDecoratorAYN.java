@@ -36,4 +36,10 @@ public class ColorDecoratorAYN extends AnimalDecoratorAYN{
 		
 	}
 
+	@Override
+	public void strengthAYN() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

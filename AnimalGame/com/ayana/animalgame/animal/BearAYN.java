@@ -43,4 +43,10 @@ public class BearAYN implements AnimalAYN,HerbivoresAYN{
 		
 	}
 
+	@Override
+	public void strengthAYN() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

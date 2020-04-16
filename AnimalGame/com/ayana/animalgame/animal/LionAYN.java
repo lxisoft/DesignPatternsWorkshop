@@ -26,4 +26,11 @@ public class LionAYN implements AnimalAYN{
 		
 	}
 
+	@Override
+	public void strengthAYN() {
+		// TODO Auto-generated method stub
+		System.out.println("strength of lion is 60");
+		
+	}
+
 }

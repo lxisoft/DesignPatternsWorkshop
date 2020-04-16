@@ -35,4 +35,10 @@ public class DeerAYN implements AnimalAYN{
 		return "Running state";
 	}
 
+	@Override
+	public void strengthAYN() {
+		// TODO Auto-generated method stub
+		System.out.println("strength of deer is 45");
+	}
+
 }

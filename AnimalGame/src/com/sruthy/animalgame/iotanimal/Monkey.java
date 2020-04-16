@@ -14,6 +14,9 @@ public class Monkey extends IOTAnimal {
 		System.out.println("Can pluck and have fruits");
 		
 	}
-
+	public String toString()
+	{
+	      return getClass().getSimpleName();
+	}
 
 }

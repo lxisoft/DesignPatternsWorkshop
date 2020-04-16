@@ -1,5 +1,6 @@
 package com.sruthy.animalgame.factory;
 
+import com.sruthy.animalgame.behaviour.RunBehavior;
 
 /**
  * @author sruthi
@@ -13,7 +14,14 @@ public abstract class Animal{
 
 		public abstract Animal createAnimalsAndBehavioursSKC(String animalName);
 		
-	
+		private RunBehavior runBehaviourSKC;
 		
+		public RunBehavior getRunBehaviourSKC() {
+			return runBehaviourSKC;
+		}
+		public void setRunBehaviourSKC(RunBehavior runBehaviourSKC) {
+			this.runBehaviourSKC = runBehaviourSKC;
+		}
+				
 
 }

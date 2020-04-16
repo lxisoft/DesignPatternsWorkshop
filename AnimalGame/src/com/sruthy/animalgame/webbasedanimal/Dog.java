@@ -10,5 +10,9 @@ import com.sruthy.animalgame.factory.WebBasedAnimal;
  */
 public class Dog extends WebBasedAnimal {
 
+	public String toString()
+	{
+	      return getClass().getSimpleName();
+	}
 
 }

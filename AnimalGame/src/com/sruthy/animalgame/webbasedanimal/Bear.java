@@ -10,5 +10,8 @@ import com.sruthy.animalgame.factory.WebBasedAnimal;
  */
 public class Bear extends WebBasedAnimal {
 
-
+	public String toString()
+	{
+	      return getClass().getSimpleName();
+	}
 }

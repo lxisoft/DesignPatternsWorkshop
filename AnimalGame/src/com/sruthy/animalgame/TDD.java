@@ -14,7 +14,7 @@ public class TDD {
 
 		System.out.println("Welcome to the game at" + forestSKC.toString());
 
-		System.out.println("We can know about the animal behaviours");
+		System.out.println("\nInitial SetUp");
 	
 		forestSKC.constructTreeHouse();
 		

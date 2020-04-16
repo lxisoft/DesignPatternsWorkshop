@@ -10,6 +10,9 @@ import com.sruthy.animalgame.factory.IOTAnimal;
  */
 public class Lion extends IOTAnimal {
 
-	
+	public String toString()
+	{
+	      return getClass().getSimpleName();
+	}
 
 }

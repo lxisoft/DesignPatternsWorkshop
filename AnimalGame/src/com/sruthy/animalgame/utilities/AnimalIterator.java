@@ -1,5 +1,6 @@
 package com.sruthy.animalgame.utilities;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import com.sruthy.animalgame.factory.Animal;
@@ -7,38 +8,33 @@ import com.sruthy.animalgame.factory.Animal;
 /**
  * @author sruthi
  * 
- * Implemented  Iterator Pattern
+ * Implemented Iterator Pattern
  *
  */
-public class AnimalIterator implements Iterator<Animal>{
+public class AnimalIterator implements Iterator<Animal> {
 
-	Animal[] animals;
-	int count = 0;
+	ArrayList<Animal> animals;
+	int position = 0;
 
-	public AnimalIterator(Animal[] animals) {
+	public AnimalIterator(ArrayList<Animal> animals) {
 		this.animals = animals;
 	}
 
-	@Override
-	public boolean hasNext() 
-	{
-		if (count >= animals.length || animals[count] == null) 
-		{
-			return false;
-		} 
+	public Animal next() {
+		Animal animal = animals.get(position);
+		position = position + 1;
+		return animal;
+	}
+
+	public boolean hasNext() {
 		
-		else {
+		if (position >= animals.size() || animals.get(position) == null) {
+			
+			return false;
+	
+		} else {
 			
 			return true;
 		}
 	}
-
-	@Override
-	public Animal next() {
-		Animal animal = animals[count];
-		count += 1;
-		return animal;
-	}
-
-
 }

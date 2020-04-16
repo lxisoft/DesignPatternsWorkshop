@@ -1,6 +1,5 @@
 package com.sruthy.animalgame.factory;
 
-import com.sruthy.animalgame.behaviour.RunBehavior;
 import com.sruthy.animalgame.behaviour.RunWithAimOfPray;
 import com.sruthy.animalgame.iotanimal.Lion;
 import com.sruthy.animalgame.iotanimal.Monkey;
@@ -14,23 +13,6 @@ import com.sruthy.animalgame.iotanimal.Tiger;
  *
  */
 public class IOTAnimal extends Animal{
-	
-	Lion lionSKC;
-	Monkey monkeySKC;
-	Tiger tigerSKC;
-	
-	
-	private RunBehavior runBehaviourSKC;
-	
-	public IOTAnimal() {
-		super();
-		setRunBehaviourSKC(new RunWithAimOfPray() );
-	}
-
-	public void eat() {
-		
-	}
-
 
 	/**
 	 * @author sruthi
@@ -39,33 +21,24 @@ public class IOTAnimal extends Animal{
 	 */
 	public Animal createAnimalsAndBehavioursSKC(String animalName) {
 
+		Animal a = null;
+		
 		if (animalName.equals("lion")) {
-		
-		
-					lionSKC = new Lion();
-			
-					lionSKC.setRunBehaviourSKC(new RunWithAimOfPray());
 					
-					return lionSKC;
-					
+					a= new Lion();
 		}
 		else if (animalName.equals("monkey")) {
 			
-					monkeySKC = new Monkey();
+					a = new Monkey();
 			
-					monkeySKC.setRunBehaviourSKC(new RunWithAimOfPray());
-					return monkeySKC;
 		}
 		else if(animalName.equals("tiger")) {
 			
-					tigerSKC = new Tiger();
+					a = new Tiger();
 			
-					tigerSKC.setRunBehaviourSKC(new RunWithAimOfPray());
-			
-					return tigerSKC;
-		
 		}
-		return null;
+		 a.setRunBehaviourSKC(new RunWithAimOfPray());
+		 return a;
 	}
 	
 	
@@ -74,15 +47,8 @@ public class IOTAnimal extends Animal{
 		System.out.println("Run with head Straight");
 	}
 
-	public RunBehavior getRunBehaviourSKC() {
-		return runBehaviourSKC;
+
+	public void eat() {
+		
 	}
-
-
-	public void setRunBehaviourSKC(RunBehavior runBehaviourSKC) {
-		this.runBehaviourSKC = runBehaviourSKC;
-	}
-
-
-
 }

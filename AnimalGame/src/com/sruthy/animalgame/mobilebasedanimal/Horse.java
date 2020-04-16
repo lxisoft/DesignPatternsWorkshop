@@ -10,5 +10,8 @@ import com.sruthy.animalgame.factory.MobileBasedAnimal;
  */
 public class Horse extends MobileBasedAnimal {
 
-
+	public String toString()
+	{
+	      return getClass().getSimpleName();
+	}
 }

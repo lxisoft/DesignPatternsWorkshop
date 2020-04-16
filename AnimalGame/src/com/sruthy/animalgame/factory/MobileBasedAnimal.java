@@ -1,8 +1,6 @@
 package com.sruthy.animalgame.factory;
 
-import com.sruthy.animalgame.behaviour.RunBehavior;
 import com.sruthy.animalgame.behaviour.RunWithAimOfPray;
-import com.sruthy.animalgame.behaviour.RunWithHeadStraight;
 import com.sruthy.animalgame.mobilebasedanimal.Deer;
 import com.sruthy.animalgame.mobilebasedanimal.Gorilla;
 import com.sruthy.animalgame.mobilebasedanimal.Horse;
@@ -15,20 +13,7 @@ import com.sruthy.animalgame.mobilebasedanimal.Horse;
  */
 public class MobileBasedAnimal extends Animal{
 	
-	Deer deerSKC;
-	Gorilla gorillaSKC;
-	Horse horseSKC;
-	
-	private RunBehavior runBehaviourSKC;
-	
-	public MobileBasedAnimal() {
-		super();
-		setRunBehaviourSKC(new RunWithHeadStraight() );
-	}
 
-	
-	
-	
 	/**
 	 * @author sruthi
 	 * Implemented factory pattern and strategy pattern
@@ -37,46 +22,32 @@ public class MobileBasedAnimal extends Animal{
 	 */
 	public Animal createAnimalsAndBehavioursSKC(String animalName) {
 
-		switch (animalName) {
+		Animal a = null;
 		
-		case "deer":
-					deerSKC = new Deer();
-					
-					deerSKC.setRunBehaviourSKC(new RunWithAimOfPray());
-					
-					break;
-		case "gorilla":
-					gorillaSKC = new Gorilla();
-			
-					gorillaSKC.setRunBehaviourSKC(new RunWithAimOfPray());
-			
-					break;
-		case "horse":
-					horseSKC = new Horse();
-			
-					horseSKC.setRunBehaviourSKC(new RunWithAimOfPray());
-			
-					break;
-
-		
+		if (animalName.equals("deer")) {
+					a= new Deer();
 		}
-		
-		return null;
+		else if (animalName.equals("gorilla")) {
+			
+					a = new Gorilla();
+					
+		}
+		else if(animalName.equals("horse")) {
+			
+					a = new Horse();
+				
+		}
+		a.setRunBehaviourSKC(new RunWithAimOfPray());
+		return a;
 	}
+	
+	
 	
 
 	public void run() {
 		System.out.println("Run with head Straight");
 	}
 
-	public RunBehavior getRunBehaviourSKC() {
-		return runBehaviourSKC;
-	}
-
-
-	public void setRunBehaviourSKC(RunBehavior runBehaviourSKC) {
-		this.runBehaviourSKC = runBehaviourSKC;
-	}
 
 
 	

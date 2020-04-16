@@ -10,5 +10,8 @@ import com.sruthy.animalgame.factory.MobileBasedAnimal;
  */
 public class Deer extends MobileBasedAnimal {
 
-
+	public String toString()
+	{
+	      return getClass().getSimpleName();
+	}
 }

@@ -8,4 +8,15 @@ public class LionNrj extends AnimalNrj {
 		eatBehaviourNrj = new CarnivourousNrj();
 	}
 
+	@Override
+	public void fight() {
+		System.out.println("lion fighting");
+	}
+
+	@Override
+	public void rest() {
+		System.out.println("lion takes rest");
+		
+	}
+
 }

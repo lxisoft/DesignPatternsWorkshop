@@ -2,7 +2,7 @@ package com.neeraja.animalgame.forest;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 import com.neeraja.animalgame.animal.AnimalNrj;
 import com.neeraja.animalgame.animal.AnimalTypeConfigNrj;
@@ -14,7 +14,13 @@ import com.neeraja.animalgame.animal.animalFactory.AbstractAnimalFactoryNrj;
 import com.neeraja.animalgame.animal.animalFactory.IotAnimalFactoryNrj;
 import com.neeraja.animalgame.animal.animalFactory.MobileAnimalFactoryNrj;
 import com.neeraja.animalgame.animal.animalFactory.WebAnimalFactoryNrj;
+import com.neeraja.animalgame.animal.command.AnimalInvokerNrj;
+import com.neeraja.animalgame.animal.command.RunBackwardNrj;
+import com.neeraja.animalgame.animal.command.RunForwardNrj;
+import com.neeraja.animalgame.animal.facade.HouseMakerNrj;
 import com.neeraja.animalgame.animal.iterator.AnimalIteratorNrj;
+import com.neeraja.animalgame.animal.state.HighEnergyNrj;
+import com.neeraja.animalgame.animal.state.LowEnergyNrj;
 
 public class ForestNrj {
 	
@@ -104,6 +110,44 @@ ArrayList<AnimalNrj> animalList= new ArrayList<AnimalNrj>();
 	  private void walkingMode(AnimalNrj animal) { 
 		  animal.walkNrj(); 
 		  }
+
+
+
+	public void undoAction() {
+		AnimalInvokerNrj animalInvoker = new AnimalInvokerNrj();
+		AnimalNrj tigerNrj2=new TigerNrj();
+		RunForwardNrj runForward =new RunForwardNrj(tigerNrj2);
+		RunBackwardNrj runBackward =new RunBackwardNrj(tigerNrj2);
+		animalInvoker.setCommand(0, runForward, runBackward);
+		
+		animalInvoker.runForwardButton(0);
+		animalInvoker.runBackwardButton(0);
+		System.out.println(animalInvoker);
+		animalInvoker.undoButtonWasPushed();
+	}
+
+
+
+	public void createHouse() {
+	HouseMakerNrj houseMaker = new HouseMakerNrj();
+		houseMaker.buildTreeHouse();
+		houseMaker.buildWoodHouse();
+		
+		
+	}
+
+
+//state Pattern
+	public void checkEnergyState(AnimalNrj tigerNrj) {
+		
+		HighEnergyNrj highEnergy= new HighEnergyNrj();
+		highEnergy.checkEnergyNrj(tigerNrj);
+		System.out.println(tigerNrj.getState().toString());
+		
+		LowEnergyNrj lowEnergy= new LowEnergyNrj();
+		lowEnergy.checkEnergyNrj(tigerNrj);
+		System.out.println(tigerNrj.getState().toString());
+	}
 	 
 
 }

@@ -7,4 +7,14 @@ public class WebAnimalNrj extends AnimalNrj {
 	public WebAnimalNrj(AnimalNrj animal) {
 		this.animal=animal;
 	}
+	@Override
+	public void fight() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void rest() {
+		// TODO Auto-generated method stub
+		
+	}
 }

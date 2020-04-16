@@ -7,5 +7,15 @@ public class IotAnimalNrj extends AnimalNrj {
 	public IotAnimalNrj(AnimalNrj animal) {
 		this.animal=animal;
 	}
+	@Override
+	public void fight() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void rest() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

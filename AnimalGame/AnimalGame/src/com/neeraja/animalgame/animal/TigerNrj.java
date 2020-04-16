@@ -14,6 +14,17 @@ public class TigerNrj extends AnimalNrj {
 		eatBehaviourNrj = new CarnivourousNrj();
 	}
 
+	@Override
+	public void fight() {
+		System.out.println("Tiger fighting");
+		
+	}
+
+	@Override
+	public void rest() {
+		System.out.println("tiger takes rest");
+	}
+
 	
 	
 }

@@ -14,6 +14,16 @@ public class MobileAnimalNrj extends AnimalNrj {
 	public String toString() {
 		return animal.toString();
 	}
+	@Override
+	public void fight() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void rest() {
+		// TODO Auto-generated method stub
+		
+	}
 
 	
 }

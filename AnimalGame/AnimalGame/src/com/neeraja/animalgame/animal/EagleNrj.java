@@ -18,4 +18,16 @@ public class EagleNrj extends AnimalNrj{
 		System.out.println("Flying");
 	}
 
+	@Override
+	public void fight() {
+		System.out.println("eagle fighting");
+		
+	}
+
+	@Override
+	public void rest() {
+		System.out.println("eagle takes rest");
+		
+	}
+
 }

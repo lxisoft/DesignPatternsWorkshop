@@ -19,4 +19,16 @@ public class EagleAdapterNrj extends AnimalNrj {
 	public void walk() {
 		this.eagle.fly();
 	}
+
+	@Override
+	public void fight() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void rest() {
+		// TODO Auto-generated method stub
+		
+	}
 }

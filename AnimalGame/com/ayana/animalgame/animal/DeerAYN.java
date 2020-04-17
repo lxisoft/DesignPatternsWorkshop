@@ -11,34 +11,19 @@ public class DeerAYN implements AnimalAYN{
 	@Override
 	public int speedAYN(int initialSpeed) {
 		// TODO Auto-generated method stub
-		return initialSpeed+40*2;
+		return 46-initialSpeed;
 	}
 
 	@Override
-	public void colorAYN() {
+	public void doActionAYN(StateAYN state) {
 		// TODO Auto-generated method stub
-		System.out.println("brown\n");
-		
-	}
-
-	@Override
-	public void doAction(StateContextAYN context) {
-		// TODO Auto-generated method stub
-		
-		System.out.println("Deer is in running state");
-		context.setState(this);
-		
+		System.out.print("The deer is in walking state : ");
+		state.setStateAYN(this);
 	}
 	
 	public String toString()
 	{
-		return "Running state";
-	}
-
-	@Override
-	public void strengthAYN() {
-		// TODO Auto-generated method stub
-		System.out.println("strength of deer is 45");
+		return "Walking state";
 	}
 
 }

@@ -1,6 +1,6 @@
 package com.ayana.animalgame.animal;
 
-public class TigerAYN implements AnimalAYN,CarnivoresAYN{
+public class TigerAYN implements AnimalAYN{
 
 	@Override
 	public void nameAYN() {
@@ -9,35 +9,22 @@ public class TigerAYN implements AnimalAYN,CarnivoresAYN{
 	}
 
 	@Override
-	public void eat() {
-		// TODO Auto-generated method stub
-		System.out.println("eat meat");
-		
-	}
-
-	@Override
 	public int speedAYN(int initialSpeed) {
 		// TODO Auto-generated method stub
-		return initialSpeed+50*2;
+		return initialSpeed+10*5;
 	}
 
 	@Override
-	public void colorAYN() {
+	public void doActionAYN(StateAYN state) {
 		// TODO Auto-generated method stub
 		
+		System.out.print("The tiger is in running state : ");
+		state.setStateAYN(this);
 	}
-
-	@Override
-	public void doAction(StateContextAYN context) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void strengthAYN() {
-		// TODO Auto-generated method stub
-		System.out.println("strenth of tiger is 55");
-		
+	
+	public String toString()
+	{
+		return "Running state";
 	}
 
 }

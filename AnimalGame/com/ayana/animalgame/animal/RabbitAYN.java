@@ -13,25 +13,19 @@ public class RabbitAYN implements AnimalAYN{
 	@Override
 	public int speedAYN(int initialSpeed) {
 		// TODO Auto-generated method stub
-		return initialSpeed+38*2;
+		return 40+initialSpeed;
 	}
 
 	@Override
-	public void colorAYN() {
+	public void doActionAYN(StateAYN state) {
 		// TODO Auto-generated method stub
-		
+		System.out.print("The rabbit is in sitting state : ");
+		state.setStateAYN(this);
 	}
-
-	@Override
-	public void doAction(StateContextAYN context) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void strengthAYN() {
-		// TODO Auto-generated method stub
-		System.out.println("strength of rabbit is 40");
+	
+	public String toString()
+	{
+		return "Sitting state";
 	}
 
 }

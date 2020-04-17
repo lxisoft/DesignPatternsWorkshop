@@ -6,10 +6,6 @@ public interface AnimalAYN {
 	
 	public int speedAYN(int initialSpeed);
 	
-	public void colorAYN();
-	
-	public void doAction(StateContextAYN context);
-	
-	public void strengthAYN();
+	public void doActionAYN(StateAYN state);
 
 }

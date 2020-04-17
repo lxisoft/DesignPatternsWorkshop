@@ -11,26 +11,18 @@ public class LionAYN implements AnimalAYN{
 	@Override
 	public int speedAYN(int initialSpeed) {
 		// TODO Auto-generated method stub
-		return initialSpeed+42*2;
+		return 60-10*initialSpeed;
 	}
 
 	@Override
-	public void colorAYN() {
+	public void doActionAYN(StateAYN state) {
 		// TODO Auto-generated method stub
-		
+		System.out.print("The lion is in standing state : ");
+		state.setStateAYN(this);
 	}
 
-	@Override
-	public void doAction(StateContextAYN context) {
-		// TODO Auto-generated method stub
-		
+	public String toString()
+	{
+		return "Standing state";
 	}
-
-	@Override
-	public void strengthAYN() {
-		// TODO Auto-generated method stub
-		System.out.println("strength of lion is 60");
-		
-	}
-
 }

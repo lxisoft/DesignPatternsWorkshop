@@ -25,11 +25,6 @@ public class MobileBasedAnimalAYN extends AbstractFactoryAYN{
 			return new RabbitAYN();
 		}
 		
-		else if(animalType.equals("Bear"))
-		{
-			return new BearAYN();
-		}
-		
 		else
 		{
 			return null;

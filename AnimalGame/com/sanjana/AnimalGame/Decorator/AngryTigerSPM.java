@@ -1,11 +1,14 @@
 package com.sanjana.AnimalGame.Decorator;
-
+/**
+ * @author sanjana p
+ *
+ */
 import com.sanjana.AnimalGame.Animal.AnimalSPM;
 
-public class IotBasedAnimalSPM extends AddOnDecoratorSPM{
+public class AngryTigerSPM extends AddOnDecoratorSPM{
 	
 	AnimalSPM animal;
-	public IotBasedAnimalSPM(AnimalSPM a) {
+	public AngryTigerSPM(AnimalSPM a) {
 		this.animal = a;
 		
 	}

@@ -8,6 +8,7 @@ import com.sanjana.AnimalGame.Iterator.AnimalIteratorSPM;
 import com.sanjana.AnimalGame.Animal.AnimalSPM;
 import com.sanjana.AnimalGame.Behaviour.*;
 import com.sanjana.AnimalGame.Configuration.AnimalConfigurationSPM;
+import com.sanjana.AnimalGame.Decorator.AngryDeerSPM;
 /**
  * @author sanjana p
  *
@@ -16,6 +17,7 @@ public class ForestSPM{
 	
 	ArrayList<AnimalSPM> animals = new ArrayList<>();
 	private volatile static ForestSPM forest;
+	AnimalSPM deer;
 	 
 	private ForestSPM() {
 		
@@ -37,6 +39,7 @@ public class ForestSPM{
 		String type = instance.getType();
 		System.out.println("The animal of type " +type);
 		AnimalFactorySPM animal = null;
+		AngryDeerSPM angdeer = null;
 		switch (type) {
 		case "iot":
 			animal = new IotbasedFactorySPM();
@@ -60,18 +63,24 @@ public class ForestSPM{
 			animals.add(animal.getAnimalSPM("lion"));
 			break;
 		}
+//to check weather feature is visible
+		System.out.println(animal.getAnimalSPM("tiger").featureSPM());
+		System.out.println(animal.getAnimalSPM("lion").featureSPM());
+		System.out.println(animal.getAnimalSPM("rabbit").featureSPM());
+		System.out.println(animal.getAnimalSPM("deer").featureSPM());
+//to check weather strength is visible
+		System.out.println(animal.getAnimalSPM("tiger").strengthSPM());
+		System.out.println(animal.getAnimalSPM("lion").strengthSPM());
+		System.out.println(animal.getAnimalSPM("rabbit").strengthSPM());
+		System.out.println(animal.getAnimalSPM("deer").strengthSPM());
 
-//		System.out.println(animal.getAnimalSPM("tiger").featureSPM());
-//		System.out.println(animal.getAnimalSPM("lion").featureSPM());
-//		System.out.println(animal.getAnimalSPM("rabbit").featureSPM());
-//		System.out.println(animal.getAnimalSPM("deer").featureSPM());
+		//
+		System.out.println("*****************************");
+		angdeer = new AngryDeerSPM(deer);
+		System.out.println("angry deer strength" +angdeer.strengthSPM());
 		
 		viewAnimalsSPM();
 	}
-//public void viewAnimalsSPM(ArrayList<AnimalSPM> animals) {
-//	for(AnimalSPM animal:animals) {
-//		System.out.println(animal);
-//	}
 	
 	public void viewAnimalsSPM() {
 		AnimalIteratorSPM animaliterator = new AnimalIteratorSPM(animals);

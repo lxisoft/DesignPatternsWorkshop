@@ -4,9 +4,13 @@ package com.sanjana.AnimalGame.Decorator;
  *
  */
 import com.sanjana.AnimalGame.Animal.AnimalSPM;
+import com.sanjana.AnimalGame.Factory.AnimalFactorySPM;
+import com.sanjana.AnimalGame.Factory.IotbasedFactorySPM;
 
 public class AngryDeerSPM extends AddOnDecoratorSPM{
 	AnimalSPM animal;
+	AnimalFactorySPM animalfac;
+	
 
 	public AngryDeerSPM(AnimalSPM animal) {
 		this.animal = animal;
@@ -15,7 +19,8 @@ public class AngryDeerSPM extends AddOnDecoratorSPM{
 	@Override
 	public int strengthSPM() {
 		// TODO Auto-generated method stub
-		return this.animal.strengthSPM()+(int)(Math.random()*80);
+		animalfac = new IotbasedFactorySPM();
+		return this.animalfac.getAnimalSPM("deer").strengthSPM()+(int)(Math.random()*80);
 	}
 
 	@Override

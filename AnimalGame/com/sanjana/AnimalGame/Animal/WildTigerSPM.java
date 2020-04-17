@@ -19,6 +19,6 @@ public class WildTigerSPM extends AnimalSPM{
 		return "tiger has strips";
 	}
 	public int strengthSPM() {
-		return (int)(Math.random()*200);
+		return (int)(Math.random()*200);	
 	}
 	}

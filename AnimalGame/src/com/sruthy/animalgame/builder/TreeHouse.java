@@ -4,29 +4,32 @@ package com.sruthy.animalgame.builder;
 
 public class TreeHouse {
 
-	private String tree;
-	private String climber;
-	private String door;
+	private String treeSKC;
+	private String climberSKC;
+	private String doorSKC;
 	
 	
-	public String getTree() {
-		return tree;
+	public String getTreeSKC() {
+		return treeSKC;
 	}
-	public void setTree(String tree) {
-		this.tree = tree;
+	public void setTreeSKC(String treeSKC) {
+		this.treeSKC = treeSKC;
 	}
-	public String getClimber() {
-		return climber;
+	public String getClimberSKC() {
+		return climberSKC;
 	}
-	public void setClimber(String climber) {
-		this.climber = climber;
+	public void setClimberSKC(String climberSKC) {
+		this.climberSKC = climberSKC;
 	}
-	public String getDoor() {
-		return door;
+	public String getDoorSKC() {
+		return doorSKC;
 	}
-	public void setDoor(String door) {
-		this.door = door;
+	public void setDoorSKC(String doorSKC) {
+		this.doorSKC = doorSKC;
 	}
+	
+	
+	
 	
 	
 	

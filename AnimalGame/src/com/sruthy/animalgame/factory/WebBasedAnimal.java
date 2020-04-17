@@ -1,10 +1,6 @@
 package com.sruthy.animalgame.factory;
 
-import com.sruthy.animalgame.behaviour.RunBehavior;
 import com.sruthy.animalgame.behaviour.RunWithAimOfPray;
-import com.sruthy.animalgame.iotanimal.Lion;
-import com.sruthy.animalgame.iotanimal.Monkey;
-import com.sruthy.animalgame.iotanimal.Tiger;
 import com.sruthy.animalgame.webbasedanimal.Bear;
 import com.sruthy.animalgame.webbasedanimal.Dog;
 import com.sruthy.animalgame.webbasedanimal.Elephant;

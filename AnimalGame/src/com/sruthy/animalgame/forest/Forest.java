@@ -20,7 +20,7 @@ import com.sruthy.animalgame.utilities.AnimalIterator;
  * @author sruthi
  * 
  * Implemented Singleton Pattern 
- * Animal acts as an animal abstract factory
+ * 
  * IOTAnimal and WebBasedAnimal are factory methods
  * Implemented Builder Pattern and Iterator Pattern
  */
@@ -28,9 +28,17 @@ public class Forest {
 
 	String name;
 	
-	ArrayList<Animal> animalList;
+	private ArrayList<Animal> animalListSKC;
 	
-	private TreeHouseBuilder treeHouseBuilderSKC;
+	public ArrayList<Animal> getAnimalListSKC() {
+		return animalListSKC;
+	}
+
+	public void setAnimalListSKC(ArrayList<Animal> animalListSKC) {
+		this.animalListSKC = animalListSKC;
+	}
+
+	TreeHouseBuilder treeHouseBuilderSKC;
 	
 	Scanner s = new Scanner(System.in);
 
@@ -39,10 +47,10 @@ public class Forest {
 	private Forest() {
 
 		name = " Amazon";
-		animalList= new ArrayList<Animal>();
+		animalListSKC= new ArrayList<Animal>();
 	}
 
-	public static Forest getInstance() {
+	public static Forest getInstanceSKC() {
 		
 		return forestSKC;
 	}
@@ -54,69 +62,66 @@ public class Forest {
 	 * 
 	 * Implemented Factory Pattern
 	 */
-	public void createAnimals() {
+	public void createAnimalsSKC() {
 		
 		String animalType = null;
-		Animal animalFactory;
-		
+		Animal animalFactorySKC;
+
 		try {
-			
-			animalType =new AnimalTypeConfig().getAnimalType();
-		
+
+			animalType = new AnimalTypeConfig().getAnimalType();
+
 		} catch (IOException e) {
-		
+
 			e.printStackTrace();
 		}
-		
-		
-		switch(animalType) {
-		
+
+		switch (animalType) {
+
 		case "iot":
-			animalFactory = new IOTAnimal();
-			animalList.add(animalFactory.createAnimalsAndBehavioursSKC("tiger"));
-			animalList.add(animalFactory.createAnimalsAndBehavioursSKC("lion"));
-			animalList.add(animalFactory.createAnimalsAndBehavioursSKC("monkey"));
-			
+			animalFactorySKC = new IOTAnimal();
+			animalListSKC.add(animalFactorySKC.createAnimalsAndBehavioursSKC("tiger"));
+			animalListSKC.add(animalFactorySKC.createAnimalsAndBehavioursSKC("lion"));
+			animalListSKC.add(animalFactorySKC.createAnimalsAndBehavioursSKC("monkey"));
+
 			System.out.println("\nCreated IOT animals successfully...");
-				
+
 			break;
 
 		case "web":
-			
-			animalFactory = new WebBasedAnimal();
-			animalList.add(animalFactory.createAnimalsAndBehavioursSKC("bear"));
-			animalList.add(animalFactory.createAnimalsAndBehavioursSKC("dog"));
-			animalList.add(animalFactory.createAnimalsAndBehavioursSKC("elephant"));
-				
+
+			animalFactorySKC = new WebBasedAnimal();
+			animalListSKC.add(animalFactorySKC.createAnimalsAndBehavioursSKC("bear"));
+			animalListSKC.add(animalFactorySKC.createAnimalsAndBehavioursSKC("dog"));
+			animalListSKC.add(animalFactorySKC.createAnimalsAndBehavioursSKC("elephant"));
+
 			System.out.println("\nCreated Web Based animals successfully...");
-			
+
 			break;
-				
+
 		case "mobile":
-			animalFactory = new MobileBasedAnimal();
-			System.out.println(animalFactory.createAnimalsAndBehavioursSKC("deer"));
-			animalList.add((Animal)animalFactory.createAnimalsAndBehavioursSKC("deer"));
-			animalList.add((Animal)animalFactory.createAnimalsAndBehavioursSKC("gorilla"));
-			animalList.add((Animal)animalFactory.createAnimalsAndBehavioursSKC("horse"));
+			animalFactorySKC = new MobileBasedAnimal();
+			animalListSKC.add(animalFactorySKC.createAnimalsAndBehavioursSKC("deer"));
+			animalListSKC.add(animalFactorySKC.createAnimalsAndBehavioursSKC("gorilla"));
+			animalListSKC.add(animalFactorySKC.createAnimalsAndBehavioursSKC("horse"));
 			System.out.println("\nCreated Mobile Based animals successfully...");
-			
+
 			break;
 
 		}
 
-		displayAnimals();
+		displayAnimalsSKC();
 	}
-
 	
 	/**
 	 * @author sruthi
 	 * 
 	 * Implemented Iterator Pattern
 	 */
-	private void displayAnimals() {
+	private void displayAnimalsSKC() {
 	
 		System.out.println("\nNow the animals in the forest are :\n");
-		AnimalIterator animalIterator = new AnimalIterator(animalList);
+		AnimalIterator animalIterator = new AnimalIterator(animalListSKC);
 		
 		while (animalIterator.hasNext()) {
 			System.out.println(animalIterator.next().toString());
@@ -130,11 +135,11 @@ public class Forest {
 		return name;
 	}
 	
-	public void knowAnimalBehaviours() {
+	public void knowAnimalBehavioursSKC() {
 
 	
 			System.out.println("\n know the behaviour of different animal types\n-----------------");
-			for (Animal animal : animalList) {
+			for (Animal animal : animalListSKC) {
 				System.out.println("\n"+animal.toString()+"  :");
 				animal.getRunBehaviourSKC().run();
 				
@@ -147,20 +152,12 @@ public class Forest {
 	 * Implemented Builder Pattern
 	 */
 
-	public void constructTreeHouse() {
+	public void constructTreeHouseSKC() {
 		treeHouseBuilderSKC= new AmazonTreeHouseBuilder();
-		this.treeHouseBuilderSKC.buildClimber();
-		this.treeHouseBuilderSKC.buildDoor();
-		this.treeHouseBuilderSKC.buildTree();
+		this.treeHouseBuilderSKC.buildClimberSKC();
+		this.treeHouseBuilderSKC.buildDoorSKC();
+		this.treeHouseBuilderSKC.buildTreeSKC();
 		System.out.println("\nBuild Tree House Successfully..");
-	}
-
-	public TreeHouseBuilder getTreeHouseBuilderSKC() {
-		return treeHouseBuilderSKC;
-	}
-
-	public void setTreeHouseBuilderSKC(TreeHouseBuilder treeHouseBuilderSKC) {
-		this.treeHouseBuilderSKC = treeHouseBuilderSKC;
 	}
 
 }

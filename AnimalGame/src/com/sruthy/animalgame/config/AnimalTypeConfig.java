@@ -25,7 +25,7 @@ public class AnimalTypeConfig {
 			
 			} else {
 			
-				throw new FileNotFoundException();
+				throw new FileNotFoundException("\n\nproperty file '" + propertiesFileName + "' not found in the classpath\n\n");
 			}
 			
 			result = properties.getProperty("animalType");

@@ -9,10 +9,10 @@ package com.sruthy.animalgame.builder;
  */
 public interface TreeHouseBuilder {
 	
-	public void buildTree();
-	public void buildClimber();
-	public void buildDoor();
+	public void buildTreeSKC();
+	public void buildClimberSKC();
+	public void buildDoorSKC();
 	
-	public TreeHouse getTreeHouse(); 
+	public TreeHouse getTreeHouseSKC(); 
 	
 }

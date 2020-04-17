@@ -13,22 +13,22 @@ import com.sruthy.animalgame.factory.Animal;
  */
 public class AnimalIterator implements Iterator<Animal> {
 
-	ArrayList<Animal> animals;
+	ArrayList<Animal> animalsSKC;
 	int position = 0;
 
-	public AnimalIterator(ArrayList<Animal> animals) {
-		this.animals = animals;
+	public AnimalIterator(ArrayList<Animal> animalsSKC) {
+		this.animalsSKC = animalsSKC;
 	}
 
 	public Animal next() {
-		Animal animal = animals.get(position);
+		Animal animal = animalsSKC.get(position);
 		position = position + 1;
 		return animal;
 	}
 
 	public boolean hasNext() {
 		
-		if (position >= animals.size() || animals.get(position) == null) {
+		if (position >= animalsSKC.size() || animalsSKC.get(position) == null) {
 			
 			return false;
 	

@@ -10,38 +10,38 @@ package com.sruthy.animalgame.builder;
 public class AmazonTreeHouseBuilder implements TreeHouseBuilder{
 
 
-	private TreeHouse treeHouse;
+	private TreeHouse treeHouseSKC;
 	
 
 	public AmazonTreeHouseBuilder() {
 		
-		treeHouse = new TreeHouse();
+		treeHouseSKC = new TreeHouse();
 	}
 
 	@Override
-	public void buildTree() {
+	public void buildTreeSKC() {
 		
-		treeHouse.setTree("Teak Tree");
+		treeHouseSKC.setTreeSKC("Teak Tree");
 	}
 
 	@Override
-	public void buildClimber() {
-		treeHouse.setClimber("climber made of bamboo");
+	public void buildClimberSKC() {
+		treeHouseSKC.setClimberSKC("climber made of bamboo");
 		
 	}
 
 	@Override
-	public void buildDoor() {
+	public void buildDoorSKC() {
 	
-		treeHouse.setDoor("Mahagani Door");
+		treeHouseSKC.setDoorSKC("Mahagani Door");
 	}
 	
 	
-	public TreeHouse getTreeHouse() {
+	public TreeHouse getTreeHouseSKC() {
 		
-		return this.treeHouse;
+		return this.treeHouseSKC;
 	}
-	
+
 	
 
 }

@@ -11,10 +11,10 @@ import com.sruthy.animalgame.factory.IOTAnimal;
 
 public class IOTDecorator extends IOTAnimal{
 
-		IOTAnimal animal;
+		IOTAnimal animalSKC;
 
-		public IOTDecorator(IOTAnimal animal) {
-			this.animal = animal;
+		public IOTDecorator(IOTAnimal animalSKC) {
+			this.animalSKC = animalSKC;
 		}
 		
 		

@@ -10,13 +10,13 @@ import com.sruthy.animalgame.factory.IOTAnimal;
 
 public class MachineDecorator extends IOTDecorator{
 
-	public MachineDecorator(IOTAnimal animal) {
-		super(animal);
+	public MachineDecorator(IOTAnimal animalSKC) {
+		super(animalSKC);
 	}
 
 	@Override
 	public void eat() {
-		animal.eat();
+		animalSKC.eat();
 		System.out.println("Eat with the help of machines");
 		charged();
 	}

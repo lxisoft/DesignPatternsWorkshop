@@ -22,6 +22,21 @@ package com.sarangi.animalgame.animal;
  */
 public class IOTBruceTigerSBA extends TigerSBA {
 	
+	/**
+	 * @param name
+	 * @param description
+	 */
+	public IOTBruceTigerSBA(String name, String description) {
+		super(name, description);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public IOTBruceTigerSBA()
+	{
+		super();
+		
+	}
+
 	@Override
 	public String toString() {
 		return "IOT-Tiger";

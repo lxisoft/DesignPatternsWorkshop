@@ -33,7 +33,10 @@ public class TddSBA {
 	public static void main(String[] args) {
 				
 		GameSBA zooGame = GameSBA.getInstanceSBA();
+		
 		   zooGame.setupStageSBA();
+		   
+		   zooGame.showAllZooWithAnimalsInGame();
 		   
 		   StateSBA todoStateSBA = new TodoStateSBA(zooGame);
 		   zooGame.setState(todoStateSBA);		   

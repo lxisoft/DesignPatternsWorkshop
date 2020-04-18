@@ -22,6 +22,22 @@ package com.sarangi.animalgame.animal;
  */
 public class TigerSBA extends AnimalSBA {
 
+	/**
+	 * @param name
+	 * @param description
+	 */
+	public TigerSBA(String name, String description) {
+		super();
+		this.setName(name);
+		this.setDescription(description);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public TigerSBA()
+	{
+		super();
+	}
+
 	@Override
 	public String toString() {
 		return "Tiger";

@@ -16,6 +16,7 @@
 package com.sarangi.animalgame.zoo;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import com.sarangi.animalgame.animal.AnimalSBA;
@@ -30,8 +31,73 @@ import com.sarangi.animalgame.animalFactory.IndianFactorySBA;
  * @author Owner
  * ,
  */
-public class IndianZooSBA extends ZooSBA{
+public class IndianZooSBA extends ZooSBA {
 
+    List<ZooComponentSBA> zooComponents = new ArrayList<ZooComponentSBA>();
+	
+	private String name;
+	private String description;
+	
+	/**
+	 * @param name
+	 * @param description
+	 */
+	public IndianZooSBA(String name, String description) {
+		super();
+		this.name = name;
+		this.description = description;
+	}
+	
+	public IndianZooSBA()
+	{
+		super();
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}	
+
+	public void add(ZooComponentSBA zooComponent){
+		zooComponents.add(zooComponent) ;
+	}
+	
+	public void remove(ZooComponentSBA zooComponent){
+		zooComponents.remove(zooComponent) ;
+	}
+	
+	public ZooComponentSBA getChild(int i){
+		return (ZooComponentSBA)zooComponents.get(i);
+	}
+		
+	public void print(){
+		
+		System.out.println("\n\t Zoo Name -->"+getName()+"\n\t Description-->"+getDescription());
+		System.out.println("\n\t-----------------------------------------------------------------------");
+			
+			Iterator<ZooComponentSBA> iterator = zooComponents.iterator();
+			while (iterator.hasNext()) {
+				ZooComponentSBA zooComponent = (ZooComponentSBA)iterator.next();
+				zooComponent.print();
+				
+			}
+			
+		}
+
+	
+	
+	
 	
 	@Override
 	public List<AnimalSBA> createAnimalsSBA(List<String> animalNames) {

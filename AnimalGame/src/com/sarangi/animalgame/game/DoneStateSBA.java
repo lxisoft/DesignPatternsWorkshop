@@ -54,10 +54,9 @@ public class DoneStateSBA implements StateSBA{
 	 */
 	@Override
 	public void publishingWinnerSBA() {
-
-		System.out.println("\n\t\t\t-------------------- CONGRAGULATIONS ------------------------");
+		
 		System.out.println("\n\t------------------------The Winner is -> "+gameSBA.getWinnerAnimalSBA()+" Name is ->"+gameSBA.getWinnerAnimalSBA().getName()+"---------------------------------");
-		System.out.println("\n\t\t\t--------------------------- END --------------------------");
+		
 		//gameSBA.setState(gameSBA.getTodoStateSBA());  
 		
 	}

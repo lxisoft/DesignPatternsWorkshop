@@ -16,22 +16,27 @@
 package com.sarangi.animalgame.animal;
 
 import com.sarangi.animalgame.animalBehaviour.AnimalBehaviourSBA;
+import com.sarangi.animalgame.zoo.ZooComponentSBA;
 
 /**
  * Define animal in this game
  * @author SarangiBalu A
  * ,
  */
-public abstract class AnimalSBA {
+public abstract class AnimalSBA extends ZooComponentSBA{
 	
 	/**
      * name  of animal
      */
 	private String name;
+	private String description;	
+	
 	
 	private AnimalBehaviourSBA animalBehaviourSBA;
 	
 	
+	
+
 	public AnimalBehaviourSBA getAnimalBehaviourSBA() {
 		return animalBehaviourSBA;
 	}
@@ -63,6 +68,14 @@ public abstract class AnimalSBA {
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 	

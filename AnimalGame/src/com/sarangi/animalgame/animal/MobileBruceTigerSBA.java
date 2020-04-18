@@ -22,6 +22,20 @@ package com.sarangi.animalgame.animal;
  */
 public class MobileBruceTigerSBA extends TigerSBA {
 	
+	/**
+	 * @param name
+	 * @param description
+	 */
+	public MobileBruceTigerSBA(String name, String description) {
+		super(name, description);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public MobileBruceTigerSBA()
+	{
+		super();
+	}
+
 	@Override
 	public String toString() {
 		return "Mobile-Tiger";

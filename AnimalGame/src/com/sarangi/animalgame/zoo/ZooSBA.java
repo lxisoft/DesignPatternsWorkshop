@@ -17,6 +17,7 @@ package com.sarangi.animalgame.zoo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 import com.sarangi.animalgame.animal.AnimalSBA;
@@ -27,8 +28,11 @@ import com.sarangi.animalgame.animal.AnimalSBA;
  * @author Owner
  * 
  */
-public abstract class ZooSBA {
-
+public abstract class ZooSBA extends ZooComponentSBA{
+	
+	List<ZooComponentSBA> zooComponents = new ArrayList<ZooComponentSBA>();
+	
+	
 	/**
 	 * @return
 	 */
@@ -54,5 +58,32 @@ public abstract class ZooSBA {
 		}
 	         
 	}
+
+	public void add(ZooComponentSBA zooComponent){
+		zooComponents.add(zooComponent) ;
+	}
+	
+	public void remove(ZooComponentSBA zooComponent){
+		zooComponents.remove(zooComponent) ;
+	}
+	
+	public ZooComponentSBA getChild(int i){
+		return (ZooComponentSBA)zooComponents.get(i);
+	}
+		
+	public void print(){
+		
+			//System.out.println("\n\t"+getName()+" , "+getDescription());			
+			System.out.println("\n\t-----------------------------------------------------------------------");
+			
+			Iterator<ZooComponentSBA> iterator = zooComponents.iterator();
+			while (iterator.hasNext()) {
+				ZooComponentSBA zooComponent = (ZooComponentSBA)iterator.next();
+				zooComponent.print();
+				
+			}
+			
+		}
+		
 
 }

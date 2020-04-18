@@ -19,6 +19,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.sarangi.animalgame.animal.AnimalSBA;
+import com.sarangi.animalgame.animal.AsiaticLionSBA;
+import com.sarangi.animalgame.animal.BruceTigerSBA;
+import com.sarangi.animalgame.animal.MachaliTigerSBA;
 import com.sarangi.animalgame.forest.AmericanForestSBA;
 import com.sarangi.animalgame.forest.ForestSBA;
 import com.sarangi.animalgame.forest.IndianForestSBA;
@@ -26,9 +29,17 @@ import com.sarangi.animalgame.stage.CarpetSpreadingSBA;
 import com.sarangi.animalgame.stage.FencingSBA;
 import com.sarangi.animalgame.stage.GameStageSBA;
 import com.sarangi.animalgame.stage.StageOneSBA;
-
+import com.sarangi.animalgame.zoo.AmericanZooSBA;
+import com.sarangi.animalgame.zoo.IndianZooSBA;
+import com.sarangi.animalgame.zoo.JaipurZooSBA;
+import com.sarangi.animalgame.zoo.KanpurZooSBA;
+import com.sarangi.animalgame.zoo.MaharajbagZooSBA;
+import com.sarangi.animalgame.zoo.MilwaukeeCountyZooSBA;
+import com.sarangi.animalgame.zoo.WildlifeWorldZooSBA;
 import com.sarangi.animalgame.zoo.ZooAdapterSBA;
+import com.sarangi.animalgame.zoo.ZooComponentSBA;
 import com.sarangi.animalgame.zoo.ZooSBA;
+import com.sarangi.animalgame.zoo.ZooWorldSBA;
 
 /**
  * displays Zoo animals using AbstractFactory and Factory method design patterns.
@@ -79,6 +90,47 @@ public class GameSBA {
 		
 	}
 	
+	public void showAllZooWithAnimalsInGame()
+	{
+		
+		ZooComponentSBA indianZoo = new IndianZooSBA("Indian Zoo","India World Best Zoo");
+		ZooComponentSBA americanZoo = new AmericanZooSBA("American Zoo","America World Best Zoo");
+		
+		ZooComponentSBA jaipurZoo = new JaipurZooSBA("Jaipur Zoo","India Best Zoo");
+		ZooComponentSBA kanpurZoo = new KanpurZooSBA("Kanpur Zoo","India Jaipur Best Zoo");
+		ZooComponentSBA maharajbagZoo = new MaharajbagZooSBA("Maharajbag Zoo","India Best Zoo");
+		
+		ZooComponentSBA milwaukeeCountyZoo = new MilwaukeeCountyZooSBA("MilwaukeeCounty Zoo","America Best Zoo");
+		ZooComponentSBA wildlifeWorldZoo = new WildlifeWorldZooSBA("WildlifeWorld Zoo","America Best Zoo");
+		
+		ZooComponentSBA zoo = new ZooWorldSBA("All Zoo","All Animals Combined");
+		
+		zoo.add(indianZoo);
+		zoo.add(americanZoo);
+		
+		indianZoo.add(new MachaliTigerSBA("Machali","India Tiger"));
+		maharajbagZoo.add(new MachaliTigerSBA("Machali","MaharajBag Tiger"));
+		
+		jaipurZoo.add(new BruceTigerSBA("Bruce","Jaipur Tiger"));
+		kanpurZoo.add(new AsiaticLionSBA("Asiatic","Kanpur Lion"));
+		jaipurZoo.add(kanpurZoo);
+		
+		indianZoo.add(maharajbagZoo);				
+		indianZoo.add(jaipurZoo);
+		
+		
+		americanZoo.add(new AsiaticLionSBA("Asiatic","American Lion"));
+		milwaukeeCountyZoo.add(new MachaliTigerSBA("Machali","milwaukeeCounty Tiger"));
+		wildlifeWorldZoo.add(new AsiaticLionSBA("Asiatic","wildlifeWorld Lion"));
+		
+		americanZoo.add(milwaukeeCountyZoo);
+		americanZoo.add(wildlifeWorldZoo);
+		
+		PresenterSBA presenter = new PresenterSBA(zoo);
+		presenter.printAllZooWithAnimals();		
+		
+		
+	}
 	
 	
 	public AnimalSBA getWinnerAnimalSBA() {

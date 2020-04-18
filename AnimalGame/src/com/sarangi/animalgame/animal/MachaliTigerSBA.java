@@ -15,6 +15,12 @@
  */
 package com.sarangi.animalgame.animal;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import com.sarangi.animalgame.zoo.ZooComponentSBA;
+
 /**
  * TODO Provide a detailed description here
  * @author Owner
@@ -22,11 +28,51 @@ package com.sarangi.animalgame.animal;
  */
 public class MachaliTigerSBA extends TigerSBA {
 
+	List<ZooComponentSBA> zooComponents = new ArrayList<ZooComponentSBA>();
+	/**
+	 * @param name
+	 * @param description
+	 */
+	public MachaliTigerSBA(String name, String description) {
+		super(name, description);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public MachaliTigerSBA()
+	{
+		super();
+	}
+
 	@Override
 	public String toString() {
 		return "Tiger";
 	}
 	
+	public void add(ZooComponentSBA zooComponent){
+		zooComponents.add(zooComponent) ;
+	}
+	
+	public void remove(ZooComponentSBA zooComponent){
+		zooComponents.remove(zooComponent) ;
+	}
+	
+	public ZooComponentSBA getChild(int i){
+		return (ZooComponentSBA)zooComponents.get(i);
+	}
+		
+	public void print(){
+		
+		System.out.println("\n\t Animal Name -->"+getName()+"\n\t Description-->"+getDescription());
+		System.out.println("\n\t-----------------------------------------------------------------------");
+			
+			Iterator<ZooComponentSBA> iterator = zooComponents.iterator();
+			while (iterator.hasNext()) {
+				ZooComponentSBA zooComponent = (ZooComponentSBA)iterator.next();
+				zooComponent.print();
+				
+			}
+			
+		}
 	
 
 }

@@ -22,6 +22,20 @@ package com.sarangi.animalgame.animal;
  */
 public class MobileAsiaticLionSBA extends LionSBA {
 	
+	/**
+	 * @param name
+	 * @param description
+	 */
+	public MobileAsiaticLionSBA(String name, String description) {
+		super(name, description);
+		// TODO Auto-generated constructor stub
+	}
+
+	public MobileAsiaticLionSBA()
+	{
+		super();
+	}
+	
 	@Override
 	public String toString() {
 		return "Mobile-Tiger";

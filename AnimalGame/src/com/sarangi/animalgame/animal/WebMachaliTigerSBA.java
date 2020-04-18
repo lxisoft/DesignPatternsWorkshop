@@ -22,6 +22,20 @@ package com.sarangi.animalgame.animal;
  */
 public class WebMachaliTigerSBA extends TigerSBA {
 	
+	/**
+	 * @param name
+	 * @param description
+	 */
+	public WebMachaliTigerSBA(String name, String description) {
+		super(name, description);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public WebMachaliTigerSBA()
+	{
+		super();
+	}
+
 	@Override
 	public String toString() {
 		return "Web-Tiger";

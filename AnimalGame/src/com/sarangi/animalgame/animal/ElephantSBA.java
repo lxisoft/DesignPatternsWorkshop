@@ -22,4 +22,15 @@ package com.sarangi.animalgame.animal;
  */
 public class ElephantSBA extends AnimalSBA{
 
+	/**
+	 * @param name
+	 * @param description
+	 */
+	public ElephantSBA(String name, String description) {
+		super();
+		this.setName(name);
+		this.setDescription(description);
+		// TODO Auto-generated constructor stub
+	}
+
 }

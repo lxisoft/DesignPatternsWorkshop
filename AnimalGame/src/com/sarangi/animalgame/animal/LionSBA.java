@@ -21,5 +21,26 @@ package com.sarangi.animalgame.animal;
  * ,
  */
 public class LionSBA extends AnimalSBA{
+	
+	/**
+	 * @param name
+	 * @param description
+	 */
+	public LionSBA(String name, String description) {
+		super();
+		this.setName(name);
+		this.setDescription(description);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public LionSBA()
+	{
+		super();
+	}
+
+	@Override
+	public String toString() {
+		return "Lion";
+	}
 
 }

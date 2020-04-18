@@ -22,4 +22,15 @@ package com.sarangi.animalgame.animal;
  */
 public class BisonSBA extends AnimalSBA{
 
+	/**
+	 * @param name
+	 * @param description
+	 */
+	public BisonSBA(String name, String description) {
+		super();
+		this.setName(name);
+		this.setDescription(description);
+		// TODO Auto-generated constructor stub
+	}
+
 }

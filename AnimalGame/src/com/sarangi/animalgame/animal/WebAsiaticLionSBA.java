@@ -22,6 +22,20 @@ package com.sarangi.animalgame.animal;
  */
 public class WebAsiaticLionSBA extends LionSBA {
 	
+	/**
+	 * @param name
+	 * @param description
+	 */
+	public WebAsiaticLionSBA(String name, String description) {
+		super(name, description);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public WebAsiaticLionSBA()
+	{
+		super();
+	}
+
 	@Override
 	public String toString() {
 		return "Web-Lion";

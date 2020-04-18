@@ -22,6 +22,20 @@ package com.sarangi.animalgame.animal;
  */
 public class IOTPantheraAtroxLionSBA extends LionSBA {
 	
+	/**
+	 * @param name
+	 * @param description
+	 */
+	public IOTPantheraAtroxLionSBA(String name, String description) {
+		super(name, description);
+		// TODO Auto-generated constructor stub
+	}
+
+	public IOTPantheraAtroxLionSBA()
+	{
+		super();		
+	}
+	
 	@Override
 	public String toString() {
 		return "IOT-Lion";

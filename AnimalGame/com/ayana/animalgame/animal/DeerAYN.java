@@ -26,4 +26,11 @@ public class DeerAYN implements AnimalAYN{
 		return "Walking state";
 	}
 
+	@Override
+	public void colorAYN() {
+		// TODO Auto-generated method stub
+		System.out.print(" color : brown\n");
+		
+	}
+
 }

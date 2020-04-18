@@ -25,4 +25,11 @@ public class LionAYN implements AnimalAYN{
 	{
 		return "Standing state";
 	}
+
+	@Override
+	public void colorAYN() {
+		// TODO Auto-generated method stub
+		System.out.print(" color : yellow gold\n");
+		
+	}
 }

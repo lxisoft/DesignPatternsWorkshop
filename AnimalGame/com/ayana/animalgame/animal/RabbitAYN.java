@@ -28,4 +28,10 @@ public class RabbitAYN implements AnimalAYN{
 		return "Sitting state";
 	}
 
+	@Override
+	public void colorAYN() {
+		// TODO Auto-generated method stub
+		System.out.print(" color : white\n");
+	}
+
 }

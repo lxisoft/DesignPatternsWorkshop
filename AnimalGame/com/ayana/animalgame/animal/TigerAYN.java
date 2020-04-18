@@ -3,9 +3,9 @@ package com.ayana.animalgame.animal;
 public class TigerAYN implements AnimalAYN{
 
 	@Override
-	public void nameAYN() {
+	public String nameAYN() {
 		// TODO Auto-generated method stub
-		System.out.print(" tiger\n");
+		return "Tiger";
 	}
 
 	@Override

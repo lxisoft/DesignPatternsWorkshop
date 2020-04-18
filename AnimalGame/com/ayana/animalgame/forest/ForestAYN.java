@@ -9,6 +9,8 @@ import com.ayana.animalgame.animal.AnimalAYN;
 
 import com.ayana.animalgame.animal.AnimalFactoryProducerAYN;
 import com.ayana.animalgame.animal.GreyishBrownColorDecoratorAYN;
+import com.ayana.animalgame.animal.IteratorAYN;
+import com.ayana.animalgame.animal.NameRepositoryAYN;
 import com.ayana.animalgame.animal.ReddishBrownColorDecoratorAYN;
 import com.ayana.animalgame.animal.StateAYN;
 import com.ayana.animalgame.animal.StrategyAYN;
@@ -168,10 +170,14 @@ public class ForestAYN {
 	public void getIotBasedAnimalAYN()
 	{
 		System.out.println("Creating Iot based");
-		for(int i=0;i<animals.size();i++)
-		{
-			animals.get(i).nameAYN();
-		}
+		
+		NameRepositoryAYN nameRepository = new NameRepositoryAYN();
+		
+		for(IteratorAYN iter =nameRepository .getIterator(); iter.hasNext(animals);){
+	        
+			AnimalAYN a = (AnimalAYN)iter.next(animals);
+			System.out.println(a.nameAYN());
+	      } 	
 	}
 	
 	public void getMobileBasedAnimalAYN()

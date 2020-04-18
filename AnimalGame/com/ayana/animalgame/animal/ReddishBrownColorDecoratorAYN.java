@@ -19,8 +19,9 @@ public class ReddishBrownColorDecoratorAYN extends ColorDecoratorAYN{
 	}
 
 	@Override
-	public void nameAYN() {
+	public String nameAYN() {
 		// TODO Auto-generated method stub
+		return null;
 		
 	}
 

@@ -3,8 +3,7 @@ package com.anjali.animalgame.animal;
 import com.anjali.animalgame.observer.DangerSubject;
 import com.anjali.animalgame.observer.Observer;
 import com.anjali.animalgame.observer.Subject;
-import com.anjali.animalgame.strategy.impl.GrazeFood;
-import com.anjali.animalgame.strategy.impl.HuntFood;
+import com.anjali.animalgame.strategy.impl.Herbivore;
 
 /*
  * Observer class observing DangerSubject
@@ -20,13 +19,13 @@ public class RabbitANJ extends AnimalANJ implements Observer{
 		}
 
 	public RabbitANJ() {
-		foodEatBehaviour=new GrazeFood(); //setting strategy pattern behaviour
+		foodEatBehaviour=new Herbivore(); //setting strategy pattern behaviour
 	}
 
 	@Override
 	public void meetAnotherAnimalANJ(AnimalANJ animal2) {
 		
-		if(animal2.getFoodEatBehaviour() instanceof HuntFood){
+		/*if(animal2.getFoodEatBehaviour() instanceof HuntFood){
 			System.out.println("observer rabbit");
 			notifyDanger();
 			run(animal2);
@@ -39,12 +38,12 @@ public class RabbitANJ extends AnimalANJ implements Observer{
 			else{
 				System.out.println("Not valid");
 			}
-		
+	*/	
 	}
 
 	
 	public void graze() {
-		this.foodHunt();		//strategy behaviour invoked 	
+		this.eat();		//strategy behaviour invoked 	
 	}
 	
 	public void run(AnimalANJ animal){

@@ -1,18 +1,17 @@
 package com.anjali.animalgame.animal;
 
-import com.anjali.animalgame.strategy.impl.GrazeFood;
-import com.anjali.animalgame.strategy.impl.HuntFood;
+import com.anjali.animalgame.strategy.impl.Carnivore;
 
-public class TigerANJ extends AnimalANJ /*implements Carnivorous*/ {
+public class TigerANJ extends AnimalANJ  {
 
 	public TigerANJ() {
-		foodEatBehaviour=new HuntFood();  //setting strategy pattern behaviour	
+		foodEatBehaviour=new Carnivore();  //setting strategy pattern behaviour	
 	}
 
 	@Override
 	public void meetAnotherAnimalANJ(AnimalANJ animal2) {
 		
-		if(animal2.getFoodEatBehaviour() instanceof GrazeFood) {
+	/*	if(animal2.getFoodEatBehaviour() instanceof GrazeFood) {
 			System.out.println("******tiger meet graze food"+animal2.getAnimalName());
 			checkHungerLevel(animal2);
 		}
@@ -23,7 +22,7 @@ public class TigerANJ extends AnimalANJ /*implements Carnivorous*/ {
 		}
 		else{
 			System.out.println("Invalid");	
-		}
+		}*/
 	}
 	
 	public void checkStrengthLevel(AnimalANJ animal2){
@@ -51,7 +50,7 @@ public class TigerANJ extends AnimalANJ /*implements Carnivorous*/ {
 		animal2.setHungerLevel(sc.nextInt());
 		 
 		if(getHungerLevel()>6){
-			this.foodHunt();       //strategy behaviour invoked
+			this.eat();       //strategy behaviour invoked
 		    animal2.dead();
 		}
 		else{

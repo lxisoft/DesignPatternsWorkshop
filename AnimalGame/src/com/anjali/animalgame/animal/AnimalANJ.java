@@ -5,11 +5,10 @@ import java.util.Scanner;
 import com.anjali.animalgame.state.AliveState;
 import com.anjali.animalgame.state.DeadState;
 import com.anjali.animalgame.state.StateANJ;
-import com.anjali.animalgame.strategy.IFoodEatBehaviourANJ;
+import com.anjali.animalgame.strategy.FoodEatBehaviourANJ;
 /*
- * Context class for State pattern
+ * Context class for Strategy and State pattern
  */
-
 public abstract class AnimalANJ {
 	
 	private String animalName;
@@ -20,10 +19,12 @@ public abstract class AnimalANJ {
 
 	private int strengthLevel;
 	
-	protected IFoodEatBehaviourANJ foodEatBehaviour; //strategy behaviour interface
+	/*
+	 * Strategy Behaviour Composition
+	 */
+	protected FoodEatBehaviourANJ foodEatBehaviour; 
 	
 	protected Scanner sc=new Scanner(System.in);
-	
 	
 	/*
 	 * State Composition in context class. Two states of animal: alive and dead  : State pattern
@@ -47,7 +48,7 @@ public abstract class AnimalANJ {
 	 */
 	public final void templateMethod(AnimalANJ anotherAnimal) {	
 		meetAnotherAnimalANJ(anotherAnimal);				//abstract template method. It is implemented in the subclasses
-		foodHunt();					
+		eat();					
 		fight(anotherAnimal);		/* 
 		 							concrete methods*/
 		dead();
@@ -55,15 +56,17 @@ public abstract class AnimalANJ {
 	
 	}
 	
-
-	public IFoodEatBehaviourANJ getFoodEatBehaviour() {
+	public FoodEatBehaviourANJ getFoodEatBehaviour() {
 		return foodEatBehaviour;
 	}
 
-	public void setFoodEatBehaviour(IFoodEatBehaviourANJ foodEatBehaviour) {
+	/*
+	 * Strategy Behaviour setter for changing behaviour dynamically
+	 */
+	public void setFoodEatBehaviour(FoodEatBehaviourANJ foodEatBehaviour) {
 		this.foodEatBehaviour = foodEatBehaviour;
 	}
-	
+
 	public String getAnimalName() {
 		return animalName;
 	}
@@ -118,8 +121,8 @@ public abstract class AnimalANJ {
 
 	public abstract void meetAnotherAnimalANJ(AnimalANJ anotherAnimal);
 
-	public void foodHunt() {
-		foodEatBehaviour.foodHunt();
+	public void eat() {
+		foodEatBehaviour.eat();
 	}
 	
 	public void fight(AnimalANJ animal2){

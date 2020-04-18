@@ -1,18 +1,17 @@
 package com.anjali.animalgame.animal;
 
-import com.anjali.animalgame.strategy.impl.GrazeFood;
-import com.anjali.animalgame.strategy.impl.HuntFood;
+import com.anjali.animalgame.strategy.impl.Carnivore;
 
 public class LionANJ extends AnimalANJ{
 
 	public LionANJ() {
-		foodEatBehaviour=new HuntFood(); //setting strategy pattern behaviour
+		foodEatBehaviour=new Carnivore(); //setting strategy pattern behaviour
 	}
 
 	@Override
 	public void meetAnotherAnimalANJ(AnimalANJ animal2) {
 
-		System.out.println(animal2.getFoodEatBehaviour());
+		/*System.out.println(animal2.getFoodEatBehaviour());
 		if(animal2.getFoodEatBehaviour() instanceof GrazeFood) {
 			
 			System.out.println("******lion meet graze food"+animal2.getAnimalName());
@@ -26,7 +25,7 @@ public class LionANJ extends AnimalANJ{
 		}
 		else{
 			System.out.println("Invalid");	
-		}
+		}*/
 		
 	}
 
@@ -55,7 +54,7 @@ public class LionANJ extends AnimalANJ{
 		animal2.setHungerLevel(sc.nextInt());
 		 
 		if(getHungerLevel()>6){
-			this.foodHunt();       //strategy behaviour invoked
+			this.eat();       //strategy behaviour invoked
 		    animal2.dead();
 		}
 		else{

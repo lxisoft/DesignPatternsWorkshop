@@ -9,9 +9,9 @@ public static void main(String args[]) throws IOException
   {
 
 
-    GameAyn game = GameAyn.getSingleObject();
-    game.playGameAyn();
-
+    GameAyn game = AnimalGameAYN.getSingleObject();
+    game.playAYN();
+    game.createForestAYN();
   }
 
    }

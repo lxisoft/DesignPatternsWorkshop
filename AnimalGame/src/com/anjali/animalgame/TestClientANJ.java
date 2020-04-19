@@ -12,16 +12,17 @@ import com.anjali.animalgame.animal.adapter.adaptee.PersianLeopardANJ;
 import com.anjali.animalgame.animal.adapter.adapter.JaguarAdapterANJ;
 import com.anjali.animalgame.animal.adapter.target.BlackJaguarANJ;
 import com.anjali.animalgame.forest.ForestANJ;
-import com.anjali.animalgame.game.GameLauncherANJ;
+import com.anjali.animalgame.game.AnimalGameANJ;
 import com.anjali.animalgame.observer.DangerSubject;
 
 public class TestClientANJ {
 
 	public static void main(String[] args) {
 		
-		GameLauncherANJ game=new GameLauncherANJ();
-		ForestANJ forest=game.setGameANJ();
-		try {
+		AnimalGameANJ game=new AnimalGameANJ();
+		game.playGame();
+		
+		/*try {
 			game.startGame(forest.getAnimals());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -29,9 +30,9 @@ public class TestClientANJ {
 		}
 		System.out.println("Game over!");
 		System.out.println("/n");
-		/*
+		
 		 * Testing Adapter pattern : jaguaradapter 
-		 */
+		 
 		System.out.println("Adapter pattern implemented");
 
 		PersianLeopardANJ persian=new PersianLeopardANJ();
@@ -44,9 +45,9 @@ public class TestClientANJ {
 		leopard.climbTree();
 		
 		System.out.println("/n");
-		/*
+		
 		 * Template method pattern testing
-		 */
+		 
 		System.out.println("Template pattern implemented");
 		
 		AnimalANJ lion=new LionANJ();
@@ -55,14 +56,14 @@ public class TestClientANJ {
 		DeerANJ deer=new DeerANJ();
 		deer.setAnimalName("Deer");
 		
-		/* 
+		 
 		template method is invoked. 
 		algorithms are encapsulated in template method
 		algorithms are invoked by order 
-		*/
+		
 		lion.templateMethod(deer);  
 		System.out.println("Thank you!");
-		
+		*/
 		
 	}
 

@@ -4,6 +4,7 @@ import com.anjali.animalgame.factory.AnimalFactory;
 import com.anjali.animalgame.observer.DangerSubject;
 import com.anjali.animalgame.observer.Observer;
 import com.anjali.animalgame.observer.Subject;
+import com.anjali.animalgame.strategy.impl.Carnivore;
 import com.anjali.animalgame.strategy.impl.Herbivore;
 
 /*
@@ -17,6 +18,7 @@ public class RabbitANJ extends AnimalANJ implements Observer{
 
 	public RabbitANJ(AnimalFactory factory) {
 		this.factory = factory;
+		foodEatBehaviour=new Herbivore(); //setting strategy pattern behaviour
 	}
 
 	public RabbitANJ(Subject dangerSubject) {
@@ -24,27 +26,23 @@ public class RabbitANJ extends AnimalANJ implements Observer{
 		dangerSubject.register(this);
 		}
 
-	public RabbitANJ() {
-		foodEatBehaviour=new Herbivore(); //setting strategy pattern behaviour
-	}
-
 	@Override
 	public void meetAnotherAnimalANJ(AnimalANJ animal2) {
 		
-		/*if(animal2.getFoodEatBehaviour() instanceof HuntFood){
+		if(animal2.getFoodEatBehaviour() instanceof Carnivore){
 			System.out.println("observer rabbit");
 			notifyDanger();
 			run(animal2);
 			}
 			
-			else if(animal2.getFoodEatBehaviour() instanceof GrazeFood){
+			else if(animal2.getFoodEatBehaviour() instanceof Herbivore){
 			ignore(animal2);
 			}
 			
 			else{
 				System.out.println("Not valid");
 			}
-	*/	
+	
 	}
 
 	

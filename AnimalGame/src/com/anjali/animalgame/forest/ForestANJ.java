@@ -8,7 +8,7 @@ import com.anjali.animalgame.facade.IAnimalFacadeANJ;
 import com.anjali.animalgame.iterator.AnimalIterator;
 import com.anjali.animalgame.iterator.Iterator;
 
-public class ForestANJ /*implements IAnimalFacadeANJ*/{
+public class ForestANJ {
 	
 	private static ForestANJ uniqueInstance;  /**
 	 											*Singleton pattern implemented-marked constructor as private

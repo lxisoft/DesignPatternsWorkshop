@@ -1,5 +1,6 @@
 package com.anjali.animalgame.animal;
 
+import com.anjali.animalgame.factory.AnimalFactory;
 import com.anjali.animalgame.observer.DangerSubject;
 import com.anjali.animalgame.observer.Observer;
 import com.anjali.animalgame.observer.Subject;
@@ -12,7 +13,12 @@ public class RabbitANJ extends AnimalANJ implements Observer{
 
 	private Boolean isDanger;
 	private Subject dangerSubject;
-	
+	AnimalFactory factory;				//abstract factory
+
+	public RabbitANJ(AnimalFactory factory) {
+		this.factory = factory;
+	}
+
 	public RabbitANJ(Subject dangerSubject) {
 		this.dangerSubject = dangerSubject;
 		dangerSubject.register(this);

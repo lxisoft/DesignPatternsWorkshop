@@ -1,14 +1,20 @@
 package com.anjali.animalgame.animal;
 
+import com.anjali.animalgame.factory.AnimalFactory;
 import com.anjali.animalgame.strategy.impl.Omnivore;
 
 public class BearANJ extends AnimalANJ {
 
-	
+	AnimalFactory factory;
+
+	public BearANJ(AnimalFactory factory) {
+		this.factory = factory;			//setting factory
+		}
+
 	public BearANJ() {
 		foodEatBehaviour=new Omnivore(); //setting strategy pattern behaviour
-	}
 
+	}
 	@Override
 	public void meetAnotherAnimalANJ(AnimalANJ animal2) {
 		

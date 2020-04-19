@@ -1,8 +1,15 @@
 package com.anjali.animalgame.animal;
 
+import com.anjali.animalgame.factory.AnimalFactory;
 import com.anjali.animalgame.strategy.impl.Carnivore;
 
 public class LionANJ extends AnimalANJ{
+	
+	AnimalFactory factory;
+
+	public LionANJ(AnimalFactory factory) {
+		this.factory = factory;
+	}
 
 	public LionANJ() {
 		foodEatBehaviour=new Carnivore(); //setting strategy pattern behaviour

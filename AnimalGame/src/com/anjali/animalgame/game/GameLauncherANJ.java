@@ -14,10 +14,9 @@ import com.anjali.animalgame.animal.DeerANJ;
 import com.anjali.animalgame.animal.LionANJ;
 import com.anjali.animalgame.animal.RabbitANJ;
 import com.anjali.animalgame.animal.TigerANJ;
+import com.anjali.animalgame.factory.creator.AfricanAnimalCreatorANJ;
 import com.anjali.animalgame.factory.creator.AnimalCreatorANJ;
-import com.anjali.animalgame.factory.creator.CarnivoreAnimalCreatorANJ;
-import com.anjali.animalgame.factory.creator.HerbivoreAnimalCreatorANJ;
-import com.anjali.animalgame.factory.creator.OmnivoreAnimalCreatorANJ;
+import com.anjali.animalgame.factory.creator.AsianAnimalCreatorANJ;
 import com.anjali.animalgame.forest.ForestANJ;
 import com.anjali.animalgame.iterator.Iterator;
 import com.anjali.animalgame.observer.DangerSubject;
@@ -31,22 +30,21 @@ public class GameLauncherANJ {
 		forest=ForestANJ.getInstance();   //Singleton pattern
 		
 		/*invoked factory creator for creating animals: factory pattern
-			*
-			*/
-		AnimalCreatorANJ herbivoreCreator=new HerbivoreAnimalCreatorANJ();  
-		AnimalCreatorANJ carnivoreCreator=new CarnivoreAnimalCreatorANJ();
-		AnimalCreatorANJ omnivoreCreator=new OmnivoreAnimalCreatorANJ();
+		*
+		*/
+		AnimalCreatorANJ africanAnimalCreator=new AfricanAnimalCreatorANJ();  
+		AnimalCreatorANJ asianAnimalCreator=new AsianAnimalCreatorANJ();
 		
-		AnimalANJ createdAnimal1=herbivoreCreator.getAnimalANJ("DeerANJ"); 
-		AnimalANJ createdAnimal2=herbivoreCreator.getAnimalANJ("DeerANJ"); 
-		AnimalANJ createdAnimal3=herbivoreCreator.getAnimalANJ("DeerANJ"); 
-		AnimalANJ createdAnimal4=herbivoreCreator.getAnimalANJ("DeerANJ"); 
-		AnimalANJ createdAnimal5=carnivoreCreator.getAnimalANJ("LionANJ"); 
-		AnimalANJ createdAnimal6=carnivoreCreator.getAnimalANJ("TigerANJ"); 
-		AnimalANJ createdAnimal7=carnivoreCreator.getAnimalANJ("TigerANJ"); 
-		AnimalANJ createdAnimal8=omnivoreCreator.getAnimalANJ("BearANJ"); 
-		AnimalANJ createdAnimal9=herbivoreCreator.getAnimalANJ("RabbitANJ"); 
-		AnimalANJ createdAnimal10=herbivoreCreator.getAnimalANJ("RabbitANJ"); 
+		AnimalANJ createdAnimal1=africanAnimalCreator.createAnimalANJ("DeerANJ"); 
+		AnimalANJ createdAnimal2=asianAnimalCreator.createAnimalANJ("DeerANJ"); 
+		AnimalANJ createdAnimal3=asianAnimalCreator.createAnimalANJ("DeerANJ"); 
+		AnimalANJ createdAnimal4=africanAnimalCreator.createAnimalANJ("DeerANJ"); 
+		AnimalANJ createdAnimal5=africanAnimalCreator.createAnimalANJ("LionANJ"); 
+		AnimalANJ createdAnimal6=asianAnimalCreator.createAnimalANJ("TigerANJ"); 
+		AnimalANJ createdAnimal7=africanAnimalCreator.createAnimalANJ("TigerANJ"); 
+		AnimalANJ createdAnimal8=africanAnimalCreator.createAnimalANJ("BearANJ"); 
+		AnimalANJ createdAnimal9=asianAnimalCreator.createAnimalANJ("RabbitANJ"); 
+		AnimalANJ createdAnimal10=africanAnimalCreator.createAnimalANJ("RabbitANJ"); 
 			
 		forest.getAnimals()[0]=createdAnimal1;
 		forest.getAnimals()[1]=createdAnimal2;
@@ -85,7 +83,7 @@ public class GameLauncherANJ {
 		System.out.println("/n");
 		int noOfAnimals=10;
 		
-		do{		
+		/*do{		
 			int firstAnimal=(int)(Math.random()*10);
 			int secondAnimal=(int)(Math.random()*10);
 			
@@ -105,7 +103,7 @@ public class GameLauncherANJ {
 			AnimalANJ winner=animalsLeft();	
 			this.saveResultInFile(winner);
 		}
-		
+		*/
 		} //end of playGame()
 		
 	

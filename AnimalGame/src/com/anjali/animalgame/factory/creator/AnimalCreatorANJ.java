@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 import com.anjali.animalgame.animal.AnimalANJ;
 /*
- * Creator class for factory pattern
+ * Creator class for factory pattern with template method
  */
 
 public abstract class AnimalCreatorANJ {
 
-	public AnimalANJ getAnimalANJ(String animalType) {
+	public AnimalANJ createAnimalANJ(String animalType) {
 		
 		AnimalANJ animal=createAnimal(animalType);
 		System.out.println("animalcreater"+animal);

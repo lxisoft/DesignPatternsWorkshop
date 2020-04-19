@@ -34,6 +34,8 @@ public class TddSBA {
 				
 		GameSBA zooGame = GameSBA.getInstanceSBA();
 		
+		   zooGame.setupStageLightsSBA();
+		
 		   zooGame.setupStageSBA();
 		   
 		   zooGame.showAllZooWithAnimalsInGame();

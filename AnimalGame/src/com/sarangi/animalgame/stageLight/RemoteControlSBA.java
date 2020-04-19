@@ -13,25 +13,42 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.sarangi.animalgame.stage;
+package com.sarangi.animalgame.stageLight;
+
+
 
 /**
- * The GameStageSBA class implements Stage of animal game. it decorates using Decorator Dp
+ * The RemoteControlSBA class implements an gameLights using Command Dp
  * @author Owner
  * ,
  */
-public abstract class GameStageSBA {
+public class RemoteControlSBA {
 	
+	CommandSBA[] onCommands ;
 	
-	String description = "No STAGE";
+	public RemoteControlSBA()
+	{
+		onCommands = new CommandSBA[2];
+				
+		CommandSBA noCommand = new NoCommandSBA();
+		
+		for(int i=0;i<onCommands.length;i++)
+		    onCommands[i] = noCommand;		
+	}
 	
-
-	public String getDescription() {
-		return description;
+	public void setCommands(int slot,CommandSBA onCommand)
+	{
+		onCommands[slot] = onCommand;
+	}
+	
+	public void onButtonWasPushed(int slot)
+	{
+		onCommands[slot].execute();
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	@Override
+	public String toString() {
+		return "RemoteControlSBA onCommands =" + onCommands;
 	}
 	
 	

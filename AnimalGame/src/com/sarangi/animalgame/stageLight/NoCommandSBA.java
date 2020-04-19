@@ -13,27 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.sarangi.animalgame.stage;
+package com.sarangi.animalgame.stageLight;
 
 /**
- * The GameStageSBA class implements Stage of animal game. it decorates using Decorator Dp
+ * TODO Provide a detailed description here
  * @author Owner
  * ,
  */
-public abstract class GameStageSBA {
-	
-	
-	String description = "No STAGE";
-	
+public class NoCommandSBA implements CommandSBA{
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
+	/* (non-Javadoc)
+	 * @see com.sarangi.animalgame.stageLight.CommandSBA#execute()
+	 */
+	@Override
+	public void execute() {
+		System.out.println("\n\t No Commands");
+		
 	}
 	
-	
+
 
 }

@@ -29,6 +29,9 @@ import com.sarangi.animalgame.stage.CarpetSpreadingSBA;
 import com.sarangi.animalgame.stage.FencingSBA;
 import com.sarangi.animalgame.stage.GameStageSBA;
 import com.sarangi.animalgame.stage.StageOneSBA;
+import com.sarangi.animalgame.stageLight.LightOnCommandSBA;
+import com.sarangi.animalgame.stageLight.LightSBA;
+import com.sarangi.animalgame.stageLight.RemoteControlSBA;
 import com.sarangi.animalgame.zoo.AmericanZooSBA;
 import com.sarangi.animalgame.zoo.IndianZooSBA;
 import com.sarangi.animalgame.zoo.JaipurZooSBA;
@@ -77,6 +80,29 @@ public class GameSBA {
 		
 	}
 	
+	public void setupStageLightsSBA()
+	{
+		RemoteControlSBA remoteControlSBA = new RemoteControlSBA();
+		
+		LightSBA gameStageLightOne = new LightSBA("GameStageLightOne");
+		
+		LightOnCommandSBA gameStageLightOneOn = new LightOnCommandSBA(gameStageLightOne);
+		
+		remoteControlSBA.setCommands(0, gameStageLightOneOn);
+		
+        LightSBA gameStageLightTwo = new LightSBA("GameStageLightTwo");
+		
+		LightOnCommandSBA gameStageLightTwoOn = new LightOnCommandSBA(gameStageLightTwo);
+		
+		remoteControlSBA.setCommands(1, gameStageLightTwoOn);
+		
+		System.out.println("\n\t*****************************FULL ON STAGE LIGHTS **************************************");
+				
+		remoteControlSBA.onButtonWasPushed(0);
+		remoteControlSBA.onButtonWasPushed(1);
+		
+	}
+	
 			
 	public void setupStageSBA()
 	{
@@ -87,6 +113,7 @@ public class GameSBA {
 		stageOne = new FencingSBA(stageOne);
 		stageOne = new FencingSBA(stageOne);
 		System.out.println("\n\t\t"+stageOne.getDescription());		
+		System.out.println("\n\t***********************************************************************************");
 		
 	}
 	
@@ -103,7 +130,7 @@ public class GameSBA {
 		ZooComponentSBA milwaukeeCountyZoo = new MilwaukeeCountyZooSBA("MilwaukeeCounty Zoo","America Best Zoo");
 		ZooComponentSBA wildlifeWorldZoo = new WildlifeWorldZooSBA("WildlifeWorld Zoo","America Best Zoo");
 		
-		ZooComponentSBA zoo = new ZooWorldSBA("All Zoo","All Animals Combined");
+		ZooComponentSBA zoo = new ZooWorldSBA("                    Showing All Zoo","With Animals                ");
 		
 		zoo.add(indianZoo);
 		zoo.add(americanZoo);

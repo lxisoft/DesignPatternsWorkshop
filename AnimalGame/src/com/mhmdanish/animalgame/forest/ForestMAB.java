@@ -61,6 +61,7 @@ public class ForestMAB {
 		animals = new AnimalMAB[6];
 		AbstractAnimalFactoryMAB animalFactory = null;
 		if(type.equals("iot")) {
+			animalFactory = new IOTAnimalFactoryMAB();
 		} else if(type.equals("web")) {
 			animalFactory = new WebAnimalFactoryMAB();
 		} else if(type.equals("mobile")) {

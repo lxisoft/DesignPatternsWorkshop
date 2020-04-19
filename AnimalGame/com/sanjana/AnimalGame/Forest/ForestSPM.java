@@ -5,7 +5,10 @@ import java.util.ArrayList;
 
 import com.sanjana.AnimalGame.Factory.*;
 import com.sanjana.AnimalGame.Iterator.AnimalIteratorSPM;
+import com.sanjana.AnimalGame.State.DeadStateSPM;
+import com.sanjana.AnimalGame.State.FightStateSPM;
 import com.sanjana.AnimalGame.Animal.AnimalSPM;
+import com.sanjana.AnimalGame.Animal.WildTigerSPM;
 import com.sanjana.AnimalGame.Behaviour.*;
 import com.sanjana.AnimalGame.Configuration.AnimalConfigurationSPM;
 import com.sanjana.AnimalGame.Decorator.*;
@@ -100,11 +103,15 @@ public class ForestSPM{
 			System.out.println(animaliterator.next());
 			
 		}
-		
-	
 	
 	
 }
+public void fight(AnimalSPM WildTigerSPM) {
+		FightStateSPM fight = new FightStateSPM();
+		fight.updateStateSPM(WildTigerSPM);
+		System.out.println(WildTigerSPM.getState().toString());
+	}
+	
 	
 	}
 	

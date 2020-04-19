@@ -12,11 +12,16 @@ import com.sanjana.AnimalGame.Forest.ForestSPM;
  *
  */
 public class Tdd{
+
 	public static void main(String [] args){
 		ForestSPM forest = ForestSPM.getInstance();
 	    forest.createAnimalSPM();
+	    
+	    
 		AnimalSPM tiger = new WildTigerSPM();
 		tiger.setEat();
+		System.out.println("111*********111");
+		forest.fight(tiger);
 		AnimalSPM lion = new WildLionSPM();
 		lion.setEat();
 		AnimalSPM rabbit = new WildRabbitSPM();

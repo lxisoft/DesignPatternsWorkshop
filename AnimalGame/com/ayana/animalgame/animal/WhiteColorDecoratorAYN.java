@@ -43,4 +43,16 @@ public class WhiteColorDecoratorAYN extends ColorDecoratorAYN{
 		return 0;
 	}
 
+	@Override
+	public int locationXAYN() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int locationYAYN() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

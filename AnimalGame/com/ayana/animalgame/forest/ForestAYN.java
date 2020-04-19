@@ -19,6 +19,7 @@ import com.ayana.animalgame.animal.WhiteColorDecoratorAYN;
 import com.ayana.animalgame.configuration.AnimalConfigAYN;
 
 
+
 public class ForestAYN {
 	
 	AnimalFactoryProducerAYN factoryProducer = new AnimalFactoryProducerAYN();
@@ -28,21 +29,19 @@ public class ForestAYN {
 	AnimalAYN animal3;
 	AnimalAYN animal4;
 	StrategyAYN strategy;
+	
 	public void getAnimalsAYN() throws IOException
-	{
-		
+	{	
 		AnimalConfigAYN animalConfig = new AnimalConfigAYN();
 		String choice = animalConfig.getPropValuesAYN();
-		
-	    
+		    
 		 switch(choice)
 		  {
 			 case "iot":createIotBasedAnimalAYN();
-			 
 			 break;
-			 case "mobile":getMobileBasedAnimalAYN();
+			 case "mobile":createMobileBasedAnimalAYN();
 			 break;
-			 case "web":getWebBasedAnimalAYN();
+			 case "web":createWebBasedAnimalAYN();
 			 break;
 			 default:System.out.println("Invalid...!!!");
 		
@@ -51,6 +50,7 @@ public class ForestAYN {
 	
 	public void createIotBasedAnimalAYN()
 	{
+		 System.out.println("Creating Iot based");
 		 AbstractFactoryAYN abstractFactory = factoryProducer.getFactoryAYN("iot");
 		 animal1=abstractFactory.getAnimalAYN("Tiger");
 		 animals.add(animal1);
@@ -64,21 +64,68 @@ public class ForestAYN {
 		 animal4=abstractFactory.getAnimalAYN("Rabbit");
 		 animals.add(animal4);
 		 
-		 getIotBasedAnimalAYN();
+		 getAnimalAYN();
 		 getSpeedOfAnimalAYN();
 		 getStrengthOfAnimal();
 		 getStateOfAnimalAYN();
-		 setColorOfAnimalAYN();
-		 
+		 setColorOfAnimalAYN();	 
 	}
 	
-	public void getStrengthOfAnimal()
+	public void createMobileBasedAnimalAYN()
 	{
-		FacadeAYN facadeAYN = new FacadeAYN(animal1,animal2,animal3,animal4);
-		facadeAYN.tigerStrength();
-		facadeAYN.lionStrength();
-		facadeAYN.deerStrength();
-		facadeAYN.rabbitStrength();
+		 System.out.println("Creating Mobile based");
+		 AbstractFactoryAYN abstractFactory = factoryProducer.getFactoryAYN("mobile");
+		 animal1=abstractFactory.getAnimalAYN("Tiger");
+		 animals.add(animal1);
+		 
+		 animal2=abstractFactory.getAnimalAYN("Lion");
+		 animals.add(animal2);
+		 
+		 animal3=abstractFactory.getAnimalAYN("Deer");
+		 animals.add(animal3);
+		 
+		 animal4=abstractFactory.getAnimalAYN("Rabbit");
+		 animals.add(animal4);
+		 
+		 getAnimalAYN();
+		 getSpeedOfAnimalAYN();
+		 getStrengthOfAnimal();
+		 getStateOfAnimalAYN();
+		 setColorOfAnimalAYN();	 
+	}
+	
+	public void createWebBasedAnimalAYN()
+	{
+		 System.out.println("Creating Web based");
+		 AbstractFactoryAYN abstractFactory = factoryProducer.getFactoryAYN("web");
+		 animal1=abstractFactory.getAnimalAYN("Tiger");
+		 animals.add(animal1);
+		 
+		 animal2=abstractFactory.getAnimalAYN("Lion");
+		 animals.add(animal2);
+		 
+		 animal3=abstractFactory.getAnimalAYN("Deer");
+		 animals.add(animal3);
+		 
+		 animal4=abstractFactory.getAnimalAYN("Rabbit");
+		 animals.add(animal4);
+		 
+		 getAnimalAYN();
+		 getSpeedOfAnimalAYN();
+		 getStrengthOfAnimal();
+		 getStateOfAnimalAYN();
+		 setColorOfAnimalAYN();	 
+	}
+	
+	public void getAnimalAYN()
+	{
+		NameRepositoryAYN nameRepository = new NameRepositoryAYN();
+		
+		for(IteratorAYN iter =nameRepository .getIterator(); iter.hasNext(animals);){
+	        
+			AnimalAYN a = (AnimalAYN)iter.next(animals);
+			System.out.println(a.nameAYN());
+	      } 	
 	}
 	
 	public void getSpeedOfAnimalAYN()
@@ -91,8 +138,15 @@ public class ForestAYN {
 		 System.out.println("speed of deer : "+strategy.executeStrategyAYN(0));
 		 strategy = new StrategyAYN(animal4);
 		 System.out.println("speed of rabbit : "+strategy.executeStrategyAYN(0));
-
-
+	}
+	
+	public void getStrengthOfAnimal()
+	{
+		FacadeAYN facadeAYN = new FacadeAYN(animal1,animal2,animal3,animal4);
+		facadeAYN.tigerStrength();
+		facadeAYN.lionStrength();
+		facadeAYN.deerStrength();
+		facadeAYN.rabbitStrength();
 	}
 	
 	public void getStateOfAnimalAYN()
@@ -109,42 +163,6 @@ public class ForestAYN {
 		
 		animal4.doActionAYN(state);
 		System.out.print(state.getStateAYN().toString()+"\n");
-	}
-	
-	public void setTigerColorAYN()
-	{
-		System.out.print("Tiger with normal ");
-		animal1.colorAYN();
-		AnimalAYN white = new WhiteColorDecoratorAYN(animal1);
-		white.colorAYN();
-		
-	}
-	
-	public void setLionColorAYN()
-	{
-		System.out.print("Lion with normal ");
-		animal2.colorAYN();
-		AnimalAYN reddish = new ReddishBrownColorDecoratorAYN(animal2);
-		reddish.colorAYN();
-
-	}
-	
-	public void setDeerColorAYN()
-	{
-		System.out.print("Deer with normal ");
-		animal3.colorAYN();
-		AnimalAYN greyish = new GreyishBrownColorDecoratorAYN(animal3);
-		greyish.colorAYN();
-		
-	}
-	
-	public void setRabbitColorAYN()
-	{
-		System.out.print("Rabbit with normal ");
-		animal4.colorAYN();
-		AnimalAYN greyish1 = new GreyishBrownColorDecoratorAYN(animal4);
-		greyish1.colorAYN();
-		
 	}
 	
 	public void setColorOfAnimalAYN()
@@ -170,58 +188,103 @@ public class ForestAYN {
 			default:System.out.println("Invalid...!!!");
 	
 			}
-
+			fightAYN();
 		}
 		else{
-			System.out.println("working inprogress:)");
-		}
-		
+			fightAYN();
+		}		
   	}
 	
-	public void getIotBasedAnimalAYN()
+	public void setTigerColorAYN()
 	{
-		System.out.println("Creating Iot based");
-		
-		NameRepositoryAYN nameRepository = new NameRepositoryAYN();
-		
-		for(IteratorAYN iter =nameRepository .getIterator(); iter.hasNext(animals);){
-	        
-			AnimalAYN a = (AnimalAYN)iter.next(animals);
-			System.out.println(a.nameAYN());
-	      } 	
+		System.out.print("Tiger with normal ");
+		animal1.colorAYN();
+		AnimalAYN white = new WhiteColorDecoratorAYN(animal1);
+		white.colorAYN();	
 	}
 	
-	public void getMobileBasedAnimalAYN()
+	public void setLionColorAYN()
 	{
-		AbstractFactoryAYN abstractFactory1 = factoryProducer.getFactoryAYN("mobile");
-		 AnimalAYN animal1=abstractFactory1.getAnimalAYN("Tiger");
-		 System.out.print("Mobile based");
-		 animal1.nameAYN();
-		 AnimalAYN animal2=abstractFactory1.getAnimalAYN("Lion");
-		 System.out.print("Mobile based");
-		 animal2.nameAYN();
-		 AnimalAYN animal3=abstractFactory1.getAnimalAYN("Deer");
-		 System.out.print("Mobile based");
-		 animal3.nameAYN();
-		 AnimalAYN animal4=abstractFactory1.getAnimalAYN("Rabbit");
-		 System.out.print("Mobile based");
-		 animal4.nameAYN();
+		System.out.print("Lion with normal ");
+		animal2.colorAYN();
+		AnimalAYN reddish = new ReddishBrownColorDecoratorAYN(animal2);
+		reddish.colorAYN();
 	}
 	
-	public void getWebBasedAnimalAYN()
+	public void setDeerColorAYN()
 	{
-		AbstractFactoryAYN abstractFactory1 = factoryProducer.getFactoryAYN("web");
-		 AnimalAYN animal1=abstractFactory1.getAnimalAYN("Tiger");
-		 System.out.print("web based");
-		 animal1.nameAYN();
-		 AnimalAYN animal2=abstractFactory1.getAnimalAYN("Lion");
-		 System.out.print("web based");
-		 animal2.nameAYN();
-		 AnimalAYN animal3=abstractFactory1.getAnimalAYN("Deer");
-		 System.out.print("web based");
-		 animal3.nameAYN();
-		 AnimalAYN animal4=abstractFactory1.getAnimalAYN("Rabbit");
-		 System.out.print("web based");
-		 animal4.nameAYN();
+		System.out.print("Deer with normal ");
+		animal3.colorAYN();
+		AnimalAYN greyish = new GreyishBrownColorDecoratorAYN(animal3);
+		greyish.colorAYN();
 	}
+	
+	public void setRabbitColorAYN()
+	{
+		System.out.print("Rabbit with normal ");
+		animal4.colorAYN();
+		AnimalAYN greyish1 = new GreyishBrownColorDecoratorAYN(animal4);
+		greyish1.colorAYN();	
+	}
+	
+	public void fightAYN()
+	{
+		int j,k;
+		System.out.println("\nFight...\n");
+		for(j=0,k=1;j<6;j++)
+		{
+			System.out.println("Round "+k+"\n------------\n");
+
+			for(int i=0;i<15;i++)
+			{
+				int random1=(int)(Math.random()*animals.size());
+				int random2=(int)(Math.random()*animals.size());
+				int locationX1=animals.get(random1).locationXAYN();
+				int locationY1=animals.get(random1).locationYAYN();
+				int locationX2=animals.get(random2).locationXAYN();
+				int locationY2=animals.get(random2).locationYAYN();
+				int d1=Math.abs(locationX1-locationX2);
+				int d2=Math.abs(locationY1-locationY2);
+				if(animals.get(random1).nameAYN()!=animals.get(random2).nameAYN())
+				{
+				if(d1<=10 && d2<=10)
+			      {
+					  
+				    System.out.println("Animal="+animals.get(random1).nameAYN()+" Strength="+animals.get(random1).strengthAYN()+" location="+locationX1+","+locationY1);
+				    System.out.println("Animal="+animals.get(random2).nameAYN()+" Strength="+animals.get(random2).strengthAYN()+" location="+locationX2+","+locationY2);
+					
+				    if(animals.get(random1).strengthAYN()==animals.get(random2).strengthAYN())
+					{
+						System.out.println("Will not fight");
+					}
+				    
+				    else if(animals.get(random1).strengthAYN()>animals.get(random2).strengthAYN())
+					{
+						System.out.println(animals.get(random1).nameAYN()+" win...\n");
+						animals.remove(random2);
+					}
+					
+					else 
+					{
+					System.out.println(animals.get(random2).nameAYN()+" win...\n");
+					animals.remove(random1);
+				    }				
+			    }
+			  }
+
+			}
+			k++;
+			if(1==animals.size())
+			{
+				System.out.println("ALIVE ANIMALS\n");
+				for(AnimalAYN a:animals)
+				{
+					System.out.println(a.nameAYN());
+				}
+				break;
+			}
+		}
+		
+	}	
+	
 }

@@ -41,4 +41,16 @@ public class GreyishBrownColorDecoratorAYN extends ColorDecoratorAYN{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	@Override
+	public int locationXAYN() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int locationYAYN() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

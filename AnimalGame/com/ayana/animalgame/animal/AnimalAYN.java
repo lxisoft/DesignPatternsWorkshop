@@ -11,5 +11,9 @@ public interface AnimalAYN {
 	public void colorAYN();
 	
 	public int strengthAYN();
+	
+	public int locationXAYN();
+	
+	public int locationYAYN();
 
 }

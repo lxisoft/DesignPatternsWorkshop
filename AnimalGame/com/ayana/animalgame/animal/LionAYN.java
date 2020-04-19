@@ -36,6 +36,20 @@ public class LionAYN implements AnimalAYN{
 	@Override
 	public int strengthAYN() {
 		// TODO Auto-generated method stub
-		return 53;
+		return (int)(Math.random()*55)+40;
+	}
+
+	@Override
+	public int locationXAYN() {
+		// TODO Auto-generated method stub
+		int locationX=(int)(Math.random()*50);
+		return locationX;
+	}
+
+	@Override
+	public int locationYAYN() {
+		// TODO Auto-generated method stub
+		int locationY=(int)(Math.random()*50);
+		return locationY;
 	}
 }

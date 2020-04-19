@@ -40,4 +40,18 @@ public class DeerAYN implements AnimalAYN{
 		return 35;
 	}
 
+	@Override
+	public int locationXAYN() {
+		// TODO Auto-generated method stub
+		int locationX=(int)(Math.random()*50);
+		return locationX;
+	}
+
+	@Override
+	public int locationYAYN() {
+		// TODO Auto-generated method stub
+		int locationY=(int)(Math.random()*50);
+		return locationY;
+	}
+
 }

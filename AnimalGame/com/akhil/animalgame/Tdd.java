@@ -25,6 +25,7 @@ public class Tdd {
 	  
 	  forest.createAnimal();
 	  forest.eatAkJ();
+	  forest.fight();
 	 
  }
  

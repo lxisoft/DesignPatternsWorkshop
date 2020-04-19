@@ -68,13 +68,16 @@ public class ForestAKJ {
 
 		List<String> animalNames = Arrays.asList("duck","tiger", "lion", "rabbit", "deer");
 		for (int i = 0; i < 5; i++) {
+			int count = 1;
 			AnimalAKJ animal = animalFactory.getAnimal(animalNames.get(new Random().nextInt(2+1)));
+			count++;
 			animals.add(animal);
-			System.out.println(animal.getClass().getName());
+			//System.out.println(animal.getClass().getName());
 			System.out.println(animal+"roaming...");
 		}
 
 	}
+	
 
 	public void eatAkJ() {
 
@@ -92,5 +95,13 @@ public class ForestAKJ {
 		InvokerAKJ animalInvoker = new InvokerAKJ(animalCommand);
 		animalInvoker.executeAKJ();
 
+	}
+	
+	public void fight() {
+		for(int i=0; i<=animals.size(); i++) {
+			
+		System.out.println(animals.get(((int)(Math.random()*4)))+"Fight with  "+ animals.get(((int)(Math.random()*4))));
+		
+		}
 	}
 }

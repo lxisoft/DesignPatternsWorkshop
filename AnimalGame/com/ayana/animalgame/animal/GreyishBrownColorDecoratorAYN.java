@@ -35,4 +35,10 @@ public class GreyishBrownColorDecoratorAYN extends ColorDecoratorAYN{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public int strengthAYN() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

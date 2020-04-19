@@ -34,4 +34,10 @@ public class DeerAYN implements AnimalAYN{
 		
 	}
 
+	@Override
+	public int strengthAYN() {
+		// TODO Auto-generated method stub
+		return 35;
+	}
+
 }

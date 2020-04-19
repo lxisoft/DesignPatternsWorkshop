@@ -8,6 +8,7 @@ import com.ayana.animalgame.animal.AbstractFactoryAYN;
 import com.ayana.animalgame.animal.AnimalAYN;
 
 import com.ayana.animalgame.animal.AnimalFactoryProducerAYN;
+import com.ayana.animalgame.animal.FacadeAYN;
 import com.ayana.animalgame.animal.GreyishBrownColorDecoratorAYN;
 import com.ayana.animalgame.animal.IteratorAYN;
 import com.ayana.animalgame.animal.NameRepositoryAYN;
@@ -65,9 +66,19 @@ public class ForestAYN {
 		 
 		 getIotBasedAnimalAYN();
 		 getSpeedOfAnimalAYN();
+		 getStrengthOfAnimal();
 		 getStateOfAnimalAYN();
 		 setColorOfAnimalAYN();
 		 
+	}
+	
+	public void getStrengthOfAnimal()
+	{
+		FacadeAYN facadeAYN = new FacadeAYN(animal1,animal2,animal3,animal4);
+		facadeAYN.tigerStrength();
+		facadeAYN.lionStrength();
+		facadeAYN.deerStrength();
+		facadeAYN.rabbitStrength();
 	}
 	
 	public void getSpeedOfAnimalAYN()

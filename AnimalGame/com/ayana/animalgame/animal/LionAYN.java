@@ -32,4 +32,10 @@ public class LionAYN implements AnimalAYN{
 		System.out.print(" color : yellow gold\n");
 		
 	}
+
+	@Override
+	public int strengthAYN() {
+		// TODO Auto-generated method stub
+		return 53;
+	}
 }

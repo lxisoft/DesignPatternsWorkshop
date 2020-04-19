@@ -33,4 +33,10 @@ public class TigerAYN implements AnimalAYN{
 		System.out.print(" color : orange with black stripes\n");
 	}
 
+	@Override
+	public int strengthAYN() {
+		// TODO Auto-generated method stub
+		return 50;
+	}
+
 }

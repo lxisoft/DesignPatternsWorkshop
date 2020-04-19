@@ -37,4 +37,10 @@ public class WhiteColorDecoratorAYN extends ColorDecoratorAYN{
 		
 	}
 
+	@Override
+	public int strengthAYN() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

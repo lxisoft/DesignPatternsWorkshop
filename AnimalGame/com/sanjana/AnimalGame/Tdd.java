@@ -1,5 +1,8 @@
 package com.sanjana.AnimalGame;
 
+import com.sanjana.AnimalGame.Adapter.BirdSPM;
+import com.sanjana.AnimalGame.Adapter.DuckSPM;
+import com.sanjana.AnimalGame.Adapter.PegionSPM;
 import com.sanjana.AnimalGame.Animal.*;
 import com.sanjana.AnimalGame.Behaviour.*;
 import com.sanjana.AnimalGame.Decorator.*;
@@ -23,6 +26,8 @@ public class Tdd{
 //		System.out.println("******************");
 //		AngryDeerSPM andeer = new AngryDeerSPM(deer);
 //				andeer.strengthSPM();
-				
-	}
+		
+		BirdSPM target = new DuckSPM(new PegionSPM());
+		target.cry();
+		}
 }

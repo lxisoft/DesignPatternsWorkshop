@@ -20,7 +20,8 @@ public class AngryDeerSPM extends AddOnDecoratorSPM{
 	public int strengthSPM() {
 		// TODO Auto-generated method stub
 		animalfac = new IotbasedFactorySPM();
-		return this.animalfac.getAnimalSPM("deer").strengthSPM()+(int)(Math.random()*80);
+		int x = this.animalfac.getAnimalSPM("deer").strengthSPM()+(int)(Math.random()*80);
+		return x;
 	}
 
 	@Override

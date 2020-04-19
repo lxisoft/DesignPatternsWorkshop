@@ -8,7 +8,7 @@ import com.sanjana.AnimalGame.Iterator.AnimalIteratorSPM;
 import com.sanjana.AnimalGame.Animal.AnimalSPM;
 import com.sanjana.AnimalGame.Behaviour.*;
 import com.sanjana.AnimalGame.Configuration.AnimalConfigurationSPM;
-import com.sanjana.AnimalGame.Decorator.AngryDeerSPM;
+import com.sanjana.AnimalGame.Decorator.*;
 /**
  * @author sanjana p
  *
@@ -18,6 +18,9 @@ public class ForestSPM{
 	ArrayList<AnimalSPM> animals = new ArrayList<>();
 	private volatile static ForestSPM forest;
 	AnimalSPM deer;
+	AnimalSPM tiger;
+	AnimalSPM lion;
+	AnimalSPM rabbit;
 	 
 	private ForestSPM() {
 		
@@ -40,6 +43,7 @@ public class ForestSPM{
 		System.out.println("The animal of type " +type);
 		AnimalFactorySPM animal = null;
 		AngryDeerSPM angdeer = null;
+		AngryTigerSPM angtiger = null;
 		switch (type) {
 		case "iot":
 			animal = new IotbasedFactorySPM();
@@ -69,15 +73,23 @@ public class ForestSPM{
 		System.out.println(animal.getAnimalSPM("rabbit").featureSPM());
 		System.out.println(animal.getAnimalSPM("deer").featureSPM());
 //to check weather strength is visible
-		System.out.println(animal.getAnimalSPM("tiger").strengthSPM());
-		System.out.println(animal.getAnimalSPM("lion").strengthSPM());
-		System.out.println(animal.getAnimalSPM("rabbit").strengthSPM());
-		System.out.println(animal.getAnimalSPM("deer").strengthSPM());
+		System.out.println("tiger strength "+animal.getAnimalSPM("tiger").strengthSPM());
+		System.out.println("lion strength "+animal.getAnimalSPM("lion").strengthSPM());
+		System.out.println("rabbit strength "+animal.getAnimalSPM("rabbit").strengthSPM());
+		System.out.println("deer Strength "+animal.getAnimalSPM("deer").strengthSPM());
 
 		//
 		System.out.println("*****************************");
 		angdeer = new AngryDeerSPM(deer);
-		System.out.println("angry deer strength" +angdeer.strengthSPM());
+		System.out.println("angry deer strength " +angdeer.strengthSPM());
+		angtiger = new AngryTigerSPM(tiger);
+		System.out.println("angry tiger strength " +angtiger.strengthSPM());
+		AngryRabbitSPM angrabbit = new AngryRabbitSPM(rabbit);
+		System.out.println("angry rabbit strength " +angrabbit.strengthSPM());
+		AngryLionSPM anglion = new AngryLionSPM(tiger);
+		System.out.println("angry lion strength " +anglion.strengthSPM());
+		
+		
 		
 		viewAnimalsSPM();
 	}

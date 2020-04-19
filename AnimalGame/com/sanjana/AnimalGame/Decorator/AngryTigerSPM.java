@@ -4,16 +4,24 @@ package com.sanjana.AnimalGame.Decorator;
  *
  */
 import com.sanjana.AnimalGame.Animal.AnimalSPM;
+import com.sanjana.AnimalGame.Factory.AnimalFactorySPM;
+import com.sanjana.AnimalGame.Factory.IotbasedFactorySPM;
+import com.sanjana.AnimalGame.Factory.MobilebasedFactorySPM;
 
 public class AngryTigerSPM extends AddOnDecoratorSPM{
 	
 	AnimalSPM animal;
+	AnimalFactorySPM animalfac;
+	
 	public AngryTigerSPM(AnimalSPM a) {
 		this.animal = a;
 		
 	}
    public int strengthSPM() {
-	return this.animal.strengthSPM()+(int)(Math.random()*80);
+	   animalfac = new MobilebasedFactorySPM();
+	   int a = (int)(Math.random()*80);
+	   int y=this.animalfac.getAnimalSPM("tiger").strengthSPM()+a;
+	   return y;
 }
 @Override
 public String featureSPM() {

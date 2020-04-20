@@ -6,67 +6,38 @@ import com.anjali.animalgame.observer.Observer;
 import com.anjali.animalgame.observer.Subject;
 import com.anjali.animalgame.strategy.impl.Carnivore;
 import com.anjali.animalgame.strategy.impl.Herbivore;
-/*
- * Observer class observing DangerSubject
- */
-public class DeerANJ extends AnimalANJ implements Observer{
 
-	private Boolean isDanger;
-	private Subject dangerSubject;
-	AnimalFactory factory;
-
-	public DeerANJ(AnimalFactory factory) {
-		this.factory = factory;
-		foodEatBehaviour=new Herbivore(); //setting strategy pattern behaviour
-	}
-
-	public DeerANJ(Subject dangerSubject) {
-		this.dangerSubject = dangerSubject;
-		dangerSubject.register(this);
-		}
-
-	
+public class DeerANJ extends AnimalANJ /*implements Observer*/{
 
 	@Override
-	public void meetAnotherAnimalANJ(AnimalANJ animal2) {
-	
-		if(animal2.getFoodEatBehaviour() instanceof Carnivore){
-			System.out.println("observer deer");
-			notifyDanger();										// Observer pattern : Notify while meeting Danger
-			run(animal2);
-			}
-			
-			else if(animal2.getFoodEatBehaviour() instanceof Herbivore){
-			ignore(animal2);
-			}
-			
-			else{
-				System.out.println("Not valid");
-			}
+	public void meetAnotherAnimalANJ(AnimalANJ anotherAnimal) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void eat() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void fight(AnimalANJ animal2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void dead() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void ignore(AnimalANJ animal2) {
+		// TODO Auto-generated method stub
 		
 	}
 
 	
-	public void graze() {
-		this.eat(); 		//strategy behaviour invoked
-	}
-	
-	public void run(AnimalANJ animal){
-		System.out.println(getAnimalName()+" Runs meeting "+animal.getAnimalName());
-		
-	}
-	
-	public void notifyDanger() {
-
-		System.out.println("Deer notifyDanger");
-
-		DeerANJ observer1=new DeerANJ(DangerSubject.getInstance());
-		DangerSubject.getInstance().getUpdate(this.isDanger);
-	}
-
-	@Override
-	public void update(Boolean isDanger) {
-		System.out.println("Run fast!!");
-	}
-
 }

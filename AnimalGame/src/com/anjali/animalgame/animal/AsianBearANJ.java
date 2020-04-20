@@ -2,12 +2,7 @@ package com.anjali.animalgame.animal;
 
 import com.anjali.animalgame.factory.AnimalFactory;
 
-public class AsianBearANJ extends AnimalANJ{
+public class AsianBearANJ extends BearANJ{
 
-	@Override
-	public void meetAnotherAnimalANJ(AnimalANJ anotherAnimal) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

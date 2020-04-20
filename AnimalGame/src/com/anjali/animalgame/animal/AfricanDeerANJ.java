@@ -1,11 +1,6 @@
 package com.anjali.animalgame.animal;
 
-public class AfricanDeerANJ extends AnimalANJ{
+public class AfricanDeerANJ extends DeerANJ{
 
-	@Override
-	public void meetAnotherAnimalANJ(AnimalANJ anotherAnimal) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

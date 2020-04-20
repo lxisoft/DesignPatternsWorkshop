@@ -8,36 +8,32 @@ import com.anjali.animalgame.animal.RabbitANJ;
 import com.anjali.animalgame.animal.TigerANJ;
 import com.anjali.animalgame.factory.AfricanAnimalFactory;
 import com.anjali.animalgame.factory.AnimalFactory;
+import com.anjali.animalgame.factory.AsianAnimalFactory;
 
 /*
  * Concrete class for factory pattern implementing template method
  */
 public class AsianAnimalCreatorANJ extends AnimalCreatorANJ{
-
+	AnimalFactory factory=new AsianAnimalFactory();
+	
 	@Override
 	public AnimalANJ createAnimal(String animalType) {
-		AnimalFactory asianFactory=new AfricanAnimalFactory();
 
-	      if(animalType.equalsIgnoreCase("RabbitANJ")){
-	    	  return asianFactory.createRabbit();
-	    	 //return new RabbitANJ(asianFactory);
-	      } 
+		if(animalType.equalsIgnoreCase("BearANJ")){
+	    	  return factory.createBear();
+			}
 	      else if(animalType.equalsIgnoreCase("DeerANJ")){
-	    	  return asianFactory.createDeer();
-	    	  // return new DeerANJ(asianFactory);       
+	    	  return factory.createDeer();      
 	      } 
 	      else if(animalType.equalsIgnoreCase("TigerANJ")){
-		     return asianFactory.createTiger();
-	    	 // return new TigerANJ(asianFactory);       
+	    	  return factory.createTiger();
 	      }
 	      else if(animalType.equalsIgnoreCase("LionANJ")){
-	    	  return asianFactory.createLion();
-	    	  //return new LionANJ(asianFactory);       
+	    	  return factory.createLion();     
 		  }
-	      else if(animalType.equalsIgnoreCase("BearANJ")){
-			  return asianFactory.createBear();
-	    	  // return new BearANJ(asianFactory);       
-		  }
+	      else if(animalType.equalsIgnoreCase("RabbitANJ")){
+	    	  return factory.createRabbit();
+	     }
 	      else {
 		return null;
 	}

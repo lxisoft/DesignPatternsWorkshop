@@ -10,61 +10,37 @@ import com.anjali.animalgame.strategy.impl.Herbivore;
 /*
  * Observer class observing DangerSubject
  */
-public class RabbitANJ extends AnimalANJ implements Observer{
-
-	private Boolean isDanger;
-	private Subject dangerSubject;
-	AnimalFactory factory;				//abstract factory
-
-	public RabbitANJ(AnimalFactory factory) {
-		this.factory = factory;
-		foodEatBehaviour=new Herbivore(); //setting strategy pattern behaviour
-	}
-
-	public RabbitANJ(Subject dangerSubject) {
-		this.dangerSubject = dangerSubject;
-		dangerSubject.register(this);
-		}
-
+public class RabbitANJ extends AnimalANJ /*implements Observer*/{
+	
 	@Override
-	public void meetAnotherAnimalANJ(AnimalANJ animal2) {
+	public void meetAnotherAnimalANJ(AnimalANJ anotherAnimal) {
+		// TODO Auto-generated method stub
 		
-		if(animal2.getFoodEatBehaviour() instanceof Carnivore){
-			System.out.println("observer rabbit");
-			notifyDanger();
-			run(animal2);
-			}
-			
-			else if(animal2.getFoodEatBehaviour() instanceof Herbivore){
-			ignore(animal2);
-			}
-			
-			else{
-				System.out.println("Not valid");
-			}
-	
-	}
-
-	
-	public void graze() {
-		this.eat();		//strategy behaviour invoked 	
-	}
-	
-	public void run(AnimalANJ animal){
-		System.out.println(getAnimalName()+" Runs meeting "+animal.getAnimalName());
-		
-	}
-	
-	public void notifyDanger() {
-		System.out.println("Rabbit notifyDanger");           /*  update subject Observer pattern*/
-		
-		RabbitANJ observer1=new RabbitANJ(DangerSubject.getInstance());
-		DangerSubject.getInstance().getUpdate(this.isDanger);
 	}
 
 	@Override
-	public void update(Boolean isDanger) {    
-		System.out.println("Run fast!!");
+	public void eat() {
+		// TODO Auto-generated method stub
+		
 	}
 
+	@Override
+	public void fight(AnimalANJ animal2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void dead() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void ignore(AnimalANJ animal2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 }

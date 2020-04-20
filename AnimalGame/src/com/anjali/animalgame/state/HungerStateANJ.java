@@ -2,8 +2,10 @@ package com.anjali.animalgame.state;
 /*
  * State interface : State pattern
  */
-public interface StateANJ {
+public interface HungerStateANJ {
 
-	void changeStateOfAnimal();
+	void kill();
+	
+	void ignore();
 	
 }

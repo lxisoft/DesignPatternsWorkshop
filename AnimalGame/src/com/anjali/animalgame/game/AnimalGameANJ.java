@@ -19,23 +19,22 @@ public class AnimalGameANJ extends GameTemplateANJ{
 	public void setGame() {
 		
 		forest=ForestANJ.getInstance();   //Singleton pattern
-		
+		forest.setForestRegion("african");
 		/*invoked factory creator for creating animals: factory pattern
 		*
 		*/
-		AnimalCreatorANJ africanAnimalCreator=new AfricanAnimalCreatorANJ();  
-		AnimalCreatorANJ asianAnimalCreator=new AsianAnimalCreatorANJ();
+		AnimalCreatorANJ animalCreator=new AfricanAnimalCreatorANJ();  
 		
-		AnimalANJ createdAnimal1=africanAnimalCreator.createAnimalANJ("DeerANJ"); 
-		AnimalANJ createdAnimal2=asianAnimalCreator.createAnimalANJ("DeerANJ"); 
-		AnimalANJ createdAnimal3=asianAnimalCreator.createAnimalANJ("DeerANJ"); 
-		AnimalANJ createdAnimal4=africanAnimalCreator.createAnimalANJ("DeerANJ"); 
-		AnimalANJ createdAnimal5=africanAnimalCreator.createAnimalANJ("LionANJ"); 
-		AnimalANJ createdAnimal6=asianAnimalCreator.createAnimalANJ("TigerANJ"); 
-		AnimalANJ createdAnimal7=africanAnimalCreator.createAnimalANJ("TigerANJ"); 
-		AnimalANJ createdAnimal8=africanAnimalCreator.createAnimalANJ("BearANJ"); 
-		AnimalANJ createdAnimal9=asianAnimalCreator.createAnimalANJ("RabbitANJ"); 
-		AnimalANJ createdAnimal10=africanAnimalCreator.createAnimalANJ("RabbitANJ"); 
+		AnimalANJ createdAnimal1=animalCreator.create("DeerANJ"); 
+		AnimalANJ createdAnimal2=animalCreator.create("DeerANJ"); 
+		AnimalANJ createdAnimal3=animalCreator.create("DeerANJ"); 
+		AnimalANJ createdAnimal4=animalCreator.create("DeerANJ"); 
+		AnimalANJ createdAnimal5=animalCreator.create("LionANJ"); 
+		AnimalANJ createdAnimal6=animalCreator.create("TigerANJ"); 
+		AnimalANJ createdAnimal7=animalCreator.create("TigerANJ"); 
+		AnimalANJ createdAnimal8=animalCreator.create("BearANJ"); 
+		AnimalANJ createdAnimal9=animalCreator.create("RabbitANJ"); 
+		AnimalANJ createdAnimal10=animalCreator.create("RabbitANJ"); 
 			
 		forest.getAnimals()[0]=createdAnimal1;
 		forest.getAnimals()[1]=createdAnimal2;
@@ -52,7 +51,8 @@ public class AnimalGameANJ extends GameTemplateANJ{
 		 * Before Facade pattern implementation
 		 */
 		//forest.getAnimals()[0].setAnimalName("Deer 1");  
-															
+		System.out.println("****7"+forest.getAnimals()[7]); 
+														
 		/**
 		 * Implement Facade pattern to avoid the coupling of method calls
 		 */								
@@ -79,7 +79,10 @@ public class AnimalGameANJ extends GameTemplateANJ{
 			if((forest.getAnimals()[firstAnimal].isAlive()==true)&&(forest.getAnimals()[secondAnimal].isAlive()==true)&&(firstAnimal!=secondAnimal))
 			{
 				System.out.println(forest.getAnimals()[firstAnimal].getAnimalName()+" meets"+forest.getAnimals()[secondAnimal].getAnimalName());
-				forest.getAnimals()[firstAnimal].meetAnotherAnimalANJ(forest.getAnimals()[secondAnimal]);
+				System.out.println("first"+forest.getAnimals()[firstAnimal]);
+				System.out.println("first"+forest.getAnimals()[secondAnimal]);
+				
+				//forest.getAnimals()[firstAnimal].meetAnotherAnimalANJ(forest.getAnimals()[secondAnimal]);
 				System.out.println("\n");
 			
 				if((forest.getAnimals()[firstAnimal].isAlive()==false)||(forest.getAnimals()[secondAnimal].isAlive()==false)){
@@ -96,13 +99,13 @@ public class AnimalGameANJ extends GameTemplateANJ{
 	@Override
 	public void showResult() {
 		//AnimalANJ winner=null;
-		for(int j=0;j<10;j++){
+		/*for(int j=0;j<10;j++){
 			if(forest.getAnimals()[j].isAlive()==true){
 				System.out.println(forest.getAnimals()[j].getAnimalName()+" left in the forest");
 				System.out.println(forest.getAnimals()[j].getAnimalName()+" is the winner");
 				//winner=forest.getAnimals()[j];
 			}
-		}
+		}*/
 	}
 
 	/*
@@ -112,7 +115,7 @@ public class AnimalGameANJ extends GameTemplateANJ{
 		System.out.println("inside print animals using iterator");
 		while (iterator.hasNext()) {
 			AnimalANJ animal = (AnimalANJ)iterator.next();
-			System.out.print(animal.getAnimalName() + "");
+		//	System.out.print(animal.getAnimalName() + "");
 			System.out.println("\n");
 		}
 	}

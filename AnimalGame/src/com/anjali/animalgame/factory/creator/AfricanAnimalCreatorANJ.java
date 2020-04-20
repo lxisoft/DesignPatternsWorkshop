@@ -14,31 +14,26 @@ import com.anjali.animalgame.factory.AnimalFactory;
  */
 public class AfricanAnimalCreatorANJ extends AnimalCreatorANJ{
 
-		
 	@Override
 	public AnimalANJ createAnimal(String animalType) {
-		AnimalFactory africanFactory=new AfricanAnimalFactory();
-
-	      if(animalType.equalsIgnoreCase("RabbitANJ")){
-	    	  return africanFactory.createRabbit();
-	    	  // return new RabbitANJ(africanFactory);
-	      } 
+		
+		AnimalFactory factory=new AfricanAnimalFactory();
+		
+	      if(animalType.equalsIgnoreCase("BearANJ")){
+	    	  return factory.createBear();
+			}
 	      else if(animalType.equalsIgnoreCase("DeerANJ")){
-	    	  return africanFactory.createDeer();
-	        // return new DeerANJ(africanFactory);       
+	    	  return factory.createDeer();      
 	      } 
 	      else if(animalType.equalsIgnoreCase("TigerANJ")){
-	    	  return africanFactory.createTiger();
-	    	  //return new TigerANJ(africanFactory);       
+	    	  return factory.createTiger();
 	      }
 	      else if(animalType.equalsIgnoreCase("LionANJ")){
-	    	  return africanFactory.createLion();
-	    	  // return new LionANJ(africanFactory);       
+	    	  return factory.createLion();     
 		  }
-	      else if(animalType.equalsIgnoreCase("BearANJ")){
-	    	  return africanFactory.createBear();
-	    	  //return new BearANJ(africanFactory);       
-		  }
+	      else if(animalType.equalsIgnoreCase("RabbitANJ")){
+	    	  return factory.createRabbit();
+	     }
 	      else {
 		return null;
 	}

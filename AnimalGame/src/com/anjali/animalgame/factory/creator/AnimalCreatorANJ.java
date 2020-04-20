@@ -9,10 +9,9 @@ import com.anjali.animalgame.animal.AnimalANJ;
 
 public abstract class AnimalCreatorANJ {
 
-	public AnimalANJ createAnimalANJ(String animalType) {
+	public AnimalANJ create(String animalType) {
 		
 		AnimalANJ animal=createAnimal(animalType);
-		System.out.println("animalcreater"+animal);
 		return animal;
 	}
 	

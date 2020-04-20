@@ -11,8 +11,7 @@ public class AnimalDetailSetterANJ implements IAnimalFacadeANJ{
 	public void setAnimalDetails(AnimalANJ[] animals) {
 		System.out.println("inside setAnimalDetails in facade implemented class");
 		
-		animals[0].setAnimalName("Deer 1");
-		
+		animals[0].setAnimalName("Deer 1");	
 		animals[1].setAnimalName("Deer 2");
 		animals[2].setAnimalName("Deer 3");
 		animals[3].setAnimalName("Deer 4");

@@ -24,7 +24,19 @@ public class ForestANJ {
 	
 	private String forestName;
 	
+	private String forestRegion;
+	
 	private AnimalANJ[] animals=new AnimalANJ[10];
+	
+	
+
+	public String getForestRegion() {
+		return forestRegion;
+	}
+
+	public void setForestRegion(String forestRegion) {
+		this.forestRegion = forestRegion;
+	}
 
 	public String getForestName() {
 		return forestName;

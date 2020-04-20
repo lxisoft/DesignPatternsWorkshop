@@ -7,6 +7,9 @@ import com.anjali.animalgame.animal.AsianDeerANJ;
 import com.anjali.animalgame.animal.AsianLionANJ;
 import com.anjali.animalgame.animal.AsianRabbitANJ;
 import com.anjali.animalgame.animal.AsianTigerANJ;
+import com.anjali.animalgame.strategy.impl.Carnivore;
+import com.anjali.animalgame.strategy.impl.Herbivore;
+import com.anjali.animalgame.strategy.impl.Omnivore;
 
 public class AsianAnimalFactory implements AnimalFactory{
 

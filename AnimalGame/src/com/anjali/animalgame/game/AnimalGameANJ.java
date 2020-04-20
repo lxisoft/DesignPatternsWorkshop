@@ -6,6 +6,10 @@ import com.anjali.animalgame.factory.creator.AnimalCreatorANJ;
 import com.anjali.animalgame.factory.creator.AsianAnimalCreatorANJ;
 import com.anjali.animalgame.forest.ForestANJ;
 import com.anjali.animalgame.iterator.Iterator;
+import com.anjali.animalgame.strategy.FoodEatBehaviourANJ;
+import com.anjali.animalgame.strategy.impl.Carnivore;
+import com.anjali.animalgame.strategy.impl.Herbivore;
+import com.anjali.animalgame.strategy.impl.Omnivore;
 import com.anjali.animalgame.template.GameTemplateANJ;
 
 /*
@@ -24,17 +28,36 @@ public class AnimalGameANJ extends GameTemplateANJ{
 		*
 		*/
 		AnimalCreatorANJ animalCreator=new AfricanAnimalCreatorANJ();  
+		FoodEatBehaviourANJ carnivoreBehaviour=new Carnivore();
+		FoodEatBehaviourANJ herbivoreBehaviour=new Herbivore();
+		FoodEatBehaviourANJ omnivoreBehaviour=new Omnivore();
 		
 		AnimalANJ createdAnimal1=animalCreator.create("DeerANJ"); 
+		createdAnimal1.setFoodEatBehaviour(herbivoreBehaviour);
 		AnimalANJ createdAnimal2=animalCreator.create("DeerANJ"); 
+		createdAnimal2.setFoodEatBehaviour(herbivoreBehaviour);
 		AnimalANJ createdAnimal3=animalCreator.create("DeerANJ"); 
-		AnimalANJ createdAnimal4=animalCreator.create("DeerANJ"); 
-		AnimalANJ createdAnimal5=animalCreator.create("LionANJ"); 
+		createdAnimal3.setFoodEatBehaviour(herbivoreBehaviour);
+		AnimalANJ createdAnimal4=animalCreator.create("DeerANJ");
+		createdAnimal4.setFoodEatBehaviour(herbivoreBehaviour);
+		
+		AnimalANJ createdAnimal5=animalCreator.create("LionANJ");
+		createdAnimal5.setFoodEatBehaviour(carnivoreBehaviour);
+		
 		AnimalANJ createdAnimal6=animalCreator.create("TigerANJ"); 
+		createdAnimal6.setFoodEatBehaviour(carnivoreBehaviour);
+		
 		AnimalANJ createdAnimal7=animalCreator.create("TigerANJ"); 
+		createdAnimal7.setFoodEatBehaviour(carnivoreBehaviour);
+		
 		AnimalANJ createdAnimal8=animalCreator.create("BearANJ"); 
+		createdAnimal8.setFoodEatBehaviour(omnivoreBehaviour);
+		
 		AnimalANJ createdAnimal9=animalCreator.create("RabbitANJ"); 
+		createdAnimal9.setFoodEatBehaviour(herbivoreBehaviour);
+		
 		AnimalANJ createdAnimal10=animalCreator.create("RabbitANJ"); 
+		createdAnimal10.setFoodEatBehaviour(herbivoreBehaviour);
 			
 		forest.getAnimals()[0]=createdAnimal1;
 		forest.getAnimals()[1]=createdAnimal2;
@@ -51,7 +74,6 @@ public class AnimalGameANJ extends GameTemplateANJ{
 		 * Before Facade pattern implementation
 		 */
 		//forest.getAnimals()[0].setAnimalName("Deer 1");  
-		System.out.println("****7"+forest.getAnimals()[7]); 
 														
 		/**
 		 * Implement Facade pattern to avoid the coupling of method calls
@@ -72,25 +94,24 @@ public class AnimalGameANJ extends GameTemplateANJ{
 		System.out.println("/n");
 		int noOfAnimals=10;
 		
-		/*do{		
+		do{		
 			int firstAnimal=(int)(Math.random()*10);
 			int secondAnimal=(int)(Math.random()*10);
 			
-			if((forest.getAnimals()[firstAnimal].isAlive()==true)&&(forest.getAnimals()[secondAnimal].isAlive()==true)&&(firstAnimal!=secondAnimal))
+			if((forest.getAnimals()[firstAnimal].getIsAlive()==true)&&(forest.getAnimals()[secondAnimal].getIsAlive()==true)&&(firstAnimal!=secondAnimal))
 			{
 				System.out.println(forest.getAnimals()[firstAnimal].getAnimalName()+" meets"+forest.getAnimals()[secondAnimal].getAnimalName());
-				System.out.println("first"+forest.getAnimals()[firstAnimal]);
-				System.out.println("first"+forest.getAnimals()[secondAnimal]);
+				System.out.println(forest.getAnimals()[firstAnimal]);
+				System.out.println(forest.getAnimals()[secondAnimal]);
 				
-				//forest.getAnimals()[firstAnimal].meetAnotherAnimalANJ(forest.getAnimals()[secondAnimal]);
-				System.out.println("\n");
-			
-				if((forest.getAnimals()[firstAnimal].isAlive()==false)||(forest.getAnimals()[secondAnimal].isAlive()==false)){
+				forest.makeAnimalsMeet(forest.getAnimals()[firstAnimal], forest.getAnimals()[secondAnimal]);
+				
+				if((forest.getAnimals()[firstAnimal].getIsAlive()==false)||(forest.getAnimals()[secondAnimal].getIsAlive()==false)){
 					noOfAnimals--;
 				}
 			}
 			}while(noOfAnimals>1);//end of dowhile
-			*/
+			
 		if(noOfAnimals==1){
 			showResult();
 		}

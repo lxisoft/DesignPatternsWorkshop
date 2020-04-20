@@ -1,7 +1,5 @@
 package com.anjali.animalgame.forest;
 
-
-
 import com.anjali.animalgame.animal.AnimalANJ;
 import com.anjali.animalgame.facade.AnimalDetailSetterANJ;
 import com.anjali.animalgame.facade.IAnimalFacadeANJ;
@@ -66,6 +64,12 @@ public class ForestANJ {
 		
 		AnimalDetailSetterANJ animalSetter=new AnimalDetailSetterANJ();
 	    animalSetter.setAnimalDetails(animals);
+		
+	}
+	
+	public void makeAnimalsMeet(AnimalANJ firstAnimal,AnimalANJ secondAnimal) {
+		System.out.println("make animals meet");
+		firstAnimal.meetAnotherAnimalANJ(secondAnimal);
 		
 	}
 

@@ -1,6 +1,8 @@
 package com.anjali.animalgame.animal;
 
-public class AfricanDeerANJ extends DeerANJ{
+import com.anjali.animalgame.strategy.FoodEatBehaviourANJ;
 
+public class AfricanDeerANJ extends DeerANJ{
+	
 
 }

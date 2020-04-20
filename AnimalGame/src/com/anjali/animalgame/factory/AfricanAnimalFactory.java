@@ -7,8 +7,18 @@ import com.anjali.animalgame.animal.AfricanRabbitANJ;
 import com.anjali.animalgame.animal.AfricanTigerANJ;
 import com.anjali.animalgame.animal.AnimalANJ;
 import com.anjali.animalgame.animal.LionANJ;
+import com.anjali.animalgame.strategy.FoodEatBehaviourANJ;
+import com.anjali.animalgame.strategy.impl.Carnivore;
+import com.anjali.animalgame.strategy.impl.Herbivore;
+import com.anjali.animalgame.strategy.impl.Omnivore;
 
 public class AfricanAnimalFactory implements AnimalFactory {
+
+
+	/*
+	 * Strategy Behaviour Composition
+	 */
+	protected FoodEatBehaviourANJ foodEatBehaviour; 
 
 	@Override
 	public AnimalANJ createLion() {

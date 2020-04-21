@@ -2,7 +2,7 @@ package com.sruthy.animalgame.factory;
 
 import com.sruthy.animalgame.behaviour.RunWithAimOfPray;
 import com.sruthy.animalgame.iotanimal.Lion;
-import com.sruthy.animalgame.iotanimal.Monkey;
+import com.sruthy.animalgame.iotanimal.Cheetah;
 import com.sruthy.animalgame.iotanimal.Tiger;
 
 /**
@@ -29,7 +29,7 @@ public class IOTAnimal extends Animal{
 		}
 		else if (animalName.equals("monkey")) {
 			
-					a = new Monkey();
+					a = new Cheetah();
 			
 		}
 		else if(animalName.equals("tiger")) {

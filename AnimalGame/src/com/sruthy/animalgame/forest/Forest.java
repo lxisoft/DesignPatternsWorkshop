@@ -157,6 +157,7 @@ public class Forest {
 		this.treeHouseBuilderSKC.buildClimberSKC();
 		this.treeHouseBuilderSKC.buildDoorSKC();
 		this.treeHouseBuilderSKC.buildTreeSKC();
+		this.treeHouseBuilderSKC.showTreeHouse();
 		System.out.println("\nBuild Tree House Successfully..");
 	}
 

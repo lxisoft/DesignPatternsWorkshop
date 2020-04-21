@@ -8,12 +8,8 @@ import com.sruthy.animalgame.factory.IOTAnimal;
  * Implemented  Factory Pattern
  *
  */
-public class Monkey extends IOTAnimal {
+public class Cheetah extends IOTAnimal {
 
-	public void pluck() {
-		System.out.println("Can pluck and have fruits");
-		
-	}
 	public String toString()
 	{
 	      return getClass().getSimpleName();

@@ -15,4 +15,7 @@ public interface TreeHouseBuilder {
 	
 	public TreeHouse getTreeHouseSKC(); 
 	
+	public void showTreeHouse();
+	
+	
 }

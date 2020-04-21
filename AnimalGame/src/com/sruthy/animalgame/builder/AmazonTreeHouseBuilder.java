@@ -42,6 +42,43 @@ public class AmazonTreeHouseBuilder implements TreeHouseBuilder{
 		return this.treeHouseSKC;
 	}
 
+	public void showTreeHouse() {
+        
+		int i, j;
+		int n= 7;
+        
+        // Printing the upper triangle  
+        for (i = 0; i < n; i++) {  
+    
+            // Left space triangle  
+            for (j = i + 1; j < n; j++)  
+                System.out.print(" ");  
+    
+            // Center Star triangle  
+            for (j = 0; j < (2 * i + 1); j++)  
+                System.out.print("*");  
+    
+            System.out.println();  
+        }  
+    
+        // Printing Lower rectangles  
+        for (i = 0; i < 3; i++) {  
+    
+            // Left rectangle  
+            for (j = 0; j < 3; j++)  
+                System.out.print("*");  
+    
+            // Center Space rectangle  
+            for (j = 0; j < (2 * n - 7); j++)  
+                System.out.print(" ");  
+    
+            // Right rectangle  
+            for (j = 0; j < 3; j++)  
+                System.out.print("*");  
+    
+            System.out.println();  
+        }  
+	}
 	
 
 }

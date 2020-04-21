@@ -27,7 +27,7 @@ public class AnimalGameANJ extends GameTemplateANJ{
 		
 		AnimalCreatorANJ animalCreator=new AsianAnimalCreatorANJ();  
 		
-		AnimalANJ createdAnimal1=animalCreator.create("DeerANJ"); 
+		AnimalANJ createdAnimal1=animalCreator.create("DeerANJ");
 		AnimalANJ createdAnimal2=animalCreator.create("DeerANJ"); 
 		AnimalANJ createdAnimal3=animalCreator.create("DeerANJ"); 
 		AnimalANJ createdAnimal4=animalCreator.create("DeerANJ");
@@ -73,16 +73,13 @@ public class AnimalGameANJ extends GameTemplateANJ{
 		System.out.println("/n");
 		int noOfAnimals=10;
 		
-		/*do{		
+		do{		
 			int firstAnimal=(int)(Math.random()*10);
 			int secondAnimal=(int)(Math.random()*10);
 			
 			if((forest.getAnimals()[firstAnimal].getIsAlive()==true)&&(forest.getAnimals()[secondAnimal].getIsAlive()==true)&&(firstAnimal!=secondAnimal))
 			{
-				System.out.println(forest.getAnimals()[firstAnimal].getAnimalName()+" meets"+forest.getAnimals()[secondAnimal].getAnimalName());
-				System.out.println(forest.getAnimals()[firstAnimal]);
-				System.out.println(forest.getAnimals()[secondAnimal]);
-				
+				System.out.println(forest.getAnimals()[firstAnimal].getAnimalName()+" meets"+forest.getAnimals()[secondAnimal].getAnimalName());			
 				forest.makeAnimalsMeet(forest.getAnimals()[firstAnimal], forest.getAnimals()[secondAnimal]);
 				
 				if((forest.getAnimals()[firstAnimal].getIsAlive()==false)||(forest.getAnimals()[secondAnimal].getIsAlive()==false)){
@@ -90,7 +87,7 @@ public class AnimalGameANJ extends GameTemplateANJ{
 				}
 			}
 			}while(noOfAnimals>1);//end of dowhile
-			*/
+			
 		if(noOfAnimals==1){
 			showResult();
 		}

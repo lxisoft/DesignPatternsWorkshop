@@ -16,8 +16,6 @@ public class HungryState implements HungerStateANJ{
 	@Override
 	public void kill() {
 		System.out.println("kill and eat");
-		//animal.setAlive(false);
-		//animal.setState(animal.getNoHungryState());
 	}
 
 	@Override

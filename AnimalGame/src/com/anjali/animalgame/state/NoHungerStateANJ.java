@@ -5,11 +5,11 @@ package com.anjali.animalgame.state;
  */
 import com.anjali.animalgame.animal.AnimalANJ;
 
-public class NoHungerState implements HungerStateANJ{
+public class NoHungerStateANJ implements HungerStateANJ{
 
 	AnimalANJ animal;
 	
-	public NoHungerState(AnimalANJ animal) {
+	public NoHungerStateANJ(AnimalANJ animal) {
 		this.animal = animal;
 	}
 

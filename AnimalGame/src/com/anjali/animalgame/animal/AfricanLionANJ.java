@@ -38,9 +38,7 @@ public class AfricanLionANJ extends LionANJ{
 			 animal.setFoodEatBehaviour(this.foodEatBehaviour);
 			 return animal;
 	        }
-		
-	 }
-
 	
+}
 	
 }

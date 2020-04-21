@@ -23,7 +23,7 @@ public class RabbitANJ extends AnimalANJ /*implements Observer*/{
 		foodEatBehaviour=new Herbivore();
 	}
 	
-	@Override
+	
 public void meetAnotherAnimalANJ(AnimalANJ animal2) {
 		
 		if(animal2.getFoodEatBehaviour() instanceof Carnivore){
@@ -44,29 +44,12 @@ public void meetAnotherAnimalANJ(AnimalANJ animal2) {
 	
 	}
 
-	@Override
-	public void eat() {
-		// TODO Auto-generated method stub
-		
+	
+	public void dead(){
+		System.out.println("Rabbit dies");
+		isAlive=false;
 	}
 
-	@Override
-	public void fight(AnimalANJ animal2) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void dead() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void ignore(AnimalANJ animal2) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 	
 }

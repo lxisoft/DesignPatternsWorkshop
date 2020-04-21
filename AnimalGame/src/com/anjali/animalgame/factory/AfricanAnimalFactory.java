@@ -16,12 +16,11 @@ public class AfricanAnimalFactory implements AnimalFactory {
 
 	@Override
 	public AnimalANJ createLion() {
-		return new AfricanLionANJ.Builder().animalName("Lion").isAlive(true).foodEatBehaviour(new Carnivore()).build();
+		return new AfricanLionANJ();
 	}
-
 	@Override
 	public AnimalANJ createTiger() {
-		return new AfricanTigerANJ.Builder().animalName("Tiger").isAlive(true).foodEatBehaviour(new Carnivore()).build();
+		return new AfricanTigerANJ();
 	}
 
 	@Override

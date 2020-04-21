@@ -24,40 +24,19 @@ public class AnimalGameANJ extends GameTemplateANJ{
 		
 		forest=ForestANJ.getInstance();   //Singleton pattern
 		forest.setForestRegion("african");
-		/*invoked factory creator for creating animals: factory pattern
-		*
-		*/
-		AnimalCreatorANJ animalCreator=new AfricanAnimalCreatorANJ();  
-		FoodEatBehaviourANJ carnivoreBehaviour=new Carnivore();
-		FoodEatBehaviourANJ herbivoreBehaviour=new Herbivore();
-		FoodEatBehaviourANJ omnivoreBehaviour=new Omnivore();
+		
+		AnimalCreatorANJ animalCreator=new AsianAnimalCreatorANJ();  
 		
 		AnimalANJ createdAnimal1=animalCreator.create("DeerANJ"); 
-		createdAnimal1.setFoodEatBehaviour(herbivoreBehaviour);
 		AnimalANJ createdAnimal2=animalCreator.create("DeerANJ"); 
-		createdAnimal2.setFoodEatBehaviour(herbivoreBehaviour);
 		AnimalANJ createdAnimal3=animalCreator.create("DeerANJ"); 
-		createdAnimal3.setFoodEatBehaviour(herbivoreBehaviour);
 		AnimalANJ createdAnimal4=animalCreator.create("DeerANJ");
-		createdAnimal4.setFoodEatBehaviour(herbivoreBehaviour);
-		
 		AnimalANJ createdAnimal5=animalCreator.create("LionANJ");
-		createdAnimal5.setFoodEatBehaviour(carnivoreBehaviour);
-		
 		AnimalANJ createdAnimal6=animalCreator.create("TigerANJ"); 
-		createdAnimal6.setFoodEatBehaviour(carnivoreBehaviour);
-		
-		AnimalANJ createdAnimal7=animalCreator.create("TigerANJ"); 
-		createdAnimal7.setFoodEatBehaviour(carnivoreBehaviour);
-		
+		AnimalANJ createdAnimal7=animalCreator.create("TigerANJ"); 	
 		AnimalANJ createdAnimal8=animalCreator.create("BearANJ"); 
-		createdAnimal8.setFoodEatBehaviour(omnivoreBehaviour);
-		
 		AnimalANJ createdAnimal9=animalCreator.create("RabbitANJ"); 
-		createdAnimal9.setFoodEatBehaviour(herbivoreBehaviour);
-		
 		AnimalANJ createdAnimal10=animalCreator.create("RabbitANJ"); 
-		createdAnimal10.setFoodEatBehaviour(herbivoreBehaviour);
 			
 		forest.getAnimals()[0]=createdAnimal1;
 		forest.getAnimals()[1]=createdAnimal2;
@@ -78,7 +57,7 @@ public class AnimalGameANJ extends GameTemplateANJ{
 		/**
 		 * Implement Facade pattern to avoid the coupling of method calls
 		 */								
-		forest.setAnimalDetails();
+		//forest.setAnimalDetails();
 		
 		System.out.println("Forest and animals created"); 
 	
@@ -94,7 +73,7 @@ public class AnimalGameANJ extends GameTemplateANJ{
 		System.out.println("/n");
 		int noOfAnimals=10;
 		
-		do{		
+		/*do{		
 			int firstAnimal=(int)(Math.random()*10);
 			int secondAnimal=(int)(Math.random()*10);
 			
@@ -111,7 +90,7 @@ public class AnimalGameANJ extends GameTemplateANJ{
 				}
 			}
 			}while(noOfAnimals>1);//end of dowhile
-			
+			*/
 		if(noOfAnimals==1){
 			showResult();
 		}

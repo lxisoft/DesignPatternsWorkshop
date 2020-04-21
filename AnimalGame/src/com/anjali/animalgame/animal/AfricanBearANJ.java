@@ -5,6 +5,43 @@ import com.anjali.animalgame.strategy.FoodEatBehaviourANJ;
 
 public class AfricanBearANJ extends BearANJ{
 
-	
+	public static class Builder {
+		
+		private String animalName;	
+		private Boolean isAlive=true;
+		int i=0;
+		/*
+		 * Strategy Behaviour Composition
+		 */
+		protected FoodEatBehaviourANJ foodEatBehaviour; 
+		
+		
+		public Builder animalName(String animalName){
+			this.animalName = animalName+i;
+			i++;
+            return this;  
+            
+        }
+		
+		public Builder isAlive(Boolean isAlive){
+            this.isAlive = isAlive;
+            return this;  
+        }
+		
+		public Builder foodEatBehaviour(FoodEatBehaviourANJ foodEatBehaviour){
+            this.foodEatBehaviour = foodEatBehaviour;
+            return this;  
+        }
+		
+		 public AnimalANJ build(){
+			 AfricanBearANJ animal=new AfricanBearANJ();  
+			 animal.setAnimalName(this.animalName);
+			 animal.setIsAlive(this.isAlive);
+			 animal.setFoodEatBehaviour(this.foodEatBehaviour);
+			 return animal;
+	        }
+		
+	 }
+
 
 }

@@ -14,35 +14,29 @@ import com.anjali.animalgame.strategy.impl.Omnivore;
 
 public class AfricanAnimalFactory implements AnimalFactory {
 
-
-	/*
-	 * Strategy Behaviour Composition
-	 */
-	protected FoodEatBehaviourANJ foodEatBehaviour; 
-
 	@Override
 	public AnimalANJ createLion() {
-		return new AfricanLionANJ();
+		return new AfricanLionANJ.Builder().animalName("Lion").isAlive(true).foodEatBehaviour(new Carnivore()).build();
 	}
 
 	@Override
 	public AnimalANJ createTiger() {
-		return new AfricanTigerANJ();
+		return new AfricanTigerANJ.Builder().animalName("Tiger").isAlive(true).foodEatBehaviour(new Carnivore()).build();
 	}
 
 	@Override
 	public AnimalANJ createDeer() {
-		return new AfricanDeerANJ();
+		return new AfricanDeerANJ.Builder().animalName("Deer").isAlive(true).foodEatBehaviour(new Herbivore()).build();
 	}
 
 	@Override
 	public AnimalANJ createRabbit() {
-		return new AfricanRabbitANJ();
+		return new AfricanRabbitANJ.Builder().animalName("Rabbit").isAlive(true).foodEatBehaviour(new Herbivore()).build();
 	}
 
 	@Override
 	public AnimalANJ createBear() {
-		return new AfricanBearANJ();
+		return new AfricanBearANJ.Builder().animalName("Bear").isAlive(true).foodEatBehaviour(new Omnivore()).build();
 	}
 
 	

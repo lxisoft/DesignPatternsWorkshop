@@ -7,16 +7,7 @@ import com.anjali.animalgame.strategy.impl.Herbivore;
 import com.anjali.animalgame.strategy.impl.Omnivore;
 
 public class LionANJ extends AnimalANJ{
-
-	/*
-	 * Strategy Behaviour Composition
-	 */
-	protected FoodEatBehaviourANJ foodEatBehaviour; 
-
-	public LionANJ() {
-		foodEatBehaviour=new Carnivore();
-	}
-
+	
 	@Override
 	public void meetAnotherAnimalANJ(AnimalANJ secondAnimal) {
 		System.out.println("inside meet*************");

@@ -3,9 +3,7 @@ package com.anjali.animalgame.animal;
 import com.anjali.animalgame.strategy.FoodEatBehaviourANJ;
 
 public abstract class AnimalANJ {
-	
-	private String animalName;
-	
+	private String animalName;	
 	private Boolean isAlive=true;
 	
 	/*
@@ -13,15 +11,15 @@ public abstract class AnimalANJ {
 	 */
 	protected FoodEatBehaviourANJ foodEatBehaviour; 
 	
-
 	public String getAnimalName() {
 		return animalName;
 	}
 
 	public void setAnimalName(String animalName) {
 		this.animalName = animalName;
+		
 	}
-	
+
 	public Boolean getIsAlive() {
 		return isAlive;
 	}
@@ -47,6 +45,7 @@ public abstract class AnimalANJ {
 	public abstract void dead();
 	
 	public abstract void ignore(AnimalANJ animal2);
+	
 	
 }
 

@@ -15,27 +15,27 @@ public class AsianAnimalFactory implements AnimalFactory{
 
 	@Override
 	public AnimalANJ createLion() {
-		return new AsianLionANJ();
+		return new AsianLionANJ.Builder().animalName("Lion").isAlive(true).foodEatBehaviour(new Carnivore()).build();
 	}
 
 	@Override
 	public AnimalANJ createTiger() {
-		return new AsianTigerANJ();
+		return new AsianTigerANJ.Builder().animalName("Tiger").isAlive(true).foodEatBehaviour(new Carnivore()).build();
 	}
 
 	@Override
 	public AnimalANJ createDeer() {
-		return new AsianDeerANJ();
+		return new AsianDeerANJ.Builder().animalName("Deer").isAlive(true).foodEatBehaviour(new Herbivore()).build();
 	}
 
 	@Override
 	public AnimalANJ createRabbit() {
-		return new AsianRabbitANJ();
+		return new AsianRabbitANJ.Builder().animalName("Rabbit").isAlive(true).foodEatBehaviour(new Herbivore()).build();
 	}
 
 	@Override
 	public AnimalANJ createBear() {
-		return new AsianBearANJ();
+		return new AsianBearANJ.Builder().animalName("Bear").isAlive(true).foodEatBehaviour(new Omnivore()).build();
 	}
 
 }

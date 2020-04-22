@@ -13,11 +13,11 @@ public class AngryTigerSPM extends AddOnDecoratorSPM{
 	AnimalSPM animal;
 	AnimalFactorySPM animalfac;
 	
-	public AngryTigerSPM(AnimalSPM a) {
-		this.animal = a;
+	public AngryTigerSPM(AnimalSPM tiger) {
+		this.animal = tiger;
 		
 	}
-   public int strengthSPM() {
+public int strengthSPM() {
 	   animalfac = new MobilebasedFactorySPM();
 	   int a = (int)(Math.random()*80);
 	   int y=this.animalfac.getAnimalSPM("tiger").strengthSPM()+a;

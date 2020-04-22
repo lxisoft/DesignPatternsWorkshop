@@ -25,7 +25,7 @@ public class ForestSPM{
 	private volatile static ForestSPM forest;
 	 AnimalSPM[][] landscape=new AnimalSPM[20][20];
 	AnimalSPM deer;
-	MobilebasedFactorySPM tiger;
+	AnimalSPM tiger;
 	AnimalSPM lion;
 	AnimalSPM rabbit;
 	 
@@ -59,8 +59,8 @@ public class ForestSPM{
 			animals.add(animal.getAnimalSPM("lion"));
 			animals.add(animal.getAnimalSPM("rabbit"));
 			animals.add(animal.getAnimalSPM("deer"));
-//			getStrength();
-//			getState(tiger);
+		
+
 			
 			break;
 		case "mobile":
@@ -70,8 +70,8 @@ public class ForestSPM{
 			animals.add(animal.getAnimalSPM("deer"));
 			animals.add(animal.getAnimalSPM("lion"));
 			animals.add(animal.getAnimalSPM("tiger"));
-		animal.getAnimalSPM("tiger").strengthSPM();
-//			getState(tiger);
+			getStrenght();
+			
 			break;
 		case "web":
 //			createMobileBasedAnimal();
@@ -105,18 +105,17 @@ public class ForestSPM{
 		System.out.println("angry lion strength " +anglion.strengthSPM());
 		
 		
-		
 		viewAnimalsSPM();
 	}
 	
 	public void getStrenght() {
-		MobilebasedFactorySPM animal = null;
-		MobileFacadeSPM mobile = new MobileFacadeSPM(animal);
-		mobile.deerStrengthSPM();
-		mobile.rabbitStrengthSPM();
-		mobile.tigerStrengthSPM();
+		AnimalFactorySPM animal=new MobilebasedFactorySPM();
+		System.out.println("tiger strength "+animal.getAnimalSPM("tiger").strengthSPM());
+		System.out.println("lion strength "+animal.getAnimalSPM("lion").strengthSPM());
+		System.out.println("rabbit strength "+animal.getAnimalSPM("rabbit").strengthSPM());
+		System.out.println("deer Strength "+animal.getAnimalSPM("deer").strengthSPM());
 	}
-
+	
 	public void getState(AnimalSPM WildTigerSPM) {
 		FightStateSPM fight = new FightStateSPM();
 		fight.updateStateSPM(WildTigerSPM);

@@ -7,11 +7,14 @@ import com.sanjana.AnimalGame.Factory.*;
 import com.sanjana.AnimalGame.Iterator.AnimalIteratorSPM;
 import com.sanjana.AnimalGame.State.DeadStateSPM;
 import com.sanjana.AnimalGame.State.FightStateSPM;
+import com.sanjana.AnimalGame.State.StateSPM;
 import com.sanjana.AnimalGame.Animal.AnimalSPM;
 import com.sanjana.AnimalGame.Animal.WildTigerSPM;
 import com.sanjana.AnimalGame.Behaviour.*;
 import com.sanjana.AnimalGame.Configuration.AnimalConfigurationSPM;
 import com.sanjana.AnimalGame.Decorator.*;
+import com.sanjana.AnimalGame.Facade.FacadeSPM;
+import com.sanjana.AnimalGame.Facade.MobileFacadeSPM;
 /**
  * @author sanjana p
  *
@@ -20,8 +23,9 @@ public class ForestSPM{
 	
 	ArrayList<AnimalSPM> animals = new ArrayList<>();
 	private volatile static ForestSPM forest;
+	 AnimalSPM[][] landscape=new AnimalSPM[20][20];
 	AnimalSPM deer;
-	AnimalSPM tiger;
+	MobilebasedFactorySPM tiger;
 	AnimalSPM lion;
 	AnimalSPM rabbit;
 	 
@@ -49,20 +53,28 @@ public class ForestSPM{
 		AngryTigerSPM angtiger = null;
 		switch (type) {
 		case "iot":
+//			createIotBasedAnimal();
 			animal = new IotbasedFactorySPM();
 			animals.add(animal.getAnimalSPM("tiger"));
 			animals.add(animal.getAnimalSPM("lion"));
 			animals.add(animal.getAnimalSPM("rabbit"));
 			animals.add(animal.getAnimalSPM("deer"));
+//			getStrength();
+//			getState(tiger);
+			
 			break;
 		case "mobile":
+//			createMobileBasedAnimal();
 			animal = new MobilebasedFactorySPM();
 			animals.add(animal.getAnimalSPM("rabbit"));
 			animals.add(animal.getAnimalSPM("deer"));
 			animals.add(animal.getAnimalSPM("lion"));
 			animals.add(animal.getAnimalSPM("tiger"));
+		animal.getAnimalSPM("tiger").strengthSPM();
+//			getState(tiger);
 			break;
 		case "web":
+//			createMobileBasedAnimal();
 			animal = new WebbasedFactorySPM();
 			animals.add(animal.getAnimalSPM("rabbit"));
 			animals.add(animal.getAnimalSPM("deer"));
@@ -71,15 +83,15 @@ public class ForestSPM{
 			break;
 		}
 //to check weather feature is visible
-		System.out.println(animal.getAnimalSPM("tiger").featureSPM());
-		System.out.println(animal.getAnimalSPM("lion").featureSPM());
-		System.out.println(animal.getAnimalSPM("rabbit").featureSPM());
-		System.out.println(animal.getAnimalSPM("deer").featureSPM());
+//		System.out.println(animal.getAnimalSPM("tiger").featureSPM());
+//		System.out.println(animal.getAnimalSPM("lion").featureSPM());
+//		System.out.println(animal.getAnimalSPM("rabbit").featureSPM());
+//		System.out.println(animal.getAnimalSPM("deer").featureSPM());
 //to check weather strength is visible
-		System.out.println("tiger strength "+animal.getAnimalSPM("tiger").strengthSPM());
-		System.out.println("lion strength "+animal.getAnimalSPM("lion").strengthSPM());
-		System.out.println("rabbit strength "+animal.getAnimalSPM("rabbit").strengthSPM());
-		System.out.println("deer Strength "+animal.getAnimalSPM("deer").strengthSPM());
+//		System.out.println("tiger strength "+animal.getAnimalSPM("tiger").strengthSPM());
+//		System.out.println("lion strength "+animal.getAnimalSPM("lion").strengthSPM());
+//		System.out.println("rabbit strength "+animal.getAnimalSPM("rabbit").strengthSPM());
+//		System.out.println("deer Strength "+animal.getAnimalSPM("deer").strengthSPM());
 
 		//
 		System.out.println("*****************************");
@@ -97,6 +109,22 @@ public class ForestSPM{
 		viewAnimalsSPM();
 	}
 	
+	public void getStrenght() {
+		MobilebasedFactorySPM animal = null;
+		MobileFacadeSPM mobile = new MobileFacadeSPM(animal);
+		mobile.deerStrengthSPM();
+		mobile.rabbitStrengthSPM();
+		mobile.tigerStrengthSPM();
+	}
+
+	public void getState(AnimalSPM WildTigerSPM) {
+		FightStateSPM fight = new FightStateSPM();
+		fight.updateStateSPM(WildTigerSPM);
+		System.out.println(WildTigerSPM.getState().toString());
+	}
+	
+	
+
 	public void viewAnimalsSPM() {
 		AnimalIteratorSPM animaliterator = new AnimalIteratorSPM(animals);
 		while(animaliterator.hasNext()){
@@ -106,12 +134,42 @@ public class ForestSPM{
 	
 	
 }
-public void fight(AnimalSPM WildTigerSPM) {
-		FightStateSPM fight = new FightStateSPM();
-		fight.updateStateSPM(WildTigerSPM);
-		System.out.println(WildTigerSPM.getState().toString());
+	
+	public void position(AnimalSPM animal) {
+		int x,y;		
+		do
+		{
+		x=(int)(Math.random()*10);
+		y=(int)(Math.random()*10);	
+		}	
+		while(landscape[x][y]!=null);
+		animal.setLocationX(x);
+		animal.setLocationY(y);
+		landscape[animal.getLocationX()][animal.getLocationY()]=animal;
 	}
 	
 	
+	
+public void fight() {
+	print();
+}
+public void print()
+{
+	for(int i=0;i<10;i++)
+		{
+			for(int j=0;j<10;j++)
+			{
+				if(landscape[i][j]!=null)
+				{
+					System.out.print(landscape[i][j].getName()+"\t\t");
+				}
+				else
+				{
+					System.out.print("0\t\t");
+				}
+			}
+			System.out.println();
+		}
+}
 	}
 	

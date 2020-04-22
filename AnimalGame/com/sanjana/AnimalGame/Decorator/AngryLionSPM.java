@@ -10,10 +10,10 @@ import com.sanjana.AnimalGame.Factory.MobilebasedFactorySPM;
 
 public class AngryLionSPM extends AddOnDecoratorSPM{
 
-	AnimalSPM animal;
+	MobilebasedFactorySPM animal;
 	AnimalFactorySPM animalfac;
-	public AngryLionSPM(AnimalSPM animal) {
-		this.animal = animal;
+	public AngryLionSPM(MobilebasedFactorySPM tiger) {
+		this.animal = tiger;
 	}
 	@Override
 	public int strengthSPM() {

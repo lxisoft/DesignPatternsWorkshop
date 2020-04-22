@@ -5,5 +5,6 @@ package com.sanjana.AnimalGame.command;
  *
  */
 public interface CommandSPM{
-	public void executeFight();
+	public void execute();
+	public void undo();
 }

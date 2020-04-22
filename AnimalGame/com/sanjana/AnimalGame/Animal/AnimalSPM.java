@@ -10,10 +10,16 @@ import com.sanjana.AnimalGame.State.StateSPM;
 public abstract class AnimalSPM{
 private StateSPM state;
 	// StrengthBehaviour StrengthBehaviour;
-	String name;
+	AnimalSPM name;
+	int locationX;
+	int locationY;
 	EatBehaviourSPM eatBehaviour;
 	
-	public String getName() {
+	public void setName(AnimalSPM animalSPM)
+	{
+		this.name=animalSPM;
+	}
+	public AnimalSPM getName() {
 		return name;
 	}
 	public abstract String featureSPM();
@@ -33,6 +39,25 @@ private StateSPM state;
 	public 	StateSPM getState() {
 		return state;
 	}
+	
+	public void setLocationX(int locationX)
+	{
+		this.locationX=locationX;
+	}
+	public void setLocationY(int locationY)
+	{
+		this.locationY=locationY;
+	}
+	public int getLocationX()
+	{
+		return locationX;
+	}
+	public int getLocationY()
+	{
+		return locationY;
+	}
+	
+	
 
 	}
 

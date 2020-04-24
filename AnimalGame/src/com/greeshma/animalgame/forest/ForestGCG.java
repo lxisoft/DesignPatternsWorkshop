@@ -34,8 +34,6 @@ public class ForestGCG {
 	    	System.out.println("singleton");
 	    	return uniqueInstance;    
 	    	}
-	  
-
 
 //		public void createAnimal() {
 //			animals = new AnimalGCG[10];
@@ -46,7 +44,7 @@ public class ForestGCG {
 		public void createAnimal() {
 			
 			String type = new ConfigGCG().getValueGCG();
-			animals = new AnimalGCG[2];
+			animals = new AnimalGCG[3];
 			AbstractAnimalFactoryGCG animalFactory;
 			if(type.equals("iot")) {
 				animalFactory = new IotFactory();
@@ -59,7 +57,7 @@ public class ForestGCG {
 			
 			animals[0] = animalFactory.createAnimalGCG("tiger");
 			animals[1] = animalFactory.createAnimalGCG("lion");
-			
+			animals[2] = animalFactory.createAnimalGCG("rabbit");
 	
 		}
 		
@@ -79,5 +77,4 @@ public class ForestGCG {
 			AnimalCommandInvoker commandInvoker = new AnimalCommandInvoker(command);
 			commandInvoker.executeGCG();
 		}
-		
 }

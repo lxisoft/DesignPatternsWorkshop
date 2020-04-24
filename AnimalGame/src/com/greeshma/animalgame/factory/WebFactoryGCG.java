@@ -2,6 +2,7 @@ package com.greeshma.animalgame.factory;
 
 import com.greeshma.animalgame.animal.AnimalGCG;
 import com.greeshma.animalgame.animal.LionGCG;
+import com.greeshma.animalgame.animal.RabbitGCG;
 import com.greeshma.animalgame.animal.TigerGCG;
 import com.greeshma.animalgame.decorator.IotGCG;
 import com.greeshma.animalgame.decorator.WebGCG;
@@ -13,6 +14,8 @@ public class WebFactoryGCG implements AbstractAnimalFactoryGCG {
 			return new WebGCG(new LionGCG());
 		} else if(animalType.equals("tiger")) {
 			return new WebGCG(new TigerGCG());
+		} else if(animalType.equals("rabbit")) {
+			return new WebGCG(new RabbitGCG());
 		}
 		return null;
 

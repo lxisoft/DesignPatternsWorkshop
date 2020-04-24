@@ -2,6 +2,7 @@ package com.greeshma.animalgame.factory;
 
 import com.greeshma.animalgame.animal.AnimalGCG;
 import com.greeshma.animalgame.animal.LionGCG;
+import com.greeshma.animalgame.animal.RabbitGCG;
 import com.greeshma.animalgame.animal.TigerGCG;
 import com.greeshma.animalgame.decorator.IotGCG;
 
@@ -13,6 +14,8 @@ public class IotFactory implements AbstractAnimalFactoryGCG {
 			return new IotGCG(new LionGCG());
 		} else if(animalType.equals("tiger")) {
 			return new IotGCG(new TigerGCG());
+		} else if(animalType.equals("rabbit")) {
+			return new IotGCG(new RabbitGCG());
 		}
 		return null;
 
